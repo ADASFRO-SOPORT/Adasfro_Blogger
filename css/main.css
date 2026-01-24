@@ -1,0 +1,268 @@
+/* ------------------------------------- */
+/* CSS BÁSICO Y ESTRUCTURA SOLICITADA    */
+/* ------------------------------------- */
+
+/* Swiper Customization */
+.swiper {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.swiper-slide h4 {
+  margin: 10px 0 5px;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+}
+
+.swiper-slide p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
+
+a { 
+  text-decoration: none; 
+  color: #333; 
+}
+
+.clear { 
+  clear: both; 
+}
+
+/* BARRA SUPERIOR (Submenú y Redes) */
+#header-top-menu {
+  background-color: #333;
+  color: white;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.top-nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top-nav-left a {
+  color: white;
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+/* Header Logo */
+#header-wrapper img {
+  max-width: 40px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  color: #004d40; /* Color Verde Oscuro para el Logo */
+}
+
+/* MENÚ PRINCIPAL */
+#main-nav {
+  background-color: #00796b; /* Color Verde Asociativo */
+  text-align: center;
+}
+
+.main-menu .widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu .widget li {
+  margin: 0 15px;
+}
+
+.main-menu .widget a {
+  color: white;
+  padding: 15px 10px;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.main-menu .widget a:hover {
+  background-color: #004d40;
+}
+
+/* CONTENIDO Y BARRA LATERAL */
+#content-wrapper {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  padding: 0 20px;
+}
+
+#main-content {
+  flex: 3; /* Ocupa más espacio, por ejemplo, 70% */
+  padding-right: 20px;
+}
+
+#sidebar-wrapper {
+  flex: 1; /* Ocupa menos espacio, por ejemplo, 30% */
+}
+
+.post-area {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* BLOQUE DE MISIÓN */
+.mission-block {
+  background-color: #2196F3; /* Azul Solicitado */
+  color: white;
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 8px;
+}
+
+.mission-block h3 {
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+}
+
+.mission-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-block li {
+  margin-bottom: 10px;
+}
+
+/* PIE DE PÁGINA */
+#footer-wrapper {
+  background-color: #333;
+  color: white;
+  padding: 30px 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  width: 23%;
+}
+
+.footer-section h4 {
+  color: #00bcd4; /* Un toque de color */
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+/* Recent Posts Carousel Styles */
+#recent-carousel {
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+#recent-posts {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#recent-posts li {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#recent-posts li img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+#recent-posts li h4 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+#recent-posts li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #content-wrapper {
+    flex-direction: column;
+  }
+  
+  #main-content {
+    padding-right: 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .top-nav-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
