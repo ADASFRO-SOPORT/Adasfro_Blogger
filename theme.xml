@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <title><data:blog.pageTitle/></title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+    
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600' rel='stylesheet'/>
+    
+    <!-- Font Awesome -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+    
+    <!-- Swiper CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
+    
+    <!-- CSS Principal desde GitHub Pages -->
+    <link href='https://TU_USUARIO.github.io/adasfro-blogger/css/main.css' rel='stylesheet'/>
+    
+    <b:skin><![CDATA[
+      /* CSS mínimo necesario para Blogger */
+      /* El resto está en GitHub Pages */
+    ]]></b:skin>
+    
+  </head>
+  <body>
+
+    <!-- BARRA SUPERIOR -->
+    <div id='header-top-menu'>
+      <div class='top-nav-content'>
+        <div class='top-nav-left'>
+          <a href='#'>Sobre Nosotros</a>
+          <a href='#'>Transparencia</a>
+          <a href='#'>Contáctanos</a>
+        </div>
+        
+        <div class='social-icons'>
+          <a href='#' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
+          <a href='#' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
+          <a href='#' target='_blank' title='TikTok'><i class='fab fa-tiktok'/></a>
+          <a href='#' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
+          <a href='#' target='_blank' title='Correo'><i class='fas fa-envelope'/></a>
+          <a href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <div id='header-wrapper'>
+      <b:section class='header' id='header' preferred='yes' showaddelement='no'>
+        <b:widget id='Header1' locked='false' title='ADASFRO (cabecera)' type='Header' version='1'>
+          <b:includable id='main'>
+            <h1 class='title'><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <div id='main-nav'>
+      <b:section class='main-menu' id='main-menu' preferred='yes' showaddelement='yes'>
+        <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
+          <b:includable id='main'>
+            <ul>
+              <li><a expr:href='data:blog.homepageUrl'>Inicio</a></li>
+              <li><a href='#'>Poblaciones</a></li>
+              <li><a href='#'>Eventos</a></li>
+              <li><a href='#'>Iniciativas / Proyectos</a></li>
+            </ul>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id='content-wrapper'>
+      
+      <div id='main-content'>
+        
+        <!-- CARRUSEL DE POSTS SWIPER -->
+        <div class='swiper post-area'>
+          <div class='swiper-wrapper' id='blog-posts'>
+            <!-- Las publicaciones se cargarán aquí vía JavaScript -->
+          </div>
+          <div class='swiper-button-next'/>
+          <div class='swiper-button-prev'/>
+          <div class='swiper-pagination'/>
+        </div>
+
+        <!-- WIDGET DE BLOG (Posts tradicionales de Blogger) -->
+        <div class='post-area'>
+          <b:section class='main' id='main' preferred='yes' showaddelement='no'>
+            <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog'/>
+          </b:section>
+        </div>
+
+        <!-- BLOQUE DE MISIÓN -->
+        <div class='mission-block'>
+          <h3>Misión de la Asociación Agencia para el Desarrollo Accesible Sin Fronteras</h3>
+          <p>Estas son nuestras 5 misiones:</p>
+          <ul>
+            <li>✨ Misión 1: Fomentar la inclusión social...</li>
+            <li>🌍 Misión 2: Promover la transparencia y el acceso a la información...</li>
+            <li>🤝 Misión 3: Establecer convenios de colaboración con otras entidades...</li>
+            <li>💡 Misión 4: Impulsar proyectos e iniciativas de desarrollo sostenible...</li>
+            <li>☮️ Misión 5: Defender los derechos y la autonomía de las poblaciones vulnerables.</li>
+          </ul>
+        </div>
+
+        <!-- CONTENIDO ADICIONAL -->
+        <div class='post-area'>
+          <h3>Bloque Multimedia</h3>
+          <p>Aquí puedes integrar un widget de Fotos que muestre tus imágenes, audios y videos destacados.</p>
+        </div>
+        
+        <div class='post-area'>
+          <h3>Convenios Realizados</h3>
+          <p>Listado o galería de logos y nombres de las organizaciones con las que se han firmado convenios.</p>
+        </div>
+        
+        <!-- FORMULARIO DE CONTACTO -->
+        <div class='post-area'>
+          <h3>Contáctanos</h3>
+          <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
+            <b:widget id='ContactForm1' locked='false' title='Formulario de Contacto' type='ContactForm'/>
+          </b:section>
+        </div>
+        
+      </div>
+
+      <!-- SIDEBAR -->
+      <div id='sidebar-wrapper'>
+        <b:section class='sidebar' id='sidebar' preferred='yes'>
+          
+          <!-- CATEGORÍAS -->
+          <b:widget id='Label1' locked='false' title='Categorías' type='Label'/>
+          
+          <!-- WIDGET DONAR -->
+          <b:widget id='HTML2' locked='false' title='Donar' type='HTML'>
+            <b:includable id='main'>
+              <div style='text-align:center; padding:10px; background-color:#ff9800; border-radius:5px;'>
+                <h4>¡Apóyanos!</h4>
+                <p>Tu donación es clave para nuestro trabajo.</p>
+                <a href='#' style='display:inline-block; padding:10px 20px; background-color:white; color:#ff9800; font-weight:bold; border-radius:3px;'>DONAR AHORA</a>
+              </div>
+            </b:includable>
+          </b:widget>
+          
+          <!-- POSTS POPULARES -->
+          <b:widget id='PopularPosts1' locked='false' title='Posts Más Populares' type='PopularPosts'/>
+          
+        </b:section>
+      </div>
+      
+    </div>
+    
+    <div class='clear'/>
+
+    <!-- FOOTER -->
+    <div id='footer-wrapper'>
+      <div class='footer-content'>
+        
+        <div class='footer-section'>
+          <h4>Síguenos</h4>
+          <div class='social-icons' style='margin-top:10px;'>
+            <a href='#' style='margin-right:15px;' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
+            <a href='#' style='margin-right:15px;' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
+            <a href='#' style='margin-right:15px;' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
+            <a href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+          </div>
+        </div>
+        
+        <div class='footer-section'>
+          <h4>Información</h4>
+          <a href='#'>Acerca de Nosotros</a>
+          <a href='#'>Transparencia</a>
+          <a href='#'>Contáctanos</a>
+        </div>
+        
+        <div class='footer-section'>
+          <h4>Categorías</h4>
+          <ul>
+            <li><a href='#'>Poblaciones</a></li>
+            <li><a href='#'>Eventos</a></li>
+            <li><a href='#'>Proyectos</a></li>
+          </ul>
+        </div>
+        
+        <div class='footer-section'>
+          <h4>Derechos</h4>
+          <p style='color:#ccc;'>© <data:blog.publishedYear/> <data:blog.title/>. Todos los derechos reservados.</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Swiper JS desde CDN -->
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
+    
+    <!-- IMPORTANTE: Reemplazar TU_USUARIO con tu nombre de usuario de GitHub -->
+    <!-- JavaScript desde GitHub Pages -->
+    <script src='https://TU_USUARIO.github.io/adasfro-blogger/js/main.js'/>
+    <script src='https://TU_USUARIO.github.io/adasfro-blogger/js/swiper-init.js'/>
+    
+    <!-- Feed de posts recientes (carrusel superior del menú) -->
+    <script src='/feeds/posts/default?alt=json-in-script&amp;callback=showRecentPosts&amp;max-results=10'/>
+    
+  </body>
+</html>

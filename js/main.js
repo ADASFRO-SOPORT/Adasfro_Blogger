@@ -1,68 +1,65 @@
-var cursor = null;
-if (items && items.length > 0) {
-  cursor = parseInt(items[items.length - 1].timestamp) + 1;
+/**
+ * ADASFRO - JavaScript Principal
+ * Funciones principales del sitio
+ */
+
+// Función para mostrar posts recientes (carousel superior)
+function showRecentPosts(json) {
+  const posts = json.feed.entry;
+  let html = '';
+
+  for (let i = 0; i < posts.length; i++) {
+    const title = posts[i].title.$t;
+    const link = posts[i].link[0].href;
+    const img = posts[i].media$thumbnail
+      ? posts[i].media$thumbnail.url
+      : 'https://via.placeholder.com/250x150';
+
+    html += `
+      <li>
+        <a href="${link}">
+          <img src="${img}" alt="${title}">
+          <h4>${title}</h4>
+        </a>
+      </li>
+    `;
+  }
+
+  document.getElementById("recent-posts").innerHTML = html;
 }
 
-var bodyFromEntry = function (entry) {
-  var text = (entry &&
-    ((entry.content && entry.content.$t) ||
-      (entry.summary && entry.summary.$t))) ||
-    '';
-  if (entry && entry.gd$extendedProperty) {
-    for (var k in entry.gd$extendedProperty) {
-      if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
-        return '<span class="deleted-comment">' + text + '</span>';
+// Inicialización cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('ADASFRO Theme cargado correctamente');
+
+  // Aquí puedes agregar más funcionalidades
+  initSmoothScroll();
+  initMobileMenu();
+});
+
+// Scroll suave para enlaces internos
+function initSmoothScroll() {
+  const links = document.querySelectorAll('a[href^="#"]');
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       }
-    }
-  }
-  return text;
+    });
+  });
 }
 
-var parse = function (data) {
-  cursor = null;
-  var comments = [];
-  if (data && data.feed && data.feed.entry) {
-    for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
-      var comment = {};
-      // comment ID, parsed out of the original id format
-      var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
-      comment.id = id ? id[2] : null;
-      comment.body = bodyFromEntry(entry);
-      comment.timestamp = Date.parse(entry.published.$t) + '';
-      if (entry.author && entry.author.constructor === Array) {
-        var auth = entry.author[0];
-        if (auth) {
-          comment.author = {
-            name: (auth.name ? auth.name.$t : undefined),
-            profileUrl: (auth.uri ? auth.uri.$t : undefined),
-            avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
-          };
-        }
-      }
-      if (entry.link) {
-        if (entry.link[2]) {
-          comment.link = comment.permalink = entry.link[2].href;
-        }
-        if (entry.link[3]) {
-          var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
-          if (pid && pid[1]) {
-            comment.parentId = pid[1];
-          }
-        }
-      }
-      comment.deleteclass = 'item-control blog-admin';
-      if (entry.gd$extendedProperty) {
-        for (var k in entry.gd$extendedProperty) {
-          if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
-            comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
-          } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
-            comment.displayTime = entry.gd$extendedProperty[k].value;
-          }
-        }
-      }
-      comments.push(comment);
-    }
-  }
-  return comments;
-};
-
+// Menú móvil (placeholder para futura implementación)
+function initMobileMenu() {
+  // Implementar lógica de menú hamburguesa si es necesario
+  console.log('Mobile menu initialized');
+}
