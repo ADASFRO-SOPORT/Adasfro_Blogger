@@ -1,41 +1,62 @@
 /**
- * ADASFRO - Neo-Brutalismo Accesible 2025
- * Diseño de alto contraste, bordes definidos, tipografía legible
- * Cumplimiento WCAG 2.2 AAA
+ * ADASFRO - Diseño Moderno Minimalista 2025
+ * Inspirado en tendencias contemporáneas de ONGs
+ * Elegante, accesible y profesional
  */
 
 /* ========================================
    VARIABLES Y SISTEMA DE DISEÑO
 ======================================== */
 :root {
-  /* Paleta Neo-Brutalista */
-  --color-fondo: #FFFDF5;
-  --color-texto: #1A1A1A;
-  --color-acento: #FF4500; /* Naranja Internacional */
-  --color-acento-hover: #CC3700;
-  --color-exito: #00C853;
-  --color-alerta: #FFD700;
-  --color-borde: #000000;
+  /* Paleta Moderna y Profesional */
+  --color-primary: #4A90E2;      /* Azul confiable */
+  --color-primary-dark: #2E5C8A;
+  --color-secondary: #50C878;    /* Verde esperanza */
+  --color-accent: #FF6B6B;       /* Coral cálido */
+  --color-accent-light: #FFE5E5;
+  
+  /* Neutrales */
+  --color-bg: #FFFFFF;
+  --color-bg-light: #F8F9FA;
+  --color-bg-section: #FAFBFC;
+  --color-text: #2C3E50;
+  --color-text-light: #6C757D;
+  --color-border: #E9ECEF;
   
   /* Tipografía */
-  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-secondary: 'Open Sans', system-ui, sans-serif;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Poppins', 'Montserrat', sans-serif;
   
-  /* Espaciado Bento Grid */
-  --gap: 20px;
-  --border-width: 3px;
-  --border-radius: 0px; /* Neo-brutalismo = sin bordes redondeados */
+  /* Espaciado */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
   
-  /* Tamaños de fuente accesibles */
-  --text-base: 20px;
-  --text-lg: 24px;
-  --text-xl: 32px;
-  --text-2xl: 48px;
-  --text-3xl: 64px;
+  /* Bordes */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  
+  /* Sombras suaves */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.16);
+  
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ========================================
-   RESET Y BASE ACCESIBLE
+   GOOGLE FONTS - Inter & Poppins
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
+/* ========================================
+   RESET Y BASE
 ======================================== */
 * {
   margin: 0;
@@ -54,17 +75,49 @@ html {
   }
   * {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  font-family: var(--font-secondary);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: var(--color-texto);
-  background-color: var(--color-fondo);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   TIPOGRAFÍA
+======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
 }
 
 /* ========================================
@@ -74,118 +127,134 @@ body {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-acento);
+  background: var(--color-primary);
   color: white;
-  padding: 8px 16px;
+  padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
-  font-weight: 700;
-  border: var(--border-width) solid var(--color-borde);
+  font-weight: 600;
+  border-radius: 0 0 var(--border-radius-sm) 0;
   z-index: 100;
+  transition: var(--transition);
 }
 
 .skip-link:focus {
   top: 0;
+  box-shadow: var(--shadow-lg);
 }
 
 /* ========================================
-   FOCO DE TECLADO - Alto Contraste
+   FOCUS STATES - Accesible y sutil
 ======================================== */
 *:focus {
-  outline: 4px dashed #FF00FF; /* Magenta ultra visible */
-  outline-offset: 4px;
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 button:focus,
 a:focus,
 input:focus,
-textarea:focus,
-select:focus {
-  outline: 4px solid #FF00FF;
+textarea:focus {
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* ========================================
-   BARRA SUPERIOR
+   BARRA SUPERIOR - Minimalista
 ======================================== */
 #header-top-menu {
-  background-color: var(--color-texto);
-  color: white;
-  padding: 12px 0;
-  border-bottom: var(--border-width) solid var(--color-borde);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: var(--spacing-sm) 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .top-nav-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--gap);
+  padding: 0 var(--spacing-md);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: var(--spacing-sm);
 }
 
 .top-nav-left a {
   color: white;
-  margin-right: 20px;
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s;
+  margin-right: var(--spacing-md);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+  opacity: 0.9;
 }
 
 .top-nav-left a:hover {
-  border-bottom-color: var(--color-alerta);
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 .social-icons a {
   color: white;
-  margin-left: 16px;
-  font-size: 22px;
-  transition: transform 0.2s;
+  margin-left: var(--spacing-sm);
+  font-size: 18px;
+  transition: var(--transition);
+  opacity: 0.9;
 }
 
 .social-icons a:hover {
-  transform: scale(1.2);
-  color: var(--color-alerta);
+  opacity: 1;
+  transform: translateY(-2px) scale(1.1);
 }
 
 /* ========================================
-   HEADER / LOGO
+   HEADER / LOGO - Clean & Modern
 ======================================== */
 #header-wrapper {
-  background: var(--color-acento);
-  border-bottom: var(--border-width) solid var(--color-borde);
-  padding: 30px var(--gap);
-  box-shadow: 8px 8px 0 var(--color-borde);
+  background: white;
+  padding: var(--spacing-lg) var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header h1 {
-  font-family: var(--font-primary);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 4px 4px 0 var(--color-borde);
+  margin: 0;
 }
 
 .header h1 a {
-  color: white;
-  text-decoration: none;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ========================================
-   MENÚ PRINCIPAL - Neo-Brutalista
+   MENÚ PRINCIPAL - Sticky Elegante
 ======================================== */
 #main-nav {
-  background-color: white;
-  border-bottom: var(--border-width) solid var(--color-borde);
+  background: white;
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 50;
-  box-shadow: 0 4px 0 var(--color-borde);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+#main-nav.scrolled {
+  box-shadow: var(--shadow-md);
 }
 
 .main-menu .widget ul {
@@ -195,7 +264,10 @@ select:focus {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--spacing-xs);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-sm);
 }
 
 .main-menu .widget li {
@@ -204,141 +276,183 @@ select:focus {
 
 .main-menu .widget a {
   display: block;
-  padding: 16px 24px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-texto);
-  background: var(--color-fondo);
-  border: var(--border-width) solid var(--color-borde);
-  transition: all 0.15s;
-  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  color: var(--color-text);
+  border-radius: var(--border-radius-md);
+  transition: var(--transition);
+  position: relative;
 }
 
-.main-menu .widget a:hover,
-.main-menu .widget a:focus {
-  background: var(--color-acento);
-  color: white;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--color-borde);
+.main-menu .widget a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition);
 }
 
-.main-menu .widget a:active {
-  transform: translate(0, 0);
-  box-shadow: none;
+.main-menu .widget a:hover {
+  color: var(--color-primary);
+  background: var(--color-bg-light);
+}
+
+.main-menu .widget a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* ========================================
-   BENTO GRID - Layout Principal
+   LAYOUT PRINCIPAL
 ======================================== */
 #content-wrapper {
-  max-width: 1400px;
-  margin: 40px auto;
-  padding: 0 var(--gap);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
   display: grid;
-  grid-template-columns: 1fr 350px;
-  gap: var(--gap);
+  grid-template-columns: 1fr 320px;
+  gap: var(--spacing-xl);
 }
 
 #main-content {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--spacing-lg);
 }
 
 /* ========================================
-   BLOQUES BENTO
+   CARDS MODERNAS
 ======================================== */
-.bento-block {
+.card {
   background: white;
-  border: var(--border-width) solid var(--color-borde);
-  padding: 30px;
-  box-shadow: 6px 6px 0 var(--color-borde);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
 }
 
-.bento-block:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 var(--color-borde);
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
-/* Bloque Hero (2x altura) */
-.bento-hero {
-  background: var(--color-acento);
+/* ========================================
+   HERO SECTION - Impactante
+======================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
-  padding: 60px 40px;
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-.bento-hero h2 {
-  font-family: var(--font-primary);
-  font-size: var(--text-3xl);
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="50" r="30" fill="rgba(255,255,255,0.05)"/></svg>');
+  opacity: 0.5;
 }
 
-.bento-hero p {
-  font-size: var(--text-lg);
-  max-width: 800px;
-  margin: 0 auto;
+.hero-section > * {
+  position: relative;
+  z-index: 1;
 }
 
-/* Bloque de Acción */
-.bento-action {
-  background: var(--color-alerta);
-  border-color: var(--color-borde);
-}
-
-.bento-action h3 {
-  font-size: var(--text-xl);
+.hero-section h2 {
+  color: white;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  margin-bottom: 16px;
-  color: var(--color-texto);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+/* ========================================
+   BOTONES MODERNOS
+======================================== */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-decoration: none;
+  font-family: var(--font-primary);
 }
 
 .btn-primary {
-  display: inline-block;
-  padding: 16px 32px;
-  font-size: var(--text-base);
-  font-weight: 800;
-  text-transform: uppercase;
-  background: var(--color-texto);
-  color: white;
-  border: var(--border-width) solid var(--color-borde);
-  cursor: pointer;
-  transition: all 0.15s;
-  text-decoration: none;
+  background: white;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-  background: var(--color-acento);
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--color-borde);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-primary-dark);
 }
 
-.btn-primary:active {
-  transform: translate(0, 0);
-  box-shadow: none;
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #45B369;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FF8585 100%);
+  color: white;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ========================================
-   MISIÓN - Bloque Especial
+   BLOQUE DE MISIÓN - Elegante
 ======================================== */
 .mission-block {
-  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
   color: white;
-  border: var(--border-width) solid var(--color-borde);
-  box-shadow: 8px 8px 0 var(--color-borde);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .mission-block h3 {
-  font-family: var(--font-primary);
-  font-size: var(--text-xl);
-  font-weight: 900;
-  border-bottom: 4px solid white;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--spacing-md);
+  font-weight: 800;
 }
 
 .mission-block ul {
@@ -347,78 +461,153 @@ select:focus {
 }
 
 .mission-block li {
-  padding: 12px 0;
-  font-size: 18px;
-  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding: var(--spacing-sm) 0;
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
 }
 
 .mission-block li:last-child {
   border-bottom: none;
 }
 
+.mission-block strong {
+  color: white;
+}
+
 /* ========================================
-   SIDEBAR
+   SWIPER CUSTOMIZATION
+======================================== */
+.swiper {
+  width: 100%;
+  padding: var(--spacing-md) 0;
+  border-radius: var(--border-radius-lg);
+}
+
+.swiper-slide {
+  background: white;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.swiper-slide:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.swiper-slide h4 {
+  padding: var(--spacing-sm) var(--spacing-md) 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.swiper-slide p {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary);
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
+
+/* ========================================
+   SIDEBAR - Limpio
 ======================================== */
 #sidebar-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--spacing-md);
 }
 
 .sidebar .widget {
   background: white;
-  border: var(--border-width) solid var(--color-borde);
-  padding: 24px;
-  box-shadow: 4px 4px 0 var(--color-borde);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
 }
 
 .sidebar h2,
 .sidebar h4 {
-  font-family: var(--font-primary);
-  font-weight: 800;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 3px solid var(--color-acento);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 /* ========================================
-   FOOTER
+   FOOTER - Profesional
 ======================================== */
 #footer-wrapper {
-  background-color: var(--color-texto);
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
   color: white;
-  padding: 40px 0;
-  margin-top: 60px;
-  border-top: var(--border-width) solid var(--color-borde);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  margin-top: var(--spacing-xl);
 }
 
 .footer-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--gap);
+  padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  gap: var(--spacing-lg);
 }
 
 .footer-section h4 {
-  color: var(--color-alerta);
-  border-bottom: 3px solid var(--color-alerta);
-  padding-bottom: 12px;
-  margin-bottom: 16px;
-  font-weight: 800;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: var(--spacing-xs);
 }
 
 .footer-section a {
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.8);
   display: block;
-  margin-bottom: 8px;
-  transition: color 0.2s;
-  text-decoration: none;
+  margin-bottom: var(--spacing-xs);
+  transition: var(--transition);
 }
 
 .footer-section a:hover {
-  color: var(--color-alerta);
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ========================================
@@ -429,33 +618,55 @@ select:focus {
     grid-template-columns: 1fr;
   }
   
-  .bento-hero h2 {
-    font-size: var(--text-2xl);
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --text-base: 18px;
-    --text-xl: 28px;
-    --text-2xl: 36px;
-    --text-3xl: 48px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
   }
   
   .top-nav-content {
     flex-direction: column;
-  }
-  
-  .header h1 {
-    font-size: var(--text-xl);
+    text-align: center;
   }
   
   .main-menu .widget ul {
     flex-direction: column;
+    align-items: center;
   }
   
   .main-menu .widget a {
     width: 100%;
     text-align: center;
   }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   UTILIDADES
+======================================== */
+.text-center { text-align: center; }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.shadow-hover { transition: var(--transition); }
+.shadow-hover:hover { box-shadow: var(--shadow-hover); }
+
+/* Gradientes de fondo */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #45B369 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FF8585 100%);
 }

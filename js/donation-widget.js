@@ -1,13 +1,13 @@
 /**
- * ADASFRO - Widget de Donaciones SINPE Móvil
- * Funcionalidad: Copy-to-clipboard + QR dinámico + validación social
+ * ADASFRO - Widget de Donaciones Moderno
+ * Estilo minimalista con animaciones suaves
  */
 
 class DonationWidget {
   constructor(config = {}) {
-    this.sinpeNumber = config.sinpeNumber || '8888-8888'; // CAMBIAR por número real
+    this.sinpeNumber = config.sinpeNumber || '8888-8888';
     this.containerId = config.containerId || 'donation-widget';
-    this.donationGoal = config.donationGoal || 500000; // Meta en colones
+    this.donationGoal = config.donationGoal || 500000;
     this.currentAmount = config.currentAmount || 0;
 
     this.init();
@@ -23,111 +23,139 @@ class DonationWidget {
     container.innerHTML = this.render();
     this.attachEventListeners();
     this.generateQR();
+    this.animateProgress();
   }
 
   render() {
     const percentage = Math.min((this.currentAmount / this.donationGoal) * 100, 100);
 
     return `
-      <div class="donation-widget-container">
-        <!-- Header -->
+      <div class="donation-widget-modern">
+        <!-- Header con gradiente -->
         <div class="donation-header">
-          <h3>💛 Apoya Nuestra Misión</h3>
-          <p>Tu donación defiende derechos y cambia vidas</p>
+          <div class="donation-icon">💛</div>
+          <h3>Impulsa el Cambio</h3>
+          <p class="subtitle">Tu donación defiende derechos</p>
         </div>
         
-        <!-- Progress Bar -->
-        <div class="donation-progress">
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill" style="width: ${percentage}%"></div>
-          </div>
+        <!-- Progress Circle Moderno -->
+        <div class="progress-circle-container">
+          <svg class="progress-ring" width="180" height="180">
+            <circle class="progress-ring-bg" cx="90" cy="90" r="75" />
+            <circle class="progress-ring-fill" cx="90" cy="90" r="75" 
+              stroke-dasharray="471" 
+              stroke-dashoffset="${471 - (471 * percentage) / 100}" />
+          </svg>
           <div class="progress-text">
-            <span class="current-amount">₡${this.formatNumber(this.currentAmount)}</span>
-            <span class="goal-amount">de ₡${this.formatNumber(this.donationGoal)}</span>
+            <div class="progress-percentage">${Math.round(percentage)}%</div>
+            <div class="progress-label">de la meta</div>
           </div>
         </div>
         
-        <!-- SINPE Móvil Section -->
-        <div class="sinpe-section">
-          <h4>🇨🇷 Donación SINPE Móvil</h4>
+        <!-- Montos -->
+        <div class="donation-amounts">
+          <div class="amount-raised">
+            <span class="amount-value">₡${this.formatNumber(this.currentAmount)}</span>
+            <span class="amount-label">Recaudado</span>
+          </div>
+          <div class="amount-goal">
+            <span class="amount-value">₡${this.formatNumber(this.donationGoal)}</span>
+            <span class="amount-label">Meta</span>
+          </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="divider"></div>
+        
+        <!-- SINPE Section -->
+        <div class="sinpe-modern">
+          <h4 class="sinpe-title">🇨🇷 Dona vía SINPE Móvil</h4>
           
-          <!-- Número para copiar -->
-          <div class="sinpe-number-box">
+          <!-- Número con botón moderno -->
+          <div class="sinpe-input-group">
             <input 
               type="text" 
               id="sinpe-number-input" 
               value="${this.sinpeNumber}" 
               readonly 
-              aria-label="Número SINPE Móvil para donaciones"
+              aria-label="Número SINPE Móvil"
             />
             <button 
               id="copy-sinpe-btn" 
-              class="btn-copy"
+              class="btn-copy-modern"
               aria-label="Copiar número SINPE"
             >
-              📋 Copiar
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copiar
             </button>
           </div>
           
-          <!-- QR Code -->
-          <div class="qr-container">
-            <canvas id="sinpe-qr-canvas"></canvas>
-            <p class="qr-instruction">Escanea con tu app bancaria</p>
-          </div>
-          
-          <!-- Instrucciones -->
-          <div class="donation-steps">
-            <h5>Pasos para donar:</h5>
-            <ol>
-              <li>Copia el número o escanea el QR</li>
-              <li>Abre tu app bancaria (BAC, BCR, Nacional, etc.)</li>
-              <li>Ve a SINPE Móvil → Enviar dinero</li>
-              <li>Pega el número: <strong>${this.sinpeNumber}</strong></li>
-              <li>¡Listo! Cada colón cuenta 💚</li>
-            </ol>
+          <!-- QR Code Minimalista -->
+          <div class="qr-modern">
+            <div class="qr-wrapper">
+              <canvas id="sinpe-qr-canvas"></canvas>
+            </div>
+            <p class="qr-hint">Escanea desde tu app bancaria</p>
           </div>
         </div>
         
-        <!-- Opciones de Monto Sugerido -->
-        <div class="suggested-amounts">
-          <h5>Montos sugeridos:</h5>
-          <div class="amount-buttons">
-            <button class="amount-btn" data-amount="2000">₡2,000</button>
-            <button class="amount-btn" data-amount="5000">₡5,000</button>
-            <button class="amount-btn" data-amount="10000">₡10,000</button>
-            <button class="amount-btn" data-amount="custom">Otro monto</button>
+        <!-- Montos Sugeridos -->
+        <div class="suggested-amounts-modern">
+          <p class="amounts-label">Montos sugeridos:</p>
+          <div class="amount-buttons-grid">
+            <button class="amount-btn-modern" data-amount="2000">₡2,000</button>
+            <button class="amount-btn-modern" data-amount="5000">₡5,000</button>
+            <button class="amount-btn-modern" data-amount="10000">₡10,000</button>
+            <button class="amount-btn-modern" data-amount="custom">Otro</button>
           </div>
         </div>
         
-        <!-- Social Proof -->
-        <div class="social-proof">
-          <p>🎉 <strong id="recent-donors-count">5</strong> personas han donado hoy</p>
+        <!-- Pasos Simplificados -->
+        <details class="steps-accordion">
+          <summary>¿Cómo donar?</summary>
+          <ol class="steps-list">
+            <li>Abre tu app bancaria</li>
+            <li>Ve a SINPE Móvil</li>
+            <li>Ingresa: <strong>${this.sinpeNumber}</strong></li>
+            <li>Confirma el monto</li>
+            <li>¡Listo! 🎉</li>
+          </ol>
+        </details>
+        
+        <!-- Social Proof Minimalista -->
+        <div class="social-proof-modern">
+          <div class="proof-icon">🌟</div>
+          <p><strong id="recent-donors-count">8</strong> personas donaron esta semana</p>
         </div>
         
-        <!-- Notificación de Copiado -->
-        <div id="copy-notification" class="copy-notification hidden" role="alert" aria-live="polite">
-          ✅ Número copiado al portapapeles
+        <!-- Notificación Flotante -->
+        <div id="copy-notification-modern" class="notification-modern" role="alert" aria-live="polite">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Número copiado al portapapeles</span>
         </div>
       </div>
     `;
   }
 
   attachEventListeners() {
-    // Botón de copiar
     const copyBtn = document.getElementById('copy-sinpe-btn');
     if (copyBtn) {
       copyBtn.addEventListener('click', () => this.copyToClipboard());
     }
 
-    // Botones de monto sugerido
-    const amountBtns = document.querySelectorAll('.amount-btn');
+    const amountBtns = document.querySelectorAll('.amount-btn-modern');
     amountBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         const amount = e.target.dataset.amount;
         if (amount === 'custom') {
           this.showCustomAmountModal();
         } else {
-          this.highlightAmount(amount);
+          this.selectAmount(e.target);
         }
       });
     });
@@ -135,52 +163,44 @@ class DonationWidget {
 
   async copyToClipboard() {
     try {
-      // Usar la API moderna de Clipboard
       await navigator.clipboard.writeText(this.sinpeNumber);
-      this.showNotification('✅ Número copiado. ¡Abre tu app bancaria!');
+      this.showNotification();
 
-      // Tracking (opcional)
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'copy_sinpe_number', {
-          event_category: 'Donation',
-          event_label: 'SINPE Number Copied'
-        });
-      }
+      // Efecto visual en el botón
+      const btn = document.getElementById('copy-sinpe-btn');
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 2000);
+
     } catch (err) {
-      // Fallback para navegadores antiguos
       const input = document.getElementById('sinpe-number-input');
       input.select();
       document.execCommand('copy');
-      this.showNotification('✅ Número copiado al portapapeles');
+      this.showNotification();
     }
   }
 
-  showNotification(message) {
-    const notification = document.getElementById('copy-notification');
+  showNotification() {
+    const notification = document.getElementById('copy-notification-modern');
     if (notification) {
-      notification.textContent = message;
-      notification.classList.remove('hidden');
-
+      notification.classList.add('show');
       setTimeout(() => {
-        notification.classList.add('hidden');
+        notification.classList.remove('show');
       }, 3000);
     }
   }
 
   generateQR() {
-    // Usar la librería qrcode.js desde CDN
     const canvas = document.getElementById('sinpe-qr-canvas');
     if (!canvas || typeof QRCode === 'undefined') {
       console.warn('QRCode library not loaded');
       return;
     }
 
-    // Generar QR con el número SINPE
     QRCode.toCanvas(canvas, this.sinpeNumber, {
-      width: 200,
-      margin: 2,
+      width: 140,
+      margin: 1,
       color: {
-        dark: '#1A1A1A',
+        dark: '#2C3E50',
         light: '#FFFFFF'
       }
     }, (error) => {
@@ -188,25 +208,24 @@ class DonationWidget {
     });
   }
 
-  highlightAmount(amount) {
-    // Resaltar el botón seleccionado
-    document.querySelectorAll('.amount-btn').forEach(btn => {
-      btn.classList.remove('selected');
+  selectAmount(btn) {
+    document.querySelectorAll('.amount-btn-modern').forEach(b => {
+      b.classList.remove('selected');
     });
-
-    const selectedBtn = document.querySelector(`[data-amount="${amount}"]`);
-    if (selectedBtn) {
-      selectedBtn.classList.add('selected');
-    }
-
-    // Mostrar mensaje motivacional
-    this.showNotification(`💚 Excelente! ₡${this.formatNumber(amount)} puede financiar materiales de capacitación en LESCO`);
+    btn.classList.add('selected');
   }
 
   showCustomAmountModal() {
     const customAmount = prompt('¿Cuánto deseas donar? (en colones)');
     if (customAmount && !isNaN(customAmount)) {
-      this.showNotification(`💛 Gracias por tu generosidad de ₡${this.formatNumber(customAmount)}`);
+      this.showNotification();
+    }
+  }
+
+  animateProgress() {
+    const circle = document.querySelector('.progress-ring-fill');
+    if (circle) {
+      circle.style.transition = 'stroke-dashoffset 1.5s ease-out';
     }
   }
 
@@ -214,106 +233,176 @@ class DonationWidget {
     return new Intl.NumberFormat('es-CR').format(num);
   }
 
-  // Método para actualizar el progreso (llamar desde backend o Google Sheets)
   updateProgress(newAmount) {
     this.currentAmount = newAmount;
     const percentage = Math.min((this.currentAmount / this.donationGoal) * 100, 100);
 
-    const progressBar = document.querySelector('.progress-bar-fill');
-    const currentAmountEl = document.querySelector('.current-amount');
+    const circle = document.querySelector('.progress-ring-fill');
+    const percentageEl = document.querySelector('.progress-percentage');
+    const amountEl = document.querySelector('.amount-raised .amount-value');
 
-    if (progressBar) {
-      progressBar.style.width = `${percentage}%`;
+    if (circle) {
+      circle.style.strokeDashoffset = 471 - (471 * percentage) / 100;
     }
 
-    if (currentAmountEl) {
-      currentAmountEl.textContent = `₡${this.formatNumber(newAmount)}`;
+    if (percentageEl) {
+      percentageEl.textContent = `${Math.round(percentage)}%`;
+    }
+
+    if (amountEl) {
+      amountEl.textContent = `₡${this.formatNumber(newAmount)}`;
     }
   }
 }
 
-// Estilos CSS inline para el widget
-const donationStyles = `
+// Estilos CSS modernos
+const donationStylesModern = `
 <style>
-.donation-widget-container {
+.donation-widget-modern {
   background: white;
-  border: 3px solid #000;
-  padding: 30px;
-  box-shadow: 8px 8px 0 #000;
-  max-width: 500px;
-  margin: 0 auto;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E9ECEF;
 }
 
+/* Header */
 .donation-header {
   text-align: center;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 3px solid #FF4500;
+  margin-bottom: 32px;
+}
+
+.donation-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .donation-header h3 {
-  font-size: 28px;
-  font-weight: 900;
-  color: #1A1A1A;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2C3E50;
   margin-bottom: 8px;
 }
 
-.donation-header p {
-  font-size: 16px;
-  color: #555;
+.donation-header .subtitle {
+  color: #6C757D;
+  font-size: 14px;
+  margin: 0;
 }
 
-/* Progress Bar */
-.donation-progress {
-  margin-bottom: 24px;
+/* Progress Circle */
+.progress-circle-container {
+  position: relative;
+  width: 180px;
+  margin: 0 auto 24px;
 }
 
-.progress-bar-container {
-  width: 100%;
-  height: 30px;
-  background: #f0f0f0;
-  border: 3px solid #000;
-  overflow: hidden;
+.progress-ring {
+  transform: rotate(-90deg);
 }
 
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #00C853, #4CAF50);
-  transition: width 0.5s ease;
+.progress-ring-bg {
+  fill: none;
+  stroke: #E9ECEF;
+  stroke-width: 10;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+/* Gradiente SVG */
+.progress-ring-fill {
+  stroke: #4A90E2;
 }
 
 .progress-text {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  font-size: 32px;
   font-weight: 700;
+  color: #4A90E2;
+  line-height: 1;
 }
 
-.current-amount {
-  color: #00C853;
-  font-size: 20px;
+.progress-label {
+  font-size: 12px;
+  color: #6C757D;
+  margin-top: 4px;
 }
 
-.goal-amount {
-  color: #666;
-  font-size: 16px;
+/* Amounts */
+.donation-amounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.amount-raised,
+.amount-goal {
+  text-align: center;
+  padding: 16px;
+  background: #F8F9FA;
+  border-radius: 12px;
+}
+
+.amount-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 4px;
+}
+
+.amount-raised .amount-value {
+  color: #50C878;
+}
+
+.amount-label {
+  font-size: 12px;
+  color: #6C757D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E9ECEF, transparent);
+  margin: 24px 0;
 }
 
 /* SINPE Section */
-.sinpe-section {
-  background: #FFFDF5;
-  border: 3px solid #FFD700;
-  padding: 20px;
-  margin-bottom: 20px;
+.sinpe-modern {
+  margin-bottom: 24px;
 }
 
-.sinpe-section h4 {
+.sinpe-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C3E50;
   margin-bottom: 16px;
-  font-weight: 800;
-  font-size: 20px;
+  text-align: center;
 }
 
-.sinpe-number-box {
+.sinpe-input-group {
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
@@ -321,146 +410,216 @@ const donationStyles = `
 
 #sinpe-number-input {
   flex: 1;
-  padding: 12px;
-  font-size: 20px;
-  font-weight: 700;
-  border: 3px solid #000;
-  background: white;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #E9ECEF;
+  border-radius: 12px;
+  background: #F8F9FA;
   text-align: center;
   letter-spacing: 1px;
+  color: #2C3E50;
 }
 
-.btn-copy {
-  padding: 12px 20px;
-  font-weight: 800;
-  background: #FF4500;
+.btn-copy-modern {
+  padding: 14px 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4A90E2 0%, #2E5C8A 100%);
   color: white;
-  border: 3px solid #000;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.15s;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
-.btn-copy:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 #000;
+.btn-copy-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(74, 144, 226, 0.3);
 }
 
-.btn-copy:active {
-  transform: translate(0, 0);
-  box-shadow: none;
+.btn-copy-modern.copied {
+  background: linear-gradient(135deg, #50C878 0%, #45B369 100%);
 }
 
 /* QR Code */
-.qr-container {
+.qr-modern {
   text-align: center;
-  padding: 20px;
+}
+
+.qr-wrapper {
+  display: inline-block;
+  padding: 16px;
   background: white;
-  border: 3px solid #000;
-  margin-bottom: 20px;
+  border: 2px solid #E9ECEF;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 #sinpe-qr-canvas {
   display: block;
-  margin: 0 auto;
 }
 
-.qr-instruction {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #666;
+.qr-hint {
+  font-size: 13px;
+  color: #6C757D;
   font-style: italic;
-}
-
-/* Steps */
-.donation-steps h5 {
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.donation-steps ol {
-  padding-left: 24px;
-}
-
-.donation-steps li {
-  margin-bottom: 8px;
-  line-height: 1.5;
+  margin: 0;
 }
 
 /* Suggested Amounts */
-.suggested-amounts {
+.suggested-amounts-modern {
   margin-bottom: 20px;
 }
 
-.suggested-amounts h5 {
-  font-weight: 800;
+.amounts-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2C3E50;
   margin-bottom: 12px;
+  text-align: center;
 }
 
-.amount-buttons {
+.amount-buttons-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
-.amount-btn {
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 700;
+.amount-btn-modern {
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
   background: white;
-  border: 3px solid #000;
+  color: #2C3E50;
+  border: 2px solid #E9ECEF;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.3s ease;
 }
 
-.amount-btn:hover {
-  background: #FFD700;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 #000;
+.amount-btn-modern:hover {
+  border-color: #4A90E2;
+  background: #F8F9FA;
+  transform: translateY(-2px);
 }
 
-.amount-btn.selected {
-  background: #00C853;
+.amount-btn-modern.selected {
+  background: linear-gradient(135deg, #4A90E2 0%, #2E5C8A 100%);
   color: white;
+  border-color: #4A90E2;
+}
+
+/* Accordion Steps */
+.steps-accordion {
+  margin-bottom: 20px;
+  border: 1px solid #E9ECEF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.steps-accordion summary {
+  padding: 14px 16px;
+  font-weight: 600;
+  color: #2C3E50;
+  cursor: pointer;
+  background: #F8F9FA;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.steps-accordion summary:hover {
+  background: #E9ECEF;
+}
+
+.steps-list {
+  padding: 16px 16px 16px 36px;
+  margin: 0;
+  background: white;
+}
+
+.steps-list li {
+  margin-bottom: 8px;
+  color: #6C757D;
+  line-height: 1.6;
+}
+
+.steps-list strong {
+  color: #2C3E50;
 }
 
 /* Social Proof */
-.social-proof {
-  text-align: center;
+.social-proof-modern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   padding: 16px;
-  background: #E8F5E9;
-  border: 3px solid #00C853;
-  margin-top: 20px;
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF5CC 100%);
+  border-radius: 12px;
+  border: 1px solid #FFE5B4;
 }
 
-.social-proof strong {
-  color: #00C853;
+.proof-icon {
   font-size: 24px;
 }
 
-/* Notification */
-.copy-notification {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00C853;
-  color: white;
-  padding: 16px 24px;
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #000;
-  font-weight: 700;
-  z-index: 1000;
-  transition: opacity 0.3s;
+.social-proof-modern p {
+  margin: 0;
+  font-size: 14px;
+  color: #2C3E50;
 }
 
-.copy-notification.hidden {
-  opacity: 0;
-  pointer-events: none;
+.social-proof-modern strong {
+  color: #FF6B6B;
+  font-size: 18px;
+}
+
+/* Notification */
+.notification-modern {
+  position: fixed;
+  bottom: -100px;
+  right: 24px;
+  background: linear-gradient(135deg, #50C878 0%, #45B369 100%);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.notification-modern.show {
+  bottom: 24px;
+}
+
+.notification-modern svg {
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .donation-widget-modern {
+    padding: 24px 16px;
+  }
+  
+  .donation-amounts {
+    grid-template-columns: 1fr;
+  }
+  
+  .amount-buttons-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 `;
 
-// Inyectar estilos
-document.head.insertAdjacentHTML('beforeend', donationStyles);
-
-// Exportar para uso global
+document.head.insertAdjacentHTML('beforeend', donationStylesModern);
 window.DonationWidget = DonationWidget;

@@ -4,41 +4,40 @@
   <head>
     <title><data:blog.pageTitle/></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-    <meta content='Asociación para el Desarrollo Accesible Sin Fronteras - Defendiendo derechos, promoviendo inclusión' name='description'/>
+    <meta content='ADASFRO - Asociación para el Desarrollo Accesible Sin Fronteras. Defendiendo derechos, promoviendo inclusión y fiscalizando el cumplimiento de la Ley 7600 en Costa Rica.' name='description'/>
     
-    <!-- Preconnect para mejor performance -->
+    <!-- Preconnect -->
     <link crossorigin='' href='https://fonts.googleapis.com' rel='preconnect'/>
     <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
     <link crossorigin='' href='https://cdnjs.cloudflare.com' rel='preconnect'/>
     
-    <!-- Google Fonts - Tipografía Accesible -->
-    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+    <!-- Google Fonts - Inter & Poppins -->
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;600;700;800&amp;display=swap' rel='stylesheet'/>
     
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
     
     <!-- Swiper CSS -->
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     
-    <!-- CSS desde GitHub Pages -->
+    <!-- CSS Moderno desde GitHub Pages -->
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
-    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/main.css' rel='stylesheet'/>
     
-    <!-- Open Graph / Social Media -->
-    <meta content='ADASFRO - Accesibilidad es un Derecho' property='og:title'/>
+    <!-- Open Graph -->
+    <meta content='ADASFRO - Accesibilidad Universal' property='og:title'/>
     <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica' property='og:description'/>
     <meta content='https://www.adasfro.org' property='og:url'/>
     <meta content='website' property='og:type'/>
     
     <b:skin><![CDATA[
-      /* CSS mínimo de Blogger - El resto está en GitHub Pages */
+      /* CSS mínimo de Blogger */
       body { margin: 0; padding: 0; }
     ]]></b:skin>
     
   </head>
   <body>
     
-    <!-- Skip Link para accesibilidad -->
+    <!-- Skip Link -->
     <a class='skip-link' href='#main-content'>Saltar al contenido principal</a>
 
     <!-- BARRA SUPERIOR -->
@@ -51,17 +50,17 @@
         </div>
         
         <div class='social-icons'>
-          <a aria-label='Facebook' href='https://facebook.com/adasfro' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
-          <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
-          <a aria-label='TikTok' href='#' target='_blank' title='TikTok'><i class='fab fa-tiktok'/></a>
-          <a aria-label='YouTube' href='#' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
-          <a aria-label='Correo' href='mailto:info@adasfro.org' title='Correo'><i class='fas fa-envelope'/></a>
-          <a aria-label='LinkedIn' href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+          <a aria-label='Facebook' href='https://facebook.com/adasfro' target='_blank'><i class='fab fa-facebook-f'/></a>
+          <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
+          <a aria-label='TikTok' href='#' target='_blank'><i class='fab fa-tiktok'/></a>
+          <a aria-label='YouTube' href='#' target='_blank'><i class='fab fa-youtube'/></a>
+          <a aria-label='Correo' href='mailto:info@adasfro.org'><i class='fas fa-envelope'/></a>
+          <a aria-label='LinkedIn' href='#' target='_blank'><i class='fab fa-linkedin-in'/></a>
         </div>
       </div>
     </div>
 
-    <!-- HEADER / LOGO -->
+    <!-- HEADER -->
     <div id='header-wrapper'>
       <b:section class='header' id='header' preferred='yes' showaddelement='no'>
         <b:widget id='Header1' locked='false' title='ADASFRO' type='Header' version='1'>
@@ -84,11 +83,12 @@
         <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
           <b:includable id='main'>
             <ul>
-              <li><a expr:href='data:blog.homepageUrl'>🏠 Inicio</a></li>
-              <li><a href='/p/poblaciones.html'>👥 Poblaciones</a></li>
-              <li><a href='/p/eventos.html'>📅 Eventos</a></li>
-              <li><a href='/p/proyectos.html'>🚀 Proyectos</a></li>
-              <li><a href='/p/denuncia.html' style='background: #FFD700; color: #000;'>⚖️ Denuncia Aquí</a></li>
+              <li><a expr:href='data:blog.homepageUrl'>Inicio</a></li>
+              <li><a href='/p/poblaciones.html'>Poblaciones</a></li>
+              <li><a href='/p/eventos.html'>Eventos</a></li>
+              <li><a href='/p/proyectos.html'>Proyectos</a></li>
+              <li><a href='/p/transparencia.html'>Transparencia</a></li>
+              <li><a href='/p/denuncia.html' style='color: #FF6B6B; font-weight: 700;'>Denunciar</a></li>
             </ul>
           </b:includable>
         </b:widget>
@@ -101,19 +101,36 @@
       <!-- COLUMNA PRINCIPAL -->
       <div id='main-content'>
         
-        <!-- BLOQUE HERO -->
-        <section class='bento-block bento-hero' aria-labelledby='hero-title'>
-          <h2 id='hero-title'>Accesibilidad es un Derecho, No un Privilegio</h2>
-          <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos a las poblaciones vulnerables de Costa Rica</p>
-          <a class='btn-primary' href='/p/denuncia.html' style='margin-top: 20px;'>📝 Genera tu Denuncia Legal</a>
+        <!-- HERO SECTION -->
+        <section class='hero-section' aria-labelledby='hero-title'>
+          <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
+          <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones vulnerables de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
+          <a class='btn btn-primary' href='/p/denuncia.html' style='display: inline-block; margin-top: 16px;'>
+            <svg style='display: inline-block; vertical-align: middle; margin-right: 8px;' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+              <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path>
+              <polyline points='14 2 14 8 20 8'></polyline>
+              <line x1='16' y1='13' x2='8' y2='13'></line>
+              <line x1='16' y1='17' x2='8' y2='17'></line>
+              <polyline points='10 9 9 9 8 9'></polyline>
+            </svg>
+            Genera tu Denuncia Legal
+          </a>
         </section>
 
-        <!-- CARRUSEL DE POSTS SWIPER -->
-        <section class='bento-block' aria-labelledby='recent-posts-title'>
-          <h3 id='recent-posts-title' style='margin-bottom: 20px; font-size: 28px;'>📰 Últimas Noticias</h3>
+        <!-- CARRUSEL DE NOTICIAS -->
+        <section class='card' aria-labelledby='news-title'>
+          <h3 id='news-title' style='margin-bottom: 24px; display: flex; align-items: center; gap: 12px;'>
+            <svg width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='#4A90E2' stroke-width='2'>
+              <path d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'></path>
+              <path d='M18 14h-8'></path>
+              <path d='M15 18h-5'></path>
+              <path d='M10 6h8v4h-8z'></path>
+            </svg>
+            Últimas Noticias
+          </h3>
           <div class='swiper'>
             <div class='swiper-wrapper' id='blog-posts'>
-              <!-- Posts se cargan dinámicamente via JavaScript -->
+              <!-- Posts cargados dinámicamente -->
             </div>
             <div class='swiper-button-next'/>
             <div class='swiper-button-prev'/>
@@ -121,37 +138,93 @@
           </div>
         </section>
 
-        <!-- BLOG POSTS TRADICIONALES DE BLOGGER -->
-        <div class='bento-block'>
+        <!-- POSTS DE BLOGGER -->
+        <div class='card'>
           <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
-            <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog'/>
+            <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
           </b:section>
         </div>
 
         <!-- BLOQUE DE MISIÓN -->
-        <section class='mission-block bento-block' aria-labelledby='mission-title'>
-          <h3 id='mission-title'>🎯 Nuestra Misión: 5 Pilares Fundamentales</h3>
+        <section class='mission-block card' aria-labelledby='mission-title'>
+          <h3 id='mission-title'>🎯 Nuestros 5 Pilares Fundamentales</h3>
           <ul>
-            <li>✨ <strong>Inclusión Social:</strong> Fomentamos espacios comunitarios donde todas las personas participan en igualdad de condiciones</li>
-            <li>🌍 <strong>Transparencia:</strong> Exigimos al Estado y practicamos internamente una rendición de cuentas radical</li>
-            <li>🤝 <strong>Colaboración:</strong> Establecemos convenios estratégicos con entidades que comparten nuestra visión</li>
-            <li>💡 <strong>Desarrollo Sostenible:</strong> Impulsamos proyectos alineados con los ODS de la ONU</li>
-            <li>⚖️ <strong>Defensa de Derechos:</strong> Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600</li>
+            <li>
+              <span style='font-size: 24px; margin-right: 12px;'>✨</span>
+              <div>
+                <strong>Inclusión Social</strong><br/>
+                Fomentamos espacios comunitarios donde todas las personas participan en igualdad de condiciones
+              </div>
+            </li>
+            <li>
+              <span style='font-size: 24px; margin-right: 12px;'>🌍</span>
+              <div>
+                <strong>Transparencia</strong><br/>
+                Exigimos al Estado y practicamos internamente una rendición de cuentas radical
+              </div>
+            </li>
+            <li>
+              <span style='font-size: 24px; margin-right: 12px;'>🤝</span>
+              <div>
+                <strong>Colaboración</strong><br/>
+                Establecemos convenios estratégicos con entidades que comparten nuestra visión
+              </div>
+            </li>
+            <li>
+              <span style='font-size: 24px; margin-right: 12px;'>💡</span>
+              <div>
+                <strong>Desarrollo Sostenible</strong><br/>
+                Impulsamos proyectos alineados con los Objetivos de Desarrollo Sostenible de la ONU
+              </div>
+            </li>
+            <li>
+              <span style='font-size: 24px; margin-right: 12px;'>⚖️</span>
+              <div>
+                <strong>Defensa de Derechos</strong><br/>
+                Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600
+              </div>
+            </li>
           </ul>
         </section>
 
-        <!-- BLOQUE DE ACCIÓN: VOTO INCLUSIVO 2026 -->
-        <section class='bento-block bento-action' aria-labelledby='voto-title'>
-          <h3 id='voto-title'>🗳️ Proyecto: Voto Inclusivo 2026</h3>
-          <p>Estamos trabajando para garantizar que TODAS las personas puedan ejercer su derecho al voto de forma autónoma e informada.</p>
-          <a class='btn-primary' href='/p/voto-inclusivo.html'>Conoce más del proyecto</a>
+        <!-- PROYECTO DESTACADO -->
+        <section class='card' style='background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); color: white; text-align: center; padding: 48px 32px;'>
+          <h3 style='color: white; font-size: 32px; margin-bottom: 16px;'>🗳️ Voto Inclusivo 2026</h3>
+          <p style='color: rgba(255,255,255,0.95); font-size: 18px; max-width: 600px; margin: 0 auto 24px;'>
+            Trabajamos para garantizar que TODAS las personas puedan ejercer su derecho al voto de forma autónoma, informada y accesible.
+          </p>
+          <a class='btn btn-primary' href='/p/voto-inclusivo.html'>Conocer el Proyecto</a>
         </section>
 
-        <!-- FORMULARIO DE CONTACTO -->
-        <div class='bento-block'>
-          <h3 style='margin-bottom: 20px;'>📧 Contáctanos</h3>
+        <!-- IMPACTO EN NÚMEROS -->
+        <section class='card'>
+          <h3 style='text-align: center; margin-bottom: 32px;'>📊 Nuestro Impacto 2025</h3>
+          <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center;'>
+            <div style='padding: 24px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 12px;'>
+              <div style='font-size: 36px; font-weight: 700; color: #2E7D32;'>47</div>
+              <div style='font-size: 14px; color: #4CAF50; margin-top: 8px;'>Denuncias Gestionadas</div>
+            </div>
+            <div style='padding: 24px; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-radius: 12px;'>
+              <div style='font-size: 36px; font-weight: 700; color: #1565C0;'>12</div>
+              <div style='font-size: 14px; color: #1976D2; margin-top: 8px;'>Convenios Activos</div>
+            </div>
+            <div style='padding: 24px; background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); border-radius: 12px;'>
+              <div style='font-size: 36px; font-weight: 700; color: #F57F17;'>230</div>
+              <div style='font-size: 14px; color: #F9A825; margin-top: 8px;'>Horas de Capacitación</div>
+            </div>
+          </div>
+          <div style='text-align: center; margin-top: 24px;'>
+            <a href='/p/transparencia.html' style='color: #4A90E2; font-weight: 600;'>
+              Ver dashboard completo →
+            </a>
+          </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <div class='card'>
+          <h3 style='margin-bottom: 24px;'>📧 Contáctanos</h3>
           <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
-            <b:widget id='ContactForm1' locked='false' title='Formulario de Contacto' type='ContactForm'/>
+            <b:widget id='ContactForm1' locked='false' title='Formulario' type='ContactForm'/>
           </b:section>
         </div>
         
@@ -163,8 +236,6 @@
           
           <!-- WIDGET DE DONACIONES -->
           <div class='widget'>
-            <h2>💛 Dona y Transforma</h2>
-            <!-- Contenedor para el widget React de donaciones -->
             <div id='donation-widget'/>
           </div>
           
@@ -172,15 +243,13 @@
           <b:widget id='Label1' locked='false' title='📂 Categorías' type='Label'/>
           
           <!-- POSTS POPULARES -->
-          <b:widget id='PopularPosts1' locked='false' title='🔥 Posts Más Leídos' type='PopularPosts'/>
+          <b:widget id='PopularPosts1' locked='false' title='🔥 Más Leídos' type='PopularPosts'/>
           
-          <!-- TRANSPARENCIA RÁPIDA -->
-          <div class='widget' style='background: #E8F5E9; border-color: #00C853;'>
-            <h2 style='color: #00C853;'>📊 Transparencia</h2>
-            <p><strong>Denuncias gestionadas 2025:</strong> 47</p>
-            <p><strong>Convenios activos:</strong> 12</p>
-            <p><strong>Horas de capacitación:</strong> 230</p>
-            <a href='/p/transparencia.html' style='color: #00C853; font-weight: 700;'>Ver dashboard completo →</a>
+          <!-- CTA SECUNDARIO -->
+          <div class='widget' style='background: linear-gradient(135deg, #FFE5E5 0%, #FFD6D6 100%); border-color: #FF6B6B;'>
+            <h4 style='color: #C62828; border-color: #FF6B6B;'>⚖️ ¿Necesitas Ayuda Legal?</h4>
+            <p style='color: #D32F2F; font-size: 14px;'>Utiliza nuestro generador automático de denuncias por violación a la Ley 7600.</p>
+            <a class='btn btn-accent' href='/p/denuncia.html' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
           </div>
           
         </b:section>
@@ -194,20 +263,20 @@
         
         <div class='footer-section'>
           <h4>Síguenos</h4>
-          <div class='social-icons' style='margin-top:10px;'>
-            <a href='https://facebook.com/adasfro' style='margin-right:15px;' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
-            <a href='https://instagram.com/adasfro' style='margin-right:15px;' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
-            <a href='#' style='margin-right:15px;' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
-            <a href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+          <div class='social-icons' style='margin-top: 16px; display: flex; gap: 16px;'>
+            <a href='https://facebook.com/adasfro' target='_blank'><i class='fab fa-facebook-f'/></a>
+            <a href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
+            <a href='#' target='_blank'><i class='fab fa-youtube'/></a>
+            <a href='#' target='_blank'><i class='fab fa-linkedin-in'/></a>
           </div>
         </div>
         
         <div class='footer-section'>
           <h4>Información</h4>
-          <a href='/p/sobre-nosotros.html'>Acerca de Nosotros</a>
+          <a href='/p/sobre-nosotros.html'>Sobre Nosotros</a>
           <a href='/p/transparencia.html'>Transparencia</a>
           <a href='/p/contacto.html'>Contáctanos</a>
-          <a href='/p/politica-privacidad.html'>Política de Privacidad</a>
+          <a href='/p/politica-privacidad.html'>Privacidad</a>
         </div>
         
         <div class='footer-section'>
@@ -220,39 +289,42 @@
         
         <div class='footer-section'>
           <h4>Legal</h4>
-          <p style='color:#ccc; margin-bottom: 12px;'>Cédula Jurídica: 3-002-XXXXXX</p>
-          <p style='color:#ccc;'>© <data:blog.publishedYear/> ADASFRO</p>
-          <p style='color:#ccc; font-size: 14px;'>Todos los derechos reservados</p>
+          <p style='color: rgba(255,255,255,0.7); margin-bottom: 12px;'>Cédula Jurídica: 3-002-XXXXXX</p>
+          <p style='color: rgba(255,255,255,0.7);'>© <data:blog.publishedYear/> ADASFRO</p>
+          <p style='color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;'>Todos los derechos reservados</p>
         </div>
         
       </div>
     </footer>
 
     <!-- SCRIPTS -->
-    
-    <!-- QRCode.js para generar códigos QR -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'/>
-    
-    <!-- Swiper JS -->
     <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
-    
-    <!-- JavaScript desde GitHub Pages -->
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'/>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'/>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'/>
     
-    <!-- Inicializar Widget de Donaciones -->
+    <!-- Inicializar Widget -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         new DonationWidget({
-          sinpeNumber: '8888-8888', // CAMBIAR por el número real
+          sinpeNumber: '8888-8888', // CAMBIAR
           donationGoal: 500000,
-          currentAmount: 125000
+          currentAmount: 175000
+        });
+        
+        // Sticky nav effect
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
         });
       });
     </script>
     
-    <!-- Feed de posts recientes (carrusel superior del menú) -->
     <script src='/feeds/posts/default?alt=json-in-script&amp;callback=showRecentPosts&amp;max-results=10'/>
     
   </body>
