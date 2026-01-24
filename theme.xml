@@ -4,123 +4,152 @@
   <head>
     <title><data:blog.pageTitle/></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+    <meta content='Asociación para el Desarrollo Accesible Sin Fronteras - Defendiendo derechos, promoviendo inclusión' name='description'/>
     
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600' rel='stylesheet'/>
+    <!-- Preconnect para mejor performance -->
+    <link crossorigin='' href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link crossorigin='' href='https://cdnjs.cloudflare.com' rel='preconnect'/>
     
-    <!-- Font Awesome -->
+    <!-- Google Fonts - Tipografía Accesible -->
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+    
+    <!-- Font Awesome Icons -->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
     
     <!-- Swiper CSS -->
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     
-    <!-- CSS Principal desde GitHub Pages -->
-    <link href='https://adasfro-soport.github.io/adasfro-blogger/css/main.css' rel='stylesheet'/>
+    <!-- CSS desde GitHub Pages -->
+    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
+    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/main.css' rel='stylesheet'/>
+    
+    <!-- Open Graph / Social Media -->
+    <meta content='ADASFRO - Accesibilidad es un Derecho' property='og:title'/>
+    <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica' property='og:description'/>
+    <meta content='https://www.adasfro.org' property='og:url'/>
+    <meta content='website' property='og:type'/>
     
     <b:skin><![CDATA[
-      /* CSS mínimo necesario para Blogger */
-      /* El resto está en GitHub Pages */
+      /* CSS mínimo de Blogger - El resto está en GitHub Pages */
+      body { margin: 0; padding: 0; }
     ]]></b:skin>
     
   </head>
   <body>
+    
+    <!-- Skip Link para accesibilidad -->
+    <a class='skip-link' href='#main-content'>Saltar al contenido principal</a>
 
     <!-- BARRA SUPERIOR -->
     <div id='header-top-menu'>
       <div class='top-nav-content'>
         <div class='top-nav-left'>
-          <a href='#'>Sobre Nosotros</a>
-          <a href='#'>Transparencia</a>
-          <a href='#'>Contáctanos</a>
+          <a href='/p/sobre-nosotros.html'>Sobre Nosotros</a>
+          <a href='/p/transparencia.html'>Transparencia</a>
+          <a href='/p/contacto.html'>Contáctanos</a>
         </div>
         
         <div class='social-icons'>
-          <a href='#' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
-          <a href='#' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
-          <a href='#' target='_blank' title='TikTok'><i class='fab fa-tiktok'/></a>
-          <a href='#' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
-          <a href='#' target='_blank' title='Correo'><i class='fas fa-envelope'/></a>
-          <a href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+          <a aria-label='Facebook' href='https://facebook.com/adasfro' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
+          <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
+          <a aria-label='TikTok' href='#' target='_blank' title='TikTok'><i class='fab fa-tiktok'/></a>
+          <a aria-label='YouTube' href='#' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
+          <a aria-label='Correo' href='mailto:info@adasfro.org' title='Correo'><i class='fas fa-envelope'/></a>
+          <a aria-label='LinkedIn' href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
         </div>
       </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER / LOGO -->
     <div id='header-wrapper'>
       <b:section class='header' id='header' preferred='yes' showaddelement='no'>
-        <b:widget id='Header1' locked='false' title='ADASFRO (cabecera)' type='Header' version='1'>
+        <b:widget id='Header1' locked='false' title='ADASFRO' type='Header' version='1'>
           <b:includable id='main'>
-            <h1 class='title'><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+            <div class='header'>
+              <h1>
+                <a expr:href='data:blog.homepageUrl'>
+                  <data:title/>
+                </a>
+              </h1>
+            </div>
           </b:includable>
         </b:widget>
       </b:section>
     </div>
 
     <!-- MENÚ PRINCIPAL -->
-    <div id='main-nav'>
+    <nav id='main-nav' role='navigation' aria-label='Menú principal'>
       <b:section class='main-menu' id='main-menu' preferred='yes' showaddelement='yes'>
         <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
           <b:includable id='main'>
             <ul>
-              <li><a expr:href='data:blog.homepageUrl'>Inicio</a></li>
-              <li><a href='#'>Poblaciones</a></li>
-              <li><a href='#'>Eventos</a></li>
-              <li><a href='#'>Iniciativas / Proyectos</a></li>
+              <li><a expr:href='data:blog.homepageUrl'>🏠 Inicio</a></li>
+              <li><a href='/p/poblaciones.html'>👥 Poblaciones</a></li>
+              <li><a href='/p/eventos.html'>📅 Eventos</a></li>
+              <li><a href='/p/proyectos.html'>🚀 Proyectos</a></li>
+              <li><a href='/p/denuncia.html' style='background: #FFD700; color: #000;'>⚖️ Denuncia Aquí</a></li>
             </ul>
           </b:includable>
         </b:widget>
       </b:section>
-    </div>
+    </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <div id='content-wrapper'>
+    <main id='content-wrapper'>
       
+      <!-- COLUMNA PRINCIPAL -->
       <div id='main-content'>
         
-        <!-- CARRUSEL DE POSTS SWIPER -->
-        <div class='swiper post-area'>
-          <div class='swiper-wrapper' id='blog-posts'>
-            <!-- Las publicaciones se cargarán aquí vía JavaScript -->
-          </div>
-          <div class='swiper-button-next'/>
-          <div class='swiper-button-prev'/>
-          <div class='swiper-pagination'/>
-        </div>
+        <!-- BLOQUE HERO -->
+        <section class='bento-block bento-hero' aria-labelledby='hero-title'>
+          <h2 id='hero-title'>Accesibilidad es un Derecho, No un Privilegio</h2>
+          <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos a las poblaciones vulnerables de Costa Rica</p>
+          <a class='btn-primary' href='/p/denuncia.html' style='margin-top: 20px;'>📝 Genera tu Denuncia Legal</a>
+        </section>
 
-        <!-- WIDGET DE BLOG (Posts tradicionales de Blogger) -->
-        <div class='post-area'>
-          <b:section class='main' id='main' preferred='yes' showaddelement='no'>
+        <!-- CARRUSEL DE POSTS SWIPER -->
+        <section class='bento-block' aria-labelledby='recent-posts-title'>
+          <h3 id='recent-posts-title' style='margin-bottom: 20px; font-size: 28px;'>📰 Últimas Noticias</h3>
+          <div class='swiper'>
+            <div class='swiper-wrapper' id='blog-posts'>
+              <!-- Posts se cargan dinámicamente via JavaScript -->
+            </div>
+            <div class='swiper-button-next'/>
+            <div class='swiper-button-prev'/>
+            <div class='swiper-pagination'/>
+          </div>
+        </section>
+
+        <!-- BLOG POSTS TRADICIONALES DE BLOGGER -->
+        <div class='bento-block'>
+          <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
             <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog'/>
           </b:section>
         </div>
 
         <!-- BLOQUE DE MISIÓN -->
-        <div class='mission-block'>
-          <h3>Misión de la Asociación Agencia para el Desarrollo Accesible Sin Fronteras</h3>
-          <p>Estas son nuestras 5 misiones:</p>
+        <section class='mission-block bento-block' aria-labelledby='mission-title'>
+          <h3 id='mission-title'>🎯 Nuestra Misión: 5 Pilares Fundamentales</h3>
           <ul>
-            <li>✨ Misión 1: Fomentar la inclusión social...</li>
-            <li>🌍 Misión 2: Promover la transparencia y el acceso a la información...</li>
-            <li>🤝 Misión 3: Establecer convenios de colaboración con otras entidades...</li>
-            <li>💡 Misión 4: Impulsar proyectos e iniciativas de desarrollo sostenible...</li>
-            <li>☮️ Misión 5: Defender los derechos y la autonomía de las poblaciones vulnerables.</li>
+            <li>✨ <strong>Inclusión Social:</strong> Fomentamos espacios comunitarios donde todas las personas participan en igualdad de condiciones</li>
+            <li>🌍 <strong>Transparencia:</strong> Exigimos al Estado y practicamos internamente una rendición de cuentas radical</li>
+            <li>🤝 <strong>Colaboración:</strong> Establecemos convenios estratégicos con entidades que comparten nuestra visión</li>
+            <li>💡 <strong>Desarrollo Sostenible:</strong> Impulsamos proyectos alineados con los ODS de la ONU</li>
+            <li>⚖️ <strong>Defensa de Derechos:</strong> Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- CONTENIDO ADICIONAL -->
-        <div class='post-area'>
-          <h3>Bloque Multimedia</h3>
-          <p>Aquí puedes integrar un widget de Fotos que muestre tus imágenes, audios y videos destacados.</p>
-        </div>
-        
-        <div class='post-area'>
-          <h3>Convenios Realizados</h3>
-          <p>Listado o galería de logos y nombres de las organizaciones con las que se han firmado convenios.</p>
-        </div>
-        
+        <!-- BLOQUE DE ACCIÓN: VOTO INCLUSIVO 2026 -->
+        <section class='bento-block bento-action' aria-labelledby='voto-title'>
+          <h3 id='voto-title'>🗳️ Proyecto: Voto Inclusivo 2026</h3>
+          <p>Estamos trabajando para garantizar que TODAS las personas puedan ejercer su derecho al voto de forma autónoma e informada.</p>
+          <a class='btn-primary' href='/p/voto-inclusivo.html'>Conoce más del proyecto</a>
+        </section>
+
         <!-- FORMULARIO DE CONTACTO -->
-        <div class='post-area'>
-          <h3>Contáctanos</h3>
+        <div class='bento-block'>
+          <h3 style='margin-bottom: 20px;'>📧 Contáctanos</h3>
           <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
             <b:widget id='ContactForm1' locked='false' title='Formulario de Contacto' type='ContactForm'/>
           </b:section>
@@ -129,42 +158,45 @@
       </div>
 
       <!-- SIDEBAR -->
-      <div id='sidebar-wrapper'>
+      <aside id='sidebar-wrapper' role='complementary' aria-label='Barra lateral'>
         <b:section class='sidebar' id='sidebar' preferred='yes'>
           
-          <!-- CATEGORÍAS -->
-          <b:widget id='Label1' locked='false' title='Categorías' type='Label'/>
+          <!-- WIDGET DE DONACIONES -->
+          <div class='widget'>
+            <h2>💛 Dona y Transforma</h2>
+            <!-- Contenedor para el widget React de donaciones -->
+            <div id='donation-widget'/>
+          </div>
           
-          <!-- WIDGET DONAR -->
-          <b:widget id='HTML2' locked='false' title='Donar' type='HTML'>
-            <b:includable id='main'>
-              <div style='text-align:center; padding:10px; background-color:#ff9800; border-radius:5px;'>
-                <h4>¡Apóyanos!</h4>
-                <p>Tu donación es clave para nuestro trabajo.</p>
-                <a href='#' style='display:inline-block; padding:10px 20px; background-color:white; color:#ff9800; font-weight:bold; border-radius:3px;'>DONAR AHORA</a>
-              </div>
-            </b:includable>
-          </b:widget>
+          <!-- CATEGORÍAS -->
+          <b:widget id='Label1' locked='false' title='📂 Categorías' type='Label'/>
           
           <!-- POSTS POPULARES -->
-          <b:widget id='PopularPosts1' locked='false' title='Posts Más Populares' type='PopularPosts'/>
+          <b:widget id='PopularPosts1' locked='false' title='🔥 Posts Más Leídos' type='PopularPosts'/>
+          
+          <!-- TRANSPARENCIA RÁPIDA -->
+          <div class='widget' style='background: #E8F5E9; border-color: #00C853;'>
+            <h2 style='color: #00C853;'>📊 Transparencia</h2>
+            <p><strong>Denuncias gestionadas 2025:</strong> 47</p>
+            <p><strong>Convenios activos:</strong> 12</p>
+            <p><strong>Horas de capacitación:</strong> 230</p>
+            <a href='/p/transparencia.html' style='color: #00C853; font-weight: 700;'>Ver dashboard completo →</a>
+          </div>
           
         </b:section>
-      </div>
+      </aside>
       
-    </div>
-    
-    <div class='clear'/>
+    </main>
 
     <!-- FOOTER -->
-    <div id='footer-wrapper'>
+    <footer id='footer-wrapper' role='contentinfo'>
       <div class='footer-content'>
         
         <div class='footer-section'>
           <h4>Síguenos</h4>
           <div class='social-icons' style='margin-top:10px;'>
-            <a href='#' style='margin-right:15px;' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
-            <a href='#' style='margin-right:15px;' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
+            <a href='https://facebook.com/adasfro' style='margin-right:15px;' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
+            <a href='https://instagram.com/adasfro' style='margin-right:15px;' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
             <a href='#' style='margin-right:15px;' target='_blank' title='YouTube'><i class='fab fa-youtube'/></a>
             <a href='#' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
           </div>
@@ -172,35 +204,53 @@
         
         <div class='footer-section'>
           <h4>Información</h4>
-          <a href='#'>Acerca de Nosotros</a>
-          <a href='#'>Transparencia</a>
-          <a href='#'>Contáctanos</a>
+          <a href='/p/sobre-nosotros.html'>Acerca de Nosotros</a>
+          <a href='/p/transparencia.html'>Transparencia</a>
+          <a href='/p/contacto.html'>Contáctanos</a>
+          <a href='/p/politica-privacidad.html'>Política de Privacidad</a>
         </div>
         
         <div class='footer-section'>
-          <h4>Categorías</h4>
-          <ul>
-            <li><a href='#'>Poblaciones</a></li>
-            <li><a href='#'>Eventos</a></li>
-            <li><a href='#'>Proyectos</a></li>
-          </ul>
+          <h4>Recursos</h4>
+          <a href='/p/ley-7600.html'>Ley 7600 Explicada</a>
+          <a href='/p/guias.html'>Guías en Lectura Fácil</a>
+          <a href='/p/lesco.html'>Videos en LESCO</a>
+          <a href='/p/denuncia.html'>Generador de Denuncias</a>
         </div>
         
         <div class='footer-section'>
-          <h4>Derechos</h4>
-          <p style='color:#ccc;'>© <data:blog.publishedYear/> <data:blog.title/>. Todos los derechos reservados.</p>
+          <h4>Legal</h4>
+          <p style='color:#ccc; margin-bottom: 12px;'>Cédula Jurídica: 3-002-XXXXXX</p>
+          <p style='color:#ccc;'>© <data:blog.publishedYear/> ADASFRO</p>
+          <p style='color:#ccc; font-size: 14px;'>Todos los derechos reservados</p>
         </div>
         
       </div>
-    </div>
+    </footer>
 
-    <!-- Swiper JS desde CDN -->
+    <!-- SCRIPTS -->
+    
+    <!-- QRCode.js para generar códigos QR -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'/>
+    
+    <!-- Swiper JS -->
     <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
     
-    <!-- IMPORTANTE: Reemplazar adasfro-soport con tu nombre de usuario de GitHub -->
     <!-- JavaScript desde GitHub Pages -->
-    <script src='https://adasfro-soport.github.io/adasfro-blogger/js/main.js'/>
-    <script src='https://adasfro-soport.github.io/adasfro-blogger/js/swiper-init.js'/>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'/>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'/>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'/>
+    
+    <!-- Inicializar Widget de Donaciones -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        new DonationWidget({
+          sinpeNumber: '8888-8888', // CAMBIAR por el número real
+          donationGoal: 500000,
+          currentAmount: 125000
+        });
+      });
+    </script>
     
     <!-- Feed de posts recientes (carrusel superior del menú) -->
     <script src='/feeds/posts/default?alt=json-in-script&amp;callback=showRecentPosts&amp;max-results=10'/>

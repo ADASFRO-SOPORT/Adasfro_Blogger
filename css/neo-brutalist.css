@@ -1,0 +1,461 @@
+/**
+ * ADASFRO - Neo-Brutalismo Accesible 2025
+ * Diseño de alto contraste, bordes definidos, tipografía legible
+ * Cumplimiento WCAG 2.2 AAA
+ */
+
+/* ========================================
+   VARIABLES Y SISTEMA DE DISEÑO
+======================================== */
+:root {
+  /* Paleta Neo-Brutalista */
+  --color-fondo: #FFFDF5;
+  --color-texto: #1A1A1A;
+  --color-acento: #FF4500; /* Naranja Internacional */
+  --color-acento-hover: #CC3700;
+  --color-exito: #00C853;
+  --color-alerta: #FFD700;
+  --color-borde: #000000;
+  
+  /* Tipografía */
+  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Open Sans', system-ui, sans-serif;
+  
+  /* Espaciado Bento Grid */
+  --gap: 20px;
+  --border-width: 3px;
+  --border-radius: 0px; /* Neo-brutalismo = sin bordes redondeados */
+  
+  /* Tamaños de fuente accesibles */
+  --text-base: 20px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 48px;
+  --text-3xl: 64px;
+}
+
+/* ========================================
+   RESET Y BASE ACCESIBLE
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* ========================================
+   SKIP LINK - Accesibilidad
+======================================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-acento);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 700;
+  border: var(--border-width) solid var(--color-borde);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========================================
+   FOCO DE TECLADO - Alto Contraste
+======================================== */
+*:focus {
+  outline: 4px dashed #FF00FF; /* Magenta ultra visible */
+  outline-offset: 4px;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 4px solid #FF00FF;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   BARRA SUPERIOR
+======================================== */
+#header-top-menu {
+  background-color: var(--color-texto);
+  color: white;
+  padding: 12px 0;
+  border-bottom: var(--border-width) solid var(--color-borde);
+}
+
+.top-nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--gap);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.top-nav-left a {
+  color: white;
+  margin-right: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.top-nav-left a:hover {
+  border-bottom-color: var(--color-alerta);
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 16px;
+  font-size: 22px;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: var(--color-alerta);
+}
+
+/* ========================================
+   HEADER / LOGO
+======================================== */
+#header-wrapper {
+  background: var(--color-acento);
+  border-bottom: var(--border-width) solid var(--color-borde);
+  padding: 30px var(--gap);
+  box-shadow: 8px 8px 0 var(--color-borde);
+}
+
+.header h1 {
+  font-family: var(--font-primary);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 0 var(--color-borde);
+}
+
+.header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ========================================
+   MENÚ PRINCIPAL - Neo-Brutalista
+======================================== */
+#main-nav {
+  background-color: white;
+  border-bottom: var(--border-width) solid var(--color-borde);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 0 var(--color-borde);
+}
+
+.main-menu .widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.main-menu .widget li {
+  margin: 0;
+}
+
+.main-menu .widget a {
+  display: block;
+  padding: 16px 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  border: var(--border-width) solid var(--color-borde);
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.main-menu .widget a:hover,
+.main-menu .widget a:focus {
+  background: var(--color-acento);
+  color: white;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--color-borde);
+}
+
+.main-menu .widget a:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* ========================================
+   BENTO GRID - Layout Principal
+======================================== */
+#content-wrapper {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 var(--gap);
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: var(--gap);
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* ========================================
+   BLOQUES BENTO
+======================================== */
+.bento-block {
+  background: white;
+  border: var(--border-width) solid var(--color-borde);
+  padding: 30px;
+  box-shadow: 6px 6px 0 var(--color-borde);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bento-block:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-borde);
+}
+
+/* Bloque Hero (2x altura) */
+.bento-hero {
+  background: var(--color-acento);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.bento-hero h2 {
+  font-family: var(--font-primary);
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.bento-hero p {
+  font-size: var(--text-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Bloque de Acción */
+.bento-action {
+  background: var(--color-alerta);
+  border-color: var(--color-borde);
+}
+
+.bento-action h3 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--color-texto);
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: var(--text-base);
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--color-texto);
+  color: white;
+  border: var(--border-width) solid var(--color-borde);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--color-acento);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--color-borde);
+}
+
+.btn-primary:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* ========================================
+   MISIÓN - Bloque Especial
+======================================== */
+.mission-block {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+  border: var(--border-width) solid var(--color-borde);
+  box-shadow: 8px 8px 0 var(--color-borde);
+}
+
+.mission-block h3 {
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  border-bottom: 4px solid white;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.mission-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-block li {
+  padding: 12px 0;
+  font-size: 18px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.mission-block li:last-child {
+  border-bottom: none;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+#sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.sidebar .widget {
+  background: white;
+  border: var(--border-width) solid var(--color-borde);
+  padding: 24px;
+  box-shadow: 4px 4px 0 var(--color-borde);
+}
+
+.sidebar h2,
+.sidebar h4 {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--color-acento);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+#footer-wrapper {
+  background-color: var(--color-texto);
+  color: white;
+  padding: 40px 0;
+  margin-top: 60px;
+  border-top: var(--border-width) solid var(--color-borde);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--gap);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-section h4 {
+  color: var(--color-alerta);
+  border-bottom: 3px solid var(--color-alerta);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.footer-section a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--color-alerta);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1024px) {
+  #content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-hero h2 {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-base: 18px;
+    --text-xl: 28px;
+    --text-2xl: 36px;
+    --text-3xl: 48px;
+  }
+  
+  .top-nav-content {
+    flex-direction: column;
+  }
+  
+  .header h1 {
+    font-size: var(--text-xl);
+  }
+  
+  .main-menu .widget ul {
+    flex-direction: column;
+  }
+  
+  .main-menu .widget a {
+    width: 100%;
+    text-align: center;
+  }
+}
