@@ -15,7 +15,7 @@
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     
     <!-- CSS Principal desde GitHub Pages -->
-    <link href='https://TU_USUARIO.github.io/adasfro-blogger/css/main.css' rel='stylesheet'/>
+    <link href='https://adasfro-soport.github.io/adasfro-blogger/css/main.css' rel='stylesheet'/>
     
     <b:skin><![CDATA[
       /* CSS mínimo necesario para Blogger */
@@ -197,10 +197,10 @@
     <!-- Swiper JS desde CDN -->
     <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
     
-    <!-- IMPORTANTE: Reemplazar TU_USUARIO con tu nombre de usuario de GitHub -->
+    <!-- IMPORTANTE: Reemplazar adasfro-soport con tu nombre de usuario de GitHub -->
     <!-- JavaScript desde GitHub Pages -->
-    <script src='https://TU_USUARIO.github.io/adasfro-blogger/js/main.js'/>
-    <script src='https://TU_USUARIO.github.io/adasfro-blogger/js/swiper-init.js'/>
+    <script src='https://adasfro-soport.github.io/adasfro-blogger/js/main.js'/>
+    <script src='https://adasfro-soport.github.io/adasfro-blogger/js/swiper-init.js'/>
     
     <!-- Feed de posts recientes (carrusel superior del menú) -->
     <script src='/feeds/posts/default?alt=json-in-script&amp;callback=showRecentPosts&amp;max-results=10'/>
