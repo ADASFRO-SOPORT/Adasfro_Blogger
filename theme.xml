@@ -187,39 +187,6 @@
           </ul>
         </section>
 
-        <!-- PROYECTO DESTACADO -->
-        <section class='card' style='background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); color: white; text-align: center; padding: 48px 32px;'>
-          <h3 style='color: white; font-size: 32px; margin-bottom: 16px;'>🗳️ Voto Inclusivo 2026</h3>
-          <p style='color: rgba(255,255,255,0.95); font-size: 18px; max-width: 600px; margin: 0 auto 24px;'>
-            Trabajamos para garantizar que TODAS las personas puedan ejercer su derecho al voto de forma autónoma, informada y accesible.
-          </p>
-          <a class='btn btn-primary' href='/p/voto-inclusivo.html'>Conocer el Proyecto</a>
-        </section>
-
-        <!-- IMPACTO EN NÚMEROS -->
-        <section class='card'>
-          <h3 style='text-align: center; margin-bottom: 32px;'>📊 Nuestro Impacto 2025</h3>
-          <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center;'>
-            <div style='padding: 24px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 12px;'>
-              <div style='font-size: 36px; font-weight: 700; color: #2E7D32;'>47</div>
-              <div style='font-size: 14px; color: #4CAF50; margin-top: 8px;'>Denuncias Gestionadas</div>
-            </div>
-            <div style='padding: 24px; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-radius: 12px;'>
-              <div style='font-size: 36px; font-weight: 700; color: #1565C0;'>12</div>
-              <div style='font-size: 14px; color: #1976D2; margin-top: 8px;'>Convenios Activos</div>
-            </div>
-            <div style='padding: 24px; background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); border-radius: 12px;'>
-              <div style='font-size: 36px; font-weight: 700; color: #F57F17;'>230</div>
-              <div style='font-size: 14px; color: #F9A825; margin-top: 8px;'>Horas de Capacitación</div>
-            </div>
-          </div>
-          <div style='text-align: center; margin-top: 24px;'>
-            <a href='/p/transparencia.html' style='color: #4A90E2; font-weight: 600;'>
-              Ver dashboard completo →
-            </a>
-          </div>
-        </section>
-
         <!-- CONTACTO -->
         <div class='card'>
           <h3 style='margin-bottom: 24px;'>📧 Contáctanos</h3>

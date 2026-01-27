@@ -67,6 +67,12 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Elimina scroll horizontal */
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Asegura que no haya scroll horizontal */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,6 +93,8 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Elimina scroll horizontal en body */
+  max-width: 100vw; /* Limita el ancho al viewport */
 }
 
 /* ========================================
@@ -176,6 +184,7 @@ textarea:focus {
   padding: 0 var(--spacing-md);
   flex-wrap: wrap;
   gap: var(--spacing-sm);
+  width: 100%; /* Asegura que no se desborde */
 }
 
 .top-nav-left a {
@@ -317,6 +326,8 @@ textarea:focus {
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--spacing-xl);
+  width: 100%; /* Previene desbordamiento */
+  box-sizing: border-box; /* Incluye padding en el ancho */
 }
 
 #main-content {
@@ -485,6 +496,8 @@ textarea:focus {
   width: 100%;
   padding: var(--spacing-md) 0;
   border-radius: var(--border-radius-lg);
+  max-width: 100%; /* Previene overflow */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
 .swiper-slide {
@@ -613,6 +626,25 @@ textarea:focus {
 /* ========================================
    RESPONSIVE
 ======================================== */
+
+/* Prevenir overflow en todos los contenedores */
+#header-wrapper,
+#main-nav,
+#footer-wrapper,
+.footer-content,
+.hero-section,
+.card,
+.mission-block {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Asegurar que imágenes no causen overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 1024px) {
   #content-wrapper {
     grid-template-columns: 1fr;
@@ -629,14 +661,20 @@ textarea:focus {
     --spacing-xl: 48px;
   }
   
+  body {
+    overflow-x: hidden;
+  }
+  
   .top-nav-content {
     flex-direction: column;
     text-align: center;
+    padding: 0 var(--spacing-sm);
   }
   
   .main-menu .widget ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   
   .main-menu .widget a {
@@ -646,6 +684,18 @@ textarea:focus {
   
   .footer-content {
     grid-template-columns: 1fr;
+  }
+  
+  /* Ajustar padding en móvil */
+  #content-wrapper {
+    padding: var(--spacing-md) var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+  
+  .card,
+  .hero-section,
+  .mission-block {
+    padding: var(--spacing-md);
   }
 }
 

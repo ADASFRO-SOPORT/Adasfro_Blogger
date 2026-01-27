@@ -264,6 +264,9 @@ const donationStylesModern = `
   padding: 32px 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   border: 1px solid #E9ECEF;
+  max-width: 100%; /* Previene overflow */
+  overflow: hidden; /* Oculta contenido desbordado */
+  box-sizing: border-box; /* Incluye padding en el ancho */
 }
 
 /* Header */
@@ -419,6 +422,8 @@ const donationStylesModern = `
   text-align: center;
   letter-spacing: 1px;
   color: #2C3E50;
+  max-width: 100%; /* Previene overflow */
+  box-sizing: border-box;
 }
 
 .btn-copy-modern {
@@ -616,6 +621,31 @@ const donationStylesModern = `
   
   .amount-buttons-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .sinpe-input-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-copy-modern {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #sinpe-number-input {
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .notification-modern {
+    left: 16px;
+    right: 16px;
+    bottom: -100px;
+  }
+  
+  .notification-modern.show {
+    bottom: 16px;
   }
 }
 </style>

@@ -1,0 +1,304 @@
+/**
+ * ADASFRO - Correcciones Específicas para Blogger
+ * Soluciona problemas de overflow y barras de scroll
+ */
+
+/* ========================================
+   FIX OVERFLOW HORIZONTAL Y VERTICAL
+======================================== */
+
+/* Prevenir scroll horizontal en TODA la página */
+html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Asegurar que todos los contenedores respeten el ancho del viewport */
+* {
+  max-width: 100%;
+}
+
+/* Contenedores principales */
+#header-top-menu,
+#header-wrapper,
+#main-nav,
+#content-wrapper,
+#footer-wrapper {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   FIX CONTENEDORES CON PADDING
+======================================== */
+
+/* Los contenedores con max-width deben incluir padding */
+.top-nav-content,
+.header,
+.footer-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ========================================
+   FIX GRID LAYOUTS
+======================================== */
+
+/* Content wrapper con grid */
+#content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  box-sizing: border-box;
+  width: calc(100% - 48px); /* Resta el padding total */
+}
+
+@media (max-width: 1024px) {
+  #content-wrapper {
+    grid-template-columns: 1fr;
+    width: calc(100% - 32px);
+    padding: 32px 16px;
+  }
+}
+
+/* ========================================
+   FIX ELEMENTOS QUE CAUSAN OVERFLOW
+======================================== */
+
+/* Hero section */
+.hero-section {
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Cards */
+.card,
+.mission-block {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Swiper */
+.swiper {
+  max-width: 100%;
+  overflow: visible; /* Necesario para los botones de navegación */
+}
+
+.swiper-wrapper {
+  max-width: 100%;
+}
+
+/* ========================================
+   FIX IMÁGENES Y MEDIA
+======================================== */
+
+img,
+iframe,
+video,
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* ========================================
+   FIX ELEMENTOS DE BLOGGER
+======================================== */
+
+/* Widget de Blogger que podría causar overflow */
+.widget {
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.widget-content {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Posts de Blogger */
+.post {
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.post-body {
+  max-width: 100%;
+  overflow-x: auto; /* Permite scroll solo en contenido de posts */
+  word-wrap: break-word;
+}
+
+/* ========================================
+   FIX MENÚ DE NAVEGACIÓN
+======================================== */
+
+.main-menu .widget ul {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* Ocultar scrollbar en webkit */
+.main-menu .widget ul::-webkit-scrollbar {
+  height: 0;
+  display: none;
+}
+
+/* ========================================
+   FIX FOOTER
+======================================== */
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ========================================
+   FIX TABLAS (si hay en posts)
+======================================== */
+
+table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* ========================================
+   FIX CÓDIGOS Y PREFORMATEADOS
+======================================== */
+
+pre,
+code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ========================================
+   FIX ELEMENTOS POSICIONADOS
+======================================== */
+
+/* Notificaciones flotantes */
+.notification-modern {
+  max-width: calc(100vw - 48px);
+  right: 24px;
+  left: auto;
+}
+
+@media (max-width: 768px) {
+  .notification-modern {
+    max-width: calc(100vw - 32px);
+    right: 16px;
+    left: 16px;
+  }
+}
+
+/* ========================================
+   FIX ESPECÍFICO PARA ELEMENTOS ANCHOS
+======================================== */
+
+/* Si hay elementos con width mayor a 100vw */
+[style*="width: 100vw"],
+[style*="width:100vw"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ========================================
+   DEBUG MODE (Descomenta para encontrar el culpable)
+======================================== */
+
+/*
+* {
+  outline: 1px solid red !important;
+}
+
+*:hover {
+  outline: 2px solid blue !important;
+}
+*/
+
+/* ========================================
+   FIX PADDING/MARGIN NEGATIVOS
+======================================== */
+
+/* Algunos temas de Blogger usan margin negativo */
+#content-wrapper > * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ========================================
+   SMOOTH SCROLL (sin overflow)
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Espacio para el menú sticky */
+}
+
+/* ========================================
+   FIX PARA MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+  /* Reducir padding general en móviles */
+  #header-top-menu,
+  #header-wrapper,
+  #main-nav {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .top-nav-content,
+  .header,
+  .footer-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  /* Cards más compactas */
+  .card,
+  .hero-section,
+  .mission-block {
+    padding: 24px 16px;
+  }
+  
+  /* Widget de donaciones */
+  .donation-widget-modern {
+    padding: 24px 16px;
+  }
+}
