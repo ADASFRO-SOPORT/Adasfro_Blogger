@@ -54,11 +54,14 @@ function initBlogSwiper() {
         container.appendChild(slide);
       });
 
-      // Inicializar Swiper después de cargar los posts
+      // Loop solo si hay suficientes slides (al menos el doble del máximo slidesPerView)
+      const totalSlides = entries.length;
+      const enableLoop = totalSlides >= 6;
+
       new Swiper(".swiper", {
         slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
+        spaceBetween: 16,
+        loop: enableLoop,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -70,7 +73,7 @@ function initBlogSwiper() {
         breakpoints: {
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 16,
           },
           1024: {
             slidesPerView: 3,

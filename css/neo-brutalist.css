@@ -562,7 +562,7 @@ img {
   max-width: 100%;
   padding: var(--spacing-md) 0;
   border-radius: var(--radius-lg);
-  overflow: visible;
+  overflow: hidden; /* hidden contiene las slides del loop y previene overflow horizontal */
 }
 
 .swiper-wrapper {
@@ -587,7 +587,7 @@ img {
 .swiper-slide-inner {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   text-decoration: none;
   color: inherit;
 }

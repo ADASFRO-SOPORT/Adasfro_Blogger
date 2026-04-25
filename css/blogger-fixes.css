@@ -96,10 +96,10 @@ body {
   overflow: hidden;
 }
 
-/* Swiper */
+/* Swiper — overflow: hidden es obligatorio para contener las slides del loop */
 .swiper {
   max-width: 100%;
-  overflow: visible; /* Necesario para los botones de navegación */
+  overflow: hidden !important;
 }
 
 .swiper-wrapper {
