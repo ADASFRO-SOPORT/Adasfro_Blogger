@@ -67,15 +67,7 @@
     panel.innerHTML = buildPanelHTML();
     document.body.appendChild(panel);
 
-    // Botón flotante WhatsApp
-    var wa = document.createElement('a');
-    wa.id = 'whatsapp-float';
-    wa.href = 'https://wa.me/' + WHATSAPP_NUMBER;
-    wa.target = '_blank';
-    wa.rel = 'noopener noreferrer';
-    wa.setAttribute('aria-label', 'Contactar a ADASFRO por WhatsApp');
-    wa.innerHTML = '<i class="fab fa-whatsapp" aria-hidden="true"></i>';
-    document.body.appendChild(wa);
+    // Botón flotante WhatsApp se agrega directamente en el HTML del tema
   }
 
   function buildPanelHTML() {

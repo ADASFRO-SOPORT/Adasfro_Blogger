@@ -2,35 +2,6 @@
  * ADASFRO — JavaScript Principal
  */
 
-// ── Enrutador de páginas por hash ────────────────────────────
-function initRouter() {
-  function navigate(hash) {
-    var id = (hash || '').replace('#', '') || 'inicio';
-    document.querySelectorAll('.page-section').forEach(function (s) {
-      s.style.display = 'none';
-    });
-    var target = document.getElementById('page-' + id);
-    if (!target) {
-      target = document.getElementById('page-inicio');
-      id = 'inicio';
-    }
-    if (target) target.style.display = 'block';
-
-    document.querySelectorAll('#main-nav a').forEach(function (a) {
-      a.classList.remove('nav-active');
-      if (a.getAttribute('href') === '#' + id) a.classList.add('nav-active');
-    });
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  window.addEventListener('hashchange', function () {
-    navigate(window.location.hash);
-  });
-
-  navigate(window.location.hash);
-}
-
 // ── Formulario de denuncia ────────────────────────────────────
 function initDenunciaForm() {
   var form = document.getElementById('denuncia-form');
@@ -128,7 +99,6 @@ function initStickyNav() {
 
 // ── Init ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
-  initRouter();
   initDenunciaForm();
   initConveniosFilter();
   initMobileMenu();

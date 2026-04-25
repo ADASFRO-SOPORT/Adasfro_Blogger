@@ -793,6 +793,47 @@ img {
 }
 
 /* ========================================
+   SEPARADORES DE SECCIÓN (scroll vertical)
+======================================== */
+.section-break {
+  background: linear-gradient(135deg, var(--secondary) 0%, #0D1642 100%);
+  color: white;
+  padding: 20px 32px;
+  border-radius: var(--radius-lg);
+  margin-top: var(--spacing-xl);
+  scroll-margin-top: 72px;
+}
+
+.section-break-title {
+  color: white;
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Anclas con offset del nav sticky */
+#inicio, #sobre-nosotros, #poblaciones, #eventos, #proyectos,
+#convenios, #transparencia, #denuncia, #ley-7600, #guias,
+#lesco, #contacto, #mapa, #privacidad {
+  scroll-margin-top: 72px;
+}
+
+/* Sidebar sticky en desktop */
+@media (min-width: 1024px) {
+  #sidebar-wrapper {
+    position: sticky;
+    top: 80px;
+    align-self: start;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}
+
+/* ========================================
    NAVEGACIÓN — ENLACE ACTIVO Y MÓVIL
 ======================================== */
 .main-menu .widget a.nav-active {
