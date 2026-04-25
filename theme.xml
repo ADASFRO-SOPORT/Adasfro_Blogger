@@ -20,8 +20,10 @@
     <!-- Swiper CSS -->
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     
-    <!-- CSS Moderno desde GitHub Pages -->
+    <!-- CSS desde GitHub Pages -->
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
+    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/blogger-fixes.css' rel='stylesheet'/>
+    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/accessibility-bar.css' rel='stylesheet'/>
     
     <!-- Open Graph -->
     <meta content='ADASFRO - Accesibilidad Universal' property='og:title'/>
@@ -50,12 +52,12 @@
         </div>
         
         <div class='social-icons'>
-          <a aria-label='Facebook' href='https://facebook.com/adasfro' target='_blank'><i class='fab fa-facebook-f'/></a>
+          <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank'><i class='fab fa-facebook-f'/></a>
           <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
           <a aria-label='TikTok' href='#' target='_blank'><i class='fab fa-tiktok'/></a>
-          <a aria-label='YouTube' href='#' target='_blank'><i class='fab fa-youtube'/></a>
-          <a aria-label='Correo' href='mailto:info@adasfro.org'><i class='fas fa-envelope'/></a>
-          <a aria-label='LinkedIn' href='#' target='_blank'><i class='fab fa-linkedin-in'/></a>
+          <a aria-label='YouTube' href='https://www.youtube.com/@adasfro' target='_blank'><i class='fab fa-youtube'/></a>
+          <a aria-label='Correo' href='mailto:comunicacion@adasfro.org'><i class='fas fa-envelope'/></a>
+          <a aria-label='LinkedIn' href='https://www.linkedin.com/in/adasfro/' target='_blank'><i class='fab fa-linkedin-in'/></a>
         </div>
       </div>
     </div>
@@ -216,7 +218,7 @@
           <div class='widget' style='background: linear-gradient(135deg, #FFE5E5 0%, #FFD6D6 100%); border-color: #FF6B6B;'>
             <h4 style='color: #C62828; border-color: #FF6B6B;'>⚖️ ¿Necesitas Ayuda Legal?</h4>
             <p style='color: #D32F2F; font-size: 14px;'>Utiliza nuestro generador automático de denuncias por violación a la Ley 7600.</p>
-            <a class='btn btn-accent' href='/p/denuncia.html' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
+            <a class='btn btn-danger' href='/p/denuncia.html' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
           </div>
           
         </b:section>
@@ -233,8 +235,8 @@
           <div class='social-icons' style='margin-top: 16px; display: flex; gap: 16px;'>
             <a href='https://facebook.com/adasfro' target='_blank'><i class='fab fa-facebook-f'/></a>
             <a href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
-            <a href='#' target='_blank'><i class='fab fa-youtube'/></a>
-            <a href='#' target='_blank'><i class='fab fa-linkedin-in'/></a>
+            <a href='https://www.youtube.com/@adasfro' target='_blank'><i class='fab fa-youtube'/></a>
+            <a href='https://www.linkedin.com/in/adasfro/' target='_blank'><i class='fab fa-linkedin-in'/></a>
           </div>
         </div>
         
@@ -256,7 +258,7 @@
         
         <div class='footer-section'>
           <h4>Legal</h4>
-          <p style='color: rgba(255,255,255,0.7); margin-bottom: 12px;'>Cédula Jurídica: 3-002-XXXXXX</p>
+          <p style='color: rgba(255,255,255,0.7); margin-bottom: 12px;'>Cédula Jurídica: 3-002-860094</p>
           <p style='color: rgba(255,255,255,0.7);'>© <data:blog.publishedYear/> ADASFRO</p>
           <p style='color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;'>Todos los derechos reservados</p>
         </div>
@@ -270,6 +272,7 @@
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'/>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'/>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'/>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'/>
     
     <!-- Inicializar Widget -->
     <script>
@@ -292,7 +295,7 @@
       });
     </script>
     
-    <script src='/feeds/posts/default?alt=json-in-script&amp;callback=showRecentPosts&amp;max-results=10'/>
+    <!-- Feed de posts manejado por swiper-init.js via fetch -->
     
   </body>
 </html>
