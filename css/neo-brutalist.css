@@ -718,6 +718,81 @@ img {
 }
 
 /* ========================================
+   MISIÓN / VISIÓN / VALORES
+======================================== */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.mv-card {
+  background: var(--bg-body);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--primary);
+}
+
+.mv-card.mv-vision {
+  border-left-color: var(--secondary);
+}
+
+.mv-icon {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.mv-card.mv-vision .mv-icon {
+  color: var(--secondary);
+}
+
+.mv-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.mv-card.mv-vision h4 {
+  color: var(--secondary);
+}
+
+.mv-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.valores-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--spacing-sm);
+}
+
+.valor {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, var(--accent) 0%, #FFA000 100%);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
    PREFERENCIA DEL SISTEMA — MOVIMIENTO
 ======================================== */
 @media (prefers-reduced-motion: reduce) {

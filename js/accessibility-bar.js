@@ -245,52 +245,93 @@
   }
 
   // ── Texto a voz (TTS) ─────────────────────────────────────────
+  function setTTSIdle(btn) {
+    isSpeaking = false;
+    if (btn) {
+      btn.setAttribute('aria-pressed', 'false');
+      btn.innerHTML = '<i class="fas fa-volume-up" aria-hidden="true"></i> Leer en voz alta';
+    }
+  }
+
+  function setTTSActive(btn) {
+    isSpeaking = true;
+    if (btn) {
+      btn.setAttribute('aria-pressed', 'true');
+      btn.innerHTML = '<i class="fas fa-stop-circle" aria-hidden="true"></i> Detener lectura';
+    }
+  }
+
+  function speakText(text, btn) {
+    // Cancela cualquier síntesis colgada (bug conocido de Chrome)
+    window.speechSynthesis.cancel();
+
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    // Busca una voz en español; si no, usa la primera disponible
+    var voices = window.speechSynthesis.getVoices();
+    var voice = voices.find(function (v) { return v.lang.startsWith('es'); })
+              || voices.find(function (v) { return v.default; })
+              || voices[0];
+    if (voice) {
+      utterance.voice = voice;
+      utterance.lang = voice.lang;
+    } else {
+      utterance.lang = 'es';
+    }
+
+    utterance.onend   = function () { setTTSIdle(btn); };
+    utterance.onerror = function () { setTTSIdle(btn); };
+
+    window.speechSynthesis.speak(utterance);
+    setTTSActive(btn);
+
+    // Workaround: Chrome pausa la síntesis en páginas largas
+    var keepAlive = setInterval(function () {
+      if (!window.speechSynthesis.speaking) { clearInterval(keepAlive); return; }
+      window.speechSynthesis.pause();
+      window.speechSynthesis.resume();
+    }, 10000);
+
+    utterance.onend = function () {
+      clearInterval(keepAlive);
+      setTTSIdle(btn);
+    };
+    utterance.onerror = function () {
+      clearInterval(keepAlive);
+      setTTSIdle(btn);
+    };
+  }
+
   function toggleTTS() {
     var btn = document.getElementById('a11y-tts-btn');
 
     if (!window.speechSynthesis) {
-      alert('Tu navegador no soporta la lectura en voz alta. Prueba con Chrome o Edge.');
+      alert('Tu navegador no soporta la lectura en voz alta.\nPrueba con Chrome, Edge o Safari en escritorio.');
       return;
     }
 
     if (isSpeaking) {
       window.speechSynthesis.cancel();
-      isSpeaking = false;
-      if (btn) {
-        btn.setAttribute('aria-pressed', 'false');
-        btn.innerHTML = '<i class="fas fa-volume-up" aria-hidden="true"></i> Leer en voz alta';
-      }
+      setTTSIdle(btn);
       return;
     }
 
     var contentEl = document.getElementById('main-content') || document.body;
-    var text = (contentEl.innerText || contentEl.textContent || '').slice(0, 6000).trim();
+    var text = (contentEl.innerText || contentEl.textContent || '')
+                 .replace(/\s+/g, ' ').trim().slice(0, 6000);
 
     if (!text) return;
 
-    var utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'es-CR';
-    utterance.rate = 0.9;
-    utterance.pitch = 1;
-
-    utterance.onend = function () {
-      isSpeaking = false;
-      if (btn) {
-        btn.setAttribute('aria-pressed', 'false');
-        btn.innerHTML = '<i class="fas fa-volume-up" aria-hidden="true"></i> Leer en voz alta';
-      }
-    };
-
-    utterance.onerror = function () {
-      isSpeaking = false;
-    };
-
-    window.speechSynthesis.speak(utterance);
-    isSpeaking = true;
-
-    if (btn) {
-      btn.setAttribute('aria-pressed', 'true');
-      btn.innerHTML = '<i class="fas fa-stop-circle" aria-hidden="true"></i> Detener lectura';
+    // Chrome carga voces de forma asíncrona; esperar si aún no están listas
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = function () {
+        window.speechSynthesis.onvoiceschanged = null;
+        speakText(text, btn);
+      };
+    } else {
+      speakText(text, btn);
     }
   }
 

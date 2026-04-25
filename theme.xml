@@ -119,6 +119,34 @@
           </a>
         </section>
 
+        <!-- MISIÓN Y VISIÓN -->
+        <section class='card' aria-labelledby='mv-title'>
+          <h3 id='mv-title' style='margin-bottom: 20px;'>Quiénes Somos</h3>
+          <div class='mv-grid'>
+            <div class='mv-card mv-mision'>
+              <div class='mv-icon'><i class='fas fa-bullseye'/></div>
+              <h4>Misión</h4>
+              <p>Ser una asociación de personas con discapacidad nacionales y migrantes, familiares y amigos dedicados a hacer un mundo mejor para las poblaciones históricamente excluidas a través de la capacitación, inserción, el voluntariado y el emprendimiento.</p>
+            </div>
+            <div class='mv-card mv-vision'>
+              <div class='mv-icon'><i class='fas fa-eye'/></div>
+              <h4>Visión</h4>
+              <p>Dar apoyo a las personas con y sin discapacidad a través de la defensa de sus derechos y oportunidades para lograr la autonomía y ser parte de la sociedad.</p>
+            </div>
+          </div>
+          <div class='valores-grid'>
+            <span class='valor'>Respeto</span>
+            <span class='valor'>Inclusión</span>
+            <span class='valor'>Equidad</span>
+            <span class='valor'>Trabajo en equipo</span>
+            <span class='valor'>Amor</span>
+            <span class='valor'>Integridad</span>
+            <span class='valor'>Servicio</span>
+            <span class='valor'>Honestidad</span>
+            <span class='valor'>Tolerancia</span>
+          </div>
+        </section>
+
         <!-- CARRUSEL DE NOTICIAS -->
         <section class='card' aria-labelledby='news-title'>
           <h3 id='news-title' style='margin-bottom: 24px; display: flex; align-items: center; gap: 12px;'>

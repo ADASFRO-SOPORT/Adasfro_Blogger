@@ -323,13 +323,25 @@ html.high-contrast #whatsapp-float {
 
 /* =========================================
    MODO: FUENTE PARA DISLEXIA
+   Excluye <i> para no romper Font Awesome
 ========================================= */
-html.dyslexia-font,
-html.dyslexia-font * {
+html.dyslexia-font body,
+html.dyslexia-font p,
+html.dyslexia-font h1, html.dyslexia-font h2,
+html.dyslexia-font h3, html.dyslexia-font h4,
+html.dyslexia-font h5, html.dyslexia-font h6,
+html.dyslexia-font li, html.dyslexia-font dt,
+html.dyslexia-font dd, html.dyslexia-font td,
+html.dyslexia-font th, html.dyslexia-font label,
+html.dyslexia-font input, html.dyslexia-font textarea,
+html.dyslexia-font select,
+html.dyslexia-font button,
+html.dyslexia-font a,
+html.dyslexia-font span:not([class*="fa"]):not([class*="swiper"]) {
   font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important;
-  letter-spacing: 0.05em !important;
-  word-spacing: 0.15em !important;
-  line-height: 1.9 !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+  line-height: 1.9;
 }
 
 /* =========================================
