@@ -1,65 +1,136 @@
 /**
- * ADASFRO - JavaScript Principal
- * Funciones principales del sitio
+ * ADASFRO — JavaScript Principal
  */
 
-// Función para mostrar posts recientes (carousel superior)
-function showRecentPosts(json) {
-  const posts = json.feed.entry;
-  let html = '';
+// ── Enrutador de páginas por hash ────────────────────────────
+function initRouter() {
+  function navigate(hash) {
+    var id = (hash || '').replace('#', '') || 'inicio';
+    document.querySelectorAll('.page-section').forEach(function (s) {
+      s.style.display = 'none';
+    });
+    var target = document.getElementById('page-' + id);
+    if (!target) {
+      target = document.getElementById('page-inicio');
+      id = 'inicio';
+    }
+    if (target) target.style.display = 'block';
 
-  for (let i = 0; i < posts.length; i++) {
-    const title = posts[i].title.$t;
-    const link = posts[i].link[0].href;
-    const img = posts[i].media$thumbnail
-      ? posts[i].media$thumbnail.url
-      : 'https://via.placeholder.com/250x150';
+    document.querySelectorAll('#main-nav a').forEach(function (a) {
+      a.classList.remove('nav-active');
+      if (a.getAttribute('href') === '#' + id) a.classList.add('nav-active');
+    });
 
-    html += `
-      <li>
-        <a href="${link}">
-          <img src="${img}" alt="${title}">
-          <h4>${title}</h4>
-        </a>
-      </li>
-    `;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  document.getElementById("recent-posts").innerHTML = html;
+  window.addEventListener('hashchange', function () {
+    navigate(window.location.hash);
+  });
+
+  navigate(window.location.hash);
 }
 
-// Inicialización cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('ADASFRO Theme cargado correctamente');
+// ── Formulario de denuncia ────────────────────────────────────
+function initDenunciaForm() {
+  var form = document.getElementById('denuncia-form');
+  if (!form) return;
 
-  // Aquí puedes agregar más funcionalidades
-  initSmoothScroll();
-  initMobileMenu();
-});
-
-// Scroll suave para enlaces internos
-function initSmoothScroll() {
-  const links = document.querySelectorAll('a[href^="#"]');
-
-  links.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var campos = ['d-nombre','d-cedula','d-correo','d-telefono',
+                  'd-institucion','d-articulo','d-fecha','d-descripcion'];
+    var vals = {};
+    campos.forEach(function(id) {
+      var el = document.getElementById(id);
+      vals[id] = el ? el.value : '';
     });
+
+    var asunto = encodeURIComponent('Denuncia Ley 7600 — ' + vals['d-institucion']);
+    var cuerpo = encodeURIComponent(
+      'DATOS DEL DENUNCIANTE\n' +
+      'Nombre: ' + vals['d-nombre'] + '\n' +
+      'Cédula: ' + vals['d-cedula'] + '\n' +
+      'Correo: ' + vals['d-correo'] + '\n' +
+      'Teléfono: ' + vals['d-telefono'] + '\n\n' +
+      'DATOS DE LA DENUNCIA\n' +
+      'Institución denunciada: ' + vals['d-institucion'] + '\n' +
+      'Artículo Ley 7600: ' + vals['d-articulo'] + '\n' +
+      'Fecha del incidente: ' + vals['d-fecha'] + '\n\n' +
+      'DESCRIPCIÓN DE LOS HECHOS:\n' + vals['d-descripcion']
+    );
+
+    window.location.href = 'mailto:comunicacion@adasfro.ong?subject=' + asunto + '&body=' + cuerpo;
+
+    var conf = document.getElementById('denuncia-confirmacion');
+    if (conf) {
+      conf.style.display = 'flex';
+      setTimeout(function () { conf.style.display = 'none'; }, 8000);
+    }
   });
 }
 
-// Menú móvil (placeholder para futura implementación)
-function initMobileMenu() {
-  // Implementar lógica de menú hamburguesa si es necesario
-  console.log('Mobile menu initialized');
+// ── Filtros de convenios ──────────────────────────────────────
+function initConveniosFilter() {
+  var tabla = document.getElementById('convenios-tabla');
+  if (!tabla) return;
+
+  function filtrar() {
+    var anio  = document.getElementById('f-anio').value;
+    var estado = document.getElementById('f-estado').value;
+    var tipo  = document.getElementById('f-tipo').value;
+    var filas = tabla.querySelectorAll('tbody tr');
+    filas.forEach(function (fila) {
+      var ok = true;
+      if (anio   && fila.dataset.anio   !== anio)   ok = false;
+      if (estado && fila.dataset.estado !== estado)  ok = false;
+      if (tipo   && fila.dataset.tipo   !== tipo)    ok = false;
+      fila.style.display = ok ? '' : 'none';
+    });
+  }
+
+  ['f-anio','f-estado','f-tipo'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('change', filtrar);
+  });
 }
+
+// ── Menú móvil ────────────────────────────────────────────────
+function initMobileMenu() {
+  var toggle = document.getElementById('mobile-menu-toggle');
+  var list   = document.getElementById('nav-list');
+  if (!toggle || !list) return;
+
+  toggle.addEventListener('click', function () {
+    var open = list.classList.toggle('mobile-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.querySelector('.menu-icon').className = 'menu-icon fas ' + (open ? 'fa-times' : 'fa-bars');
+  });
+
+  // Cerrar al navegar
+  list.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      list.classList.remove('mobile-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.querySelector('.menu-icon').className = 'menu-icon fas fa-bars';
+    }
+  });
+}
+
+// ── Sticky nav ────────────────────────────────────────────────
+function initStickyNav() {
+  var nav = document.getElementById('main-nav');
+  if (!nav) return;
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 100);
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+  initRouter();
+  initDenunciaForm();
+  initConveniosFilter();
+  initMobileMenu();
+  initStickyNav();
+});

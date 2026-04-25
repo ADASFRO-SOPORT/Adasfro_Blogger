@@ -3,42 +3,40 @@
 <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
     <title><data:blog.pageTitle/></title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-    <meta content='ADASFRO - Asociación para el Desarrollo Accesible Sin Fronteras. Defendiendo derechos, promoviendo inclusión y fiscalizando el cumplimiento de la Ley 7600 en Costa Rica.' name='description'/>
-    
+    <meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
+    <meta content='ADASFRO - Asociación Agencia para el Desarrollo Accesible Sin Fronteras. Defendiendo derechos, promoviendo inclusión y fiscalizando el cumplimiento de la Ley 7600 en Costa Rica.' name='description'/>
+
     <!-- Preconnect -->
     <link crossorigin='' href='https://fonts.googleapis.com' rel='preconnect'/>
     <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
     <link crossorigin='' href='https://cdnjs.cloudflare.com' rel='preconnect'/>
-    
-    <!-- Google Fonts - Inter & Poppins -->
-    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;600;700;800&amp;display=swap' rel='stylesheet'/>
-    
+
+    <!-- Google Fonts - Montserrat + Open Sans -->
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+
     <!-- Font Awesome -->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
-    
+
     <!-- Swiper CSS -->
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
-    
+
     <!-- CSS desde GitHub Pages -->
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/blogger-fixes.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/accessibility-bar.css' rel='stylesheet'/>
-    
+
     <!-- Open Graph -->
-    <meta content='ADASFRO - Accesibilidad Universal' property='og:title'/>
-    <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica' property='og:description'/>
+    <meta content='ADASFRO - Accesibilidad Universal en Costa Rica' property='og:title'/>
+    <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica bajo la Ley 7600 y la Convención Internacional sobre los Derechos de las Personas con Discapacidad.' property='og:description'/>
     <meta content='https://www.adasfro.org' property='og:url'/>
     <meta content='website' property='og:type'/>
-    
+
     <b:skin><![CDATA[
-      /* CSS mínimo de Blogger */
       body { margin: 0; padding: 0; }
     ]]></b:skin>
-    
   </head>
   <body>
-    
+
     <!-- Skip Link -->
     <a class='skip-link' href='#main-content'>Saltar al contenido principal</a>
 
@@ -46,18 +44,18 @@
     <div id='header-top-menu'>
       <div class='top-nav-content'>
         <div class='top-nav-left'>
-          <a href='/p/sobre-nosotros.html'>Sobre Nosotros</a>
-          <a href='/p/transparencia.html'>Transparencia</a>
-          <a href='/p/contacto.html'>Contáctanos</a>
+          <a href='#sobre-nosotros'>Sobre Nosotros</a>
+          <a href='#transparencia'>Transparencia</a>
+          <a href='#contacto'>Contáctanos</a>
         </div>
-        
         <div class='social-icons'>
-          <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank'><i class='fab fa-facebook-f'/></a>
-          <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
-          <a aria-label='TikTok' href='#' target='_blank'><i class='fab fa-tiktok'/></a>
-          <a aria-label='YouTube' href='https://www.youtube.com/@adasfro' target='_blank'><i class='fab fa-youtube'/></a>
-          <a aria-label='Correo' href='mailto:comunicacion@adasfro.org'><i class='fas fa-envelope'/></a>
-          <a aria-label='LinkedIn' href='https://www.linkedin.com/in/adasfro/' target='_blank'><i class='fab fa-linkedin-in'/></a>
+          <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank'><i class='fab fa-facebook-f'></i></a>
+          <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'></i></a>
+          <a aria-label='TikTok' href='#' target='_blank'><i class='fab fa-tiktok'></i></a>
+          <a aria-label='YouTube' href='https://www.youtube.com/@adasfro' target='_blank'><i class='fab fa-youtube'></i></a>
+          <a aria-label='WhatsApp' href='https://wa.me/50625742048' target='_blank'><i class='fab fa-whatsapp'></i></a>
+          <a aria-label='Correo' href='mailto:comunicacion@adasfro.ong'><i class='fas fa-envelope'></i></a>
+          <a aria-label='LinkedIn' href='https://www.linkedin.com/in/adasfro/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </div>
       </div>
     </div>
@@ -68,11 +66,7 @@
         <b:widget id='Header1' locked='false' title='ADASFRO' type='Header' version='1'>
           <b:includable id='main'>
             <div class='header'>
-              <h1>
-                <a expr:href='data:blog.homepageUrl'>
-                  <data:title/>
-                </a>
-              </h1>
+              <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
             </div>
           </b:includable>
         </b:widget>
@@ -84,13 +78,18 @@
       <b:section class='main-menu' id='main-menu' preferred='yes' showaddelement='yes'>
         <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
           <b:includable id='main'>
-            <ul>
-              <li><a expr:href='data:blog.homepageUrl'>Inicio</a></li>
-              <li><a href='/p/poblaciones.html'>Poblaciones</a></li>
-              <li><a href='/p/eventos.html'>Eventos</a></li>
-              <li><a href='/p/proyectos.html'>Proyectos</a></li>
-              <li><a href='/p/transparencia.html'>Transparencia</a></li>
-              <li><a href='/p/denuncia.html' style='color: #FF6B6B; font-weight: 700;'>Denunciar</a></li>
+            <button id='mobile-menu-toggle' aria-label='Abrir menú de navegación' aria-expanded='false' aria-controls='nav-list'>
+              <i class='menu-icon fas fa-bars'></i>
+              <span>Menú</span>
+            </button>
+            <ul id='nav-list'>
+              <li><a href='#inicio'>Inicio</a></li>
+              <li><a href='#poblaciones'>Poblaciones</a></li>
+              <li><a href='#eventos'>Eventos</a></li>
+              <li><a href='#proyectos'>Proyectos</a></li>
+              <li><a href='#convenios'>Convenios</a></li>
+              <li><a href='#transparencia'>Transparencia</a></li>
+              <li><a href='#denuncia' style='color: #FF6B6B; font-weight: 700;'>Denunciar</a></li>
             </ul>
           </b:includable>
         </b:widget>
@@ -99,231 +98,1101 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main id='content-wrapper'>
-      
-      <!-- COLUMNA PRINCIPAL -->
       <div id='main-content'>
-        
-        <!-- HERO SECTION -->
-        <section class='hero-section' aria-labelledby='hero-title'>
-          <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
-          <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones vulnerables de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
-          <a class='btn btn-primary' href='/p/denuncia.html' style='display: inline-block; margin-top: 16px;'>
-            <svg style='display: inline-block; vertical-align: middle; margin-right: 8px;' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
-              <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path>
-              <polyline points='14 2 14 8 20 8'></polyline>
-              <line x1='16' y1='13' x2='8' y2='13'></line>
-              <line x1='16' y1='17' x2='8' y2='17'></line>
-              <polyline points='10 9 9 9 8 9'></polyline>
-            </svg>
-            Genera tu Denuncia Legal
-          </a>
-        </section>
 
-        <!-- MISIÓN Y VISIÓN -->
-        <section class='card' aria-labelledby='mv-title'>
-          <h3 id='mv-title' style='margin-bottom: 20px;'>Quiénes Somos</h3>
-          <div class='mv-grid'>
-            <div class='mv-card mv-mision'>
-              <div class='mv-icon'><i class='fas fa-bullseye'/></div>
-              <h4>Misión</h4>
-              <p>Ser una asociación de personas con discapacidad nacionales y migrantes, familiares y amigos dedicados a hacer un mundo mejor para las poblaciones históricamente excluidas a través de la capacitación, inserción, el voluntariado y el emprendimiento.</p>
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: INICIO                             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-inicio' class='page-section'>
+
+          <!-- Hero -->
+          <section class='hero-section' aria-labelledby='hero-title'>
+            <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
+            <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
+            <a class='btn btn-primary' href='#denuncia' style='display: inline-block; margin-top: 16px;'>
+              <i class='fas fa-file-alt' style='margin-right: 8px;'></i>
+              Genera tu Denuncia Legal
+            </a>
+          </section>
+
+          <!-- Misión y Visión -->
+          <section class='card' aria-labelledby='mv-title'>
+            <h3 id='mv-title' style='margin-bottom: 20px;'>Nuestra Misión y Visión</h3>
+            <div class='mv-grid'>
+              <div class='mv-card mv-mision'>
+                <div class='mv-icon'><i class='fas fa-bullseye'></i></div>
+                <h4>Misión</h4>
+                <p>Ser una asociación de personas con discapacidad nacionales y migrantes, familiares y amigos dedicados a hacer un mundo mejor para las poblaciones históricamente excluidas a través de la capacitación, inserción, el voluntariado y el emprendimiento.</p>
+              </div>
+              <div class='mv-card mv-vision'>
+                <div class='mv-icon'><i class='fas fa-eye'></i></div>
+                <h4>Visión</h4>
+                <p>Dar apoyo a las personas con y sin discapacidad a través de la defensa de sus derechos y oportunidades para lograr la autonomía y ser parte de la sociedad.</p>
+              </div>
             </div>
-            <div class='mv-card mv-vision'>
-              <div class='mv-icon'><i class='fas fa-eye'/></div>
-              <h4>Visión</h4>
-              <p>Dar apoyo a las personas con y sin discapacidad a través de la defensa de sus derechos y oportunidades para lograr la autonomía y ser parte de la sociedad.</p>
+          </section>
+
+          <!-- Valores -->
+          <section class='card' aria-labelledby='valores-title'>
+            <h3 id='valores-title' style='margin-bottom: 16px;'>Nuestros Valores</h3>
+            <div class='valores-grid'>
+              <span class='valor'>Respeto</span>
+              <span class='valor'>Inclusión</span>
+              <span class='valor'>Equidad</span>
+              <span class='valor'>Trabajo en equipo</span>
+              <span class='valor'>Amor</span>
+              <span class='valor'>Integridad</span>
+              <span class='valor'>Servicio</span>
+              <span class='valor'>Honestidad</span>
+              <span class='valor'>Tolerancia</span>
+            </div>
+          </section>
+
+          <!-- Carrusel de noticias -->
+          <section class='card' aria-labelledby='news-title'>
+            <h3 id='news-title' style='margin-bottom: 24px;'>
+              <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>
+              Últimas Noticias
+            </h3>
+            <div class='swiper'>
+              <div class='swiper-wrapper' id='blog-posts'></div>
+              <div class='swiper-button-next'></div>
+              <div class='swiper-button-prev'></div>
+              <div class='swiper-pagination'></div>
+            </div>
+          </section>
+
+          <!-- Posts de Blogger -->
+          <div class='card'>
+            <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
+              <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
+            </b:section>
+          </div>
+
+          <!-- 5 Pilares -->
+          <section class='card pilares-block' aria-labelledby='pilares-title'>
+            <h3 id='pilares-title'>Nuestros 5 Pilares Fundamentales</h3>
+            <div class='pilares-grid'>
+              <div class='pilar'>
+                <div class='pilar-num'>01</div>
+                <div class='pilar-body'>
+                  <strong>Inclusión Social</strong>
+                  <p>Fomentamos espacios comunitarios donde todas las personas participan en igualdad de condiciones, sin importar su condición.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>02</div>
+                <div class='pilar-body'>
+                  <strong>Transparencia</strong>
+                  <p>Exigimos al Estado y practicamos internamente una rendición de cuentas radical, accesible y verificable por cualquier ciudadano.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>03</div>
+                <div class='pilar-body'>
+                  <strong>Colaboración</strong>
+                  <p>Establecemos convenios estratégicos con entidades públicas, privadas y académicas que comparten nuestra visión de accesibilidad.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>04</div>
+                <div class='pilar-body'>
+                  <strong>Desarrollo Sostenible</strong>
+                  <p>Impulsamos proyectos alineados con los Objetivos de Desarrollo Sostenible de la ONU, con enfoque en derechos humanos.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>05</div>
+                <div class='pilar-body'>
+                  <strong>Defensa de Derechos</strong>
+                  <p>Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600 y la Convención Internacional sobre los Derechos de las PcD.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contacto rápido -->
+          <div class='card'>
+            <h3 style='margin-bottom: 24px;'><i class='fas fa-envelope' style='margin-right: 10px; color: var(--primary);'></i>Contáctanos</h3>
+            <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
+              <b:widget id='ContactForm1' locked='false' title='Formulario' type='ContactForm'/>
+            </b:section>
+          </div>
+
+        </div><!-- /page-inicio -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: SOBRE NOSOTROS                    -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-sobre-nosotros' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='sn-title'>
+            <h2 id='sn-title'>Sobre ADASFRO</h2>
+            <p>Conoce nuestra historia, quiénes somos y cómo trabajamos por la accesibilidad universal en Costa Rica.</p>
+          </section>
+
+          <div class='card'>
+            <h3>¿Quiénes Somos?</h3>
+            <p>La Asociación Agencia para el Desarrollo Accesible Sin Fronteras (ADASFRO) es una organización sin fines de lucro constituida bajo las leyes de la República de Costa Rica, con cédula jurídica 3-002-860094, con sede en Paraíso, Cartago.</p>
+            <p>Nacimos de la convicción de que la accesibilidad universal es un derecho fundamental de toda persona, no un privilegio. Agrupamos a personas con discapacidad, sus familias, cuidadores y aliados comprometidos con la construcción de una sociedad más justa e inclusiva.</p>
+            <p>Nuestro trabajo está fundamentado en la <strong>Convención Internacional sobre los Derechos de las Personas con Discapacidad</strong> de la ONU, ratificada por Costa Rica, y en la <strong>Ley 7600 sobre la Igualdad de Oportunidades para las Personas con Discapacidad</strong>.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Áreas de Trabajo</h3>
+            <div class='pilares-grid'>
+              <div class='pilar'>
+                <div class='pilar-num' style='font-size: 1.8rem;'><i class='fas fa-balance-scale' style='color: var(--primary);'></i></div>
+                <div class='pilar-body'>
+                  <strong>Defensa Legal</strong>
+                  <p>Asesoría jurídica gratuita y litigio estratégico para garantizar el cumplimiento de los derechos de las personas con discapacidad.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num' style='font-size: 1.8rem;'><i class='fas fa-chalkboard-teacher' style='color: var(--primary);'></i></div>
+                <div class='pilar-body'>
+                  <strong>Capacitación</strong>
+                  <p>Talleres, charlas y programas de formación sobre accesibilidad, derechos y autonomía para personas con discapacidad y sus comunidades.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num' style='font-size: 1.8rem;'><i class='fas fa-handshake' style='color: var(--primary);'></i></div>
+                <div class='pilar-body'>
+                  <strong>Incidencia Política</strong>
+                  <p>Fiscalización activa del cumplimiento de la Ley 7600 en instituciones públicas y privadas, con informes y reportes periódicos.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num' style='font-size: 1.8rem;'><i class='fas fa-laptop-code' style='color: var(--primary);'></i></div>
+                <div class='pilar-body'>
+                  <strong>Accesibilidad Digital</strong>
+                  <p>Asesoramiento a organizaciones para que sus plataformas digitales cumplan con estándares WCAG 2.1 y sean accesibles para todos.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class='valores-grid'>
-            <span class='valor'>Respeto</span>
-            <span class='valor'>Inclusión</span>
-            <span class='valor'>Equidad</span>
-            <span class='valor'>Trabajo en equipo</span>
-            <span class='valor'>Amor</span>
-            <span class='valor'>Integridad</span>
-            <span class='valor'>Servicio</span>
-            <span class='valor'>Honestidad</span>
-            <span class='valor'>Tolerancia</span>
-          </div>
-        </section>
 
-        <!-- CARRUSEL DE NOTICIAS -->
-        <section class='card' aria-labelledby='news-title'>
-          <h3 id='news-title' style='margin-bottom: 24px; display: flex; align-items: center; gap: 12px;'>
-            <svg width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='#4A90E2' stroke-width='2'>
-              <path d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'></path>
-              <path d='M18 14h-8'></path>
-              <path d='M15 18h-5'></path>
-              <path d='M10 6h8v4h-8z'></path>
-            </svg>
-            Últimas Noticias
-          </h3>
-          <div class='swiper'>
-            <div class='swiper-wrapper' id='blog-posts'>
-              <!-- Posts cargados dinámicamente -->
+          <div class='card'>
+            <h3>Datos Institucionales</h3>
+            <table style='width:100%; border-collapse: collapse; font-size: 15px;'>
+              <tr style='border-bottom: 1px solid var(--border);'>
+                <td style='padding: 12px; font-weight: 600; color: var(--text-main); width: 40%;'>Nombre completo</td>
+                <td style='padding: 12px; color: var(--text-light);'>Asociación Agencia para el Desarrollo Accesible Sin Fronteras</td>
+              </tr>
+              <tr style='border-bottom: 1px solid var(--border);'>
+                <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>Cédula Jurídica</td>
+                <td style='padding: 12px; color: var(--text-light);'>3-002-860094</td>
+              </tr>
+              <tr style='border-bottom: 1px solid var(--border);'>
+                <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>Sede</td>
+                <td style='padding: 12px; color: var(--text-light);'>Paraíso, Cartago, Costa Rica</td>
+              </tr>
+              <tr style='border-bottom: 1px solid var(--border);'>
+                <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>Correo institucional</td>
+                <td style='padding: 12px;'><a href='mailto:comunicacion@adasfro.ong'>comunicacion@adasfro.ong</a></td>
+              </tr>
+              <tr>
+                <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>Marco jurídico</td>
+                <td style='padding: 12px; color: var(--text-light);'>Ley 7600 · Convención ONU sobre Derechos de PcD</td>
+              </tr>
+            </table>
+          </div>
+
+        </div><!-- /page-sobre-nosotros -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: POBLACIONES                       -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-poblaciones' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='pob-title'>
+            <h2 id='pob-title'>Poblaciones que Atendemos</h2>
+            <p>Trabajamos con y para las personas históricamente excluidas, con un enfoque basado en derechos humanos y la Convención Internacional sobre los Derechos de las Personas con Discapacidad.</p>
+          </section>
+
+          <div class='card'>
+            <h3>¿A quiénes apoyamos?</h3>
+            <div class='poblaciones-grid'>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-wheelchair'></i></div>
+                <h4>Discapacidad Física</h4>
+                <p>Personas con movilidad reducida, usuarios de silla de ruedas, prótesis o ayudas técnicas. Fiscalizamos la accesibilidad física en espacios públicos y privados.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-eye-slash'></i></div>
+                <h4>Discapacidad Visual</h4>
+                <p>Personas ciegas o con baja visión. Promovemos el acceso a la información en formatos accesibles como braille, audio y texto de alto contraste.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-deaf'></i></div>
+                <h4>Discapacidad Auditiva</h4>
+                <p>Personas sordas o con hipoacusia. Trabajamos por el reconocimiento y uso del LESCO (Lengua de Señas Costarricense) como derecho fundamental.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-brain'></i></div>
+                <h4>Discapacidad Cognitiva</h4>
+                <p>Personas con discapacidad intelectual. Promovemos materiales en Lectura Fácil y apoyamos la autonomía e inserción social y laboral.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-puzzle-piece'></i></div>
+                <h4>Neurodivergencia</h4>
+                <p>Personas con TEA, TDAH, dislexia y otras condiciones neurodivergentes. Abogamos por entornos de baja estimulación y aprendizaje diferenciado.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-user-clock'></i></div>
+                <h4>Adultos Mayores</h4>
+                <p>Personas mayores que enfrentan barreras por el envejecimiento. Trabajamos por su plena participación y el acceso a servicios de salud y recreación.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-globe-americas'></i></div>
+                <h4>Migrantes con Discapacidad</h4>
+                <p>Personas migrantes que además tienen alguna discapacidad. Brindamos orientación legal incluyendo apoyo jurídico internacional en casos como pensión alimenticia.</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-hands-helping'></i></div>
+                <h4>Cuidadores y Familiares</h4>
+                <p>Personas que cuidan a alguien con discapacidad. Ofrecemos acompañamiento, capacitación y espacios de apoyo emocional para cuidadores.</p>
+              </div>
             </div>
-            <div class='swiper-button-next'/>
-            <div class='swiper-button-prev'/>
-            <div class='swiper-pagination'/>
           </div>
-        </section>
 
-        <!-- POSTS DE BLOGGER -->
-        <div class='card'>
-          <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
-            <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
-          </b:section>
-        </div>
+        </div><!-- /page-poblaciones -->
 
-        <!-- BLOQUE DE MISIÓN -->
-        <section class='mission-block card' aria-labelledby='mission-title'>
-          <h3 id='mission-title'>🎯 Nuestros 5 Pilares Fundamentales</h3>
-          <ul>
-            <li>
-              <span style='font-size: 24px; margin-right: 12px;'>✨</span>
-              <div>
-                <strong>Inclusión Social</strong><br/>
-                Fomentamos espacios comunitarios donde todas las personas participan en igualdad de condiciones
-              </div>
-            </li>
-            <li>
-              <span style='font-size: 24px; margin-right: 12px;'>🌍</span>
-              <div>
-                <strong>Transparencia</strong><br/>
-                Exigimos al Estado y practicamos internamente una rendición de cuentas radical
-              </div>
-            </li>
-            <li>
-              <span style='font-size: 24px; margin-right: 12px;'>🤝</span>
-              <div>
-                <strong>Colaboración</strong><br/>
-                Establecemos convenios estratégicos con entidades que comparten nuestra visión
-              </div>
-            </li>
-            <li>
-              <span style='font-size: 24px; margin-right: 12px;'>💡</span>
-              <div>
-                <strong>Desarrollo Sostenible</strong><br/>
-                Impulsamos proyectos alineados con los Objetivos de Desarrollo Sostenible de la ONU
-              </div>
-            </li>
-            <li>
-              <span style='font-size: 24px; margin-right: 12px;'>⚖️</span>
-              <div>
-                <strong>Defensa de Derechos</strong><br/>
-                Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600
-              </div>
-            </li>
-          </ul>
-        </section>
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: EVENTOS                           -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-eventos' class='page-section' style='display:none'>
 
-        <!-- CONTACTO -->
-        <div class='card'>
-          <h3 style='margin-bottom: 24px;'>📧 Contáctanos</h3>
-          <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
-            <b:widget id='ContactForm1' locked='false' title='Formulario' type='ContactForm'/>
-          </b:section>
-        </div>
-        
-      </div>
+          <section class='hero-section' aria-labelledby='ev-title'>
+            <h2 id='ev-title'>Eventos y Actividades</h2>
+            <p>Talleres, capacitaciones, asambleas y actividades de incidencia. Todos con intérprete de LESCO y materiales en formatos accesibles.</p>
+          </section>
+
+          <div class='card'>
+            <h3>Próximos Eventos</h3>
+            <div class='eventos-list'>
+              <div class='evento-card'>
+                <div class='evento-fecha'>
+                  <div class='dia'>15</div>
+                  <div class='mes'>May</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Taller: Conoce tus Derechos — Ley 7600</h4>
+                  <p><i class='fas fa-map-marker-alt' style='color: var(--primary); margin-right: 6px;'></i>Paraíso, Cartago · 9:00 a.m. — 12:00 p.m.</p>
+                  <p style='margin-top: 6px;'>Taller gratuito sobre los artículos clave de la Ley 7600. Incluye intérprete LESCO, materiales en Lectura Fácil y refrigerio accesible.</p>
+                </div>
+              </div>
+              <div class='evento-card'>
+                <div class='evento-fecha'>
+                  <div class='dia'>22</div>
+                  <div class='mes'>May</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Asamblea General de Asociados 2025</h4>
+                  <p><i class='fas fa-map-marker-alt' style='color: var(--primary); margin-right: 6px;'></i>Sede ADASFRO, Paraíso · 2:00 p.m.</p>
+                  <p style='margin-top: 6px;'>Reunión anual ordinaria. Revisión de informes, elección de junta directiva y planificación estratégica 2025-2026.</p>
+                </div>
+              </div>
+              <div class='evento-card'>
+                <div class='evento-fecha'>
+                  <div class='dia'>05</div>
+                  <div class='mes'>Jun</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Capacitación LESCO para Funcionarios Públicos</h4>
+                  <p><i class='fas fa-map-marker-alt' style='color: var(--primary); margin-right: 6px;'></i>Virtual (Zoom) · 8:00 a.m. — 5:00 p.m.</p>
+                  <p style='margin-top: 6px;'>Curso básico de Lengua de Señas Costarricense para funcionarios de instituciones públicas. Certificación incluida.</p>
+                </div>
+              </div>
+            </div>
+            <p style='margin-top: 24px; text-align: center;'>
+              <a href='mailto:comunicacion@adasfro.ong' class='btn btn-secondary' style='display: inline-block;'>
+                <i class='fas fa-envelope' style='margin-right: 8px;'></i>Consultar sobre eventos
+              </a>
+            </p>
+          </div>
+
+        </div><!-- /page-eventos -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: PROYECTOS                         -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-proyectos' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='proy-title'>
+            <h2 id='proy-title'>Proyectos Activos</h2>
+            <p>Iniciativas en curso que impulsan la accesibilidad universal, la autonomía y la defensa de derechos en Costa Rica.</p>
+          </section>
+
+          <div class='card'>
+            <h3>Proyectos en Ejecución</h3>
+            <div class='proyectos-grid'>
+              <div class='proyecto-card'>
+                <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+                <h4>Accesibilidad Web para ONGs</h4>
+                <p>Programa de diagnóstico y asesoría para que organizaciones de la sociedad civil costarricense adapten sus sitios web a estándares WCAG 2.1 AA. Incluye talleres, auditorías y acompañamiento técnico.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2024 — 2025</p>
+              </div>
+              <div class='proyecto-card'>
+                <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+                <h4>Asesoría Legal Gratuita para Migrantes con Discapacidad</h4>
+                <p>Servicio de orientación jurídica para personas migrantes con discapacidad en Costa Rica, incluyendo casos de acceso a pensión alimenticia, salud y educación con dimensión transfronteriza.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2023 — continuo</p>
+              </div>
+              <div class='proyecto-card'>
+                <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+                <h4>Fiscalización Ley 7600 en Espacios Públicos</h4>
+                <p>Auditorías de accesibilidad física en municipios de Cartago. Levantamiento de diagnósticos, informes de incumplimiento y seguimiento ante el CONAPDIS y la Defensoría de los Habitantes.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2024 — 2025</p>
+              </div>
+              <div class='proyecto-card'>
+                <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px; color: var(--accent);'></i>En planificación</div>
+                <h4>Guías en Lectura Fácil sobre Derechos</h4>
+                <p>Producción de materiales informativos sobre la Ley 7600 y la Convención ONU en formato de Lectura Fácil, adaptados para personas con discapacidad cognitiva y neurodivergentes.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--accent); font-weight: 600;'>2025 — planificado</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /page-proyectos -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: CONVENIOS                         -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-convenios' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='conv-title'>
+            <h2 id='conv-title'>Convenios Institucionales</h2>
+            <p>Acuerdos de cooperación con organizaciones que comparten nuestra visión de accesibilidad, inclusión y defensa de derechos.</p>
+          </section>
+
+          <div class='card'>
+            <h3 style='margin-bottom: 20px;'>Filtrar Convenios</h3>
+            <div class='convenios-filters'>
+              <select id='f-anio' aria-label='Filtrar por año'>
+                <option value=''>Todos los años</option>
+                <option value='2025'>2025</option>
+                <option value='2024'>2024</option>
+                <option value='2023'>2023</option>
+              </select>
+              <select id='f-estado' aria-label='Filtrar por estado'>
+                <option value=''>Todos los estados</option>
+                <option value='vigente'>Vigente</option>
+                <option value='proceso'>En proceso</option>
+                <option value='vencido'>Vencido</option>
+              </select>
+              <select id='f-tipo' aria-label='Filtrar por tipo'>
+                <option value=''>Todos los tipos</option>
+                <option value='academico'>Académico</option>
+                <option value='publico'>Institucional público</option>
+                <option value='sociedad'>Sociedad civil</option>
+              </select>
+            </div>
+
+            <div style='overflow-x: auto;'>
+              <table class='tabla-convenios' id='convenios-tabla'>
+                <thead>
+                  <tr>
+                    <th>Convenio</th>
+                    <th>Institución</th>
+                    <th>Año</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-anio='2024' data-estado='vigente' data-tipo='academico'>
+                    <td>Cooperación para inclusión educativa</td>
+                    <td>Universidad de Costa Rica (UCR)</td>
+                    <td>2024</td>
+                    <td>Académico</td>
+                    <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  </tr>
+                  <tr data-anio='2024' data-estado='vigente' data-tipo='publico'>
+                    <td>Fiscalización accesibilidad física</td>
+                    <td>CONAPDIS</td>
+                    <td>2024</td>
+                    <td>Institucional público</td>
+                    <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  </tr>
+                  <tr data-anio='2025' data-estado='proceso' data-tipo='sociedad'>
+                    <td>Red de apoyo para migrantes con discapacidad</td>
+                    <td>Cruz Roja Costarricense</td>
+                    <td>2025</td>
+                    <td>Sociedad civil</td>
+                    <td><span class='estado-badge estado-proceso'>En proceso</span></td>
+                  </tr>
+                  <tr data-anio='2023' data-estado='vencido' data-tipo='academico'>
+                    <td>Programa de prácticas universitarias</td>
+                    <td>TEC Costa Rica</td>
+                    <td>2023</td>
+                    <td>Académico</td>
+                    <td><span class='estado-badge estado-vencido'>Vencido</span></td>
+                  </tr>
+                  <tr data-anio='2025' data-estado='vigente' data-tipo='publico'>
+                    <td>Asistencia técnica accesibilidad web</td>
+                    <td>Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones</td>
+                    <td>2025</td>
+                    <td>Institucional público</td>
+                    <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div><!-- /page-convenios -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: TRANSPARENCIA                     -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-transparencia' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='trans-title'>
+            <h2 id='trans-title'>Transparencia Institucional</h2>
+            <p>Rendición de cuentas radical. Accede a nuestros informes financieros, actas y documentos institucionales.</p>
+          </section>
+
+          <div class='card'>
+            <h3>Informe Financiero 2024</h3>
+            <div class='pilares-grid'>
+              <div class='pilar' style='flex-direction: column; text-align: center;'>
+                <div style='font-size: 2rem; font-weight: 900; color: var(--primary); font-family: var(--font-heading);'>₡1.8M</div>
+                <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Presupuesto Anual</div>
+                <div style='font-size: 13px; color: var(--text-light);'>Ejercicio fiscal 2024</div>
+              </div>
+              <div class='pilar' style='flex-direction: column; text-align: center;'>
+                <div style='font-size: 2rem; font-weight: 900; color: var(--success); font-family: var(--font-heading);'>₡1.2M</div>
+                <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Ingresos Ejecutados</div>
+                <div style='font-size: 13px; color: var(--text-light);'>Donaciones + cuotas + subvenciones</div>
+              </div>
+              <div class='pilar' style='flex-direction: column; text-align: center;'>
+                <div style='font-size: 2rem; font-weight: 900; color: var(--secondary); font-family: var(--font-heading);'>₡980K</div>
+                <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Egresos</div>
+                <div style='font-size: 13px; color: var(--text-light);'>Programas + administración</div>
+              </div>
+              <div class='pilar' style='flex-direction: column; text-align: center;'>
+                <div style='font-size: 2rem; font-weight: 900; color: var(--accent); font-family: var(--font-heading);'>68%</div>
+                <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Inversión Programática</div>
+                <div style='font-size: 13px; color: var(--text-light);'>Del gasto total hacia proyectos</div>
+              </div>
+            </div>
+            <p style='margin-top: 16px; font-size: 13px; color: var(--text-light);'>* Cifras preliminares sujetas a auditoría. Informe completo disponible previa solicitud a comunicacion@adasfro.ong</p>
+          </div>
+
+          <div class='card'>
+            <h3>Documentos Institucionales</h3>
+            <div class='eventos-list'>
+              <div class='evento-card'>
+                <div class='evento-fecha' style='background: var(--secondary);'>
+                  <div class='dia' style='font-size: 20px;'><i class='fas fa-file-pdf'></i></div>
+                  <div class='mes'>2024</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Informe Anual de Actividades 2024</h4>
+                  <p>Resumen de proyectos ejecutados, beneficiarios atendidos y resultados obtenidos durante el año fiscal 2024.</p>
+                  <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Informe Anual 2024' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar documento</a></p>
+                </div>
+              </div>
+              <div class='evento-card'>
+                <div class='evento-fecha' style='background: var(--secondary);'>
+                  <div class='dia' style='font-size: 20px;'><i class='fas fa-file-alt'></i></div>
+                  <div class='mes'>2025</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Acta Asamblea General Ordinaria — Mayo 2025</h4>
+                  <p>Acta oficial de la asamblea general de asociados. Incluye acuerdos, elección de junta directiva y aprobación de presupuesto.</p>
+                  <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Acta Asamblea 2025' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar documento</a></p>
+                </div>
+              </div>
+              <div class='evento-card'>
+                <div class='evento-fecha' style='background: var(--secondary);'>
+                  <div class='dia' style='font-size: 20px;'><i class='fas fa-gavel'></i></div>
+                  <div class='mes'>Base</div>
+                </div>
+                <div class='evento-info'>
+                  <h4>Estatutos de la Asociación</h4>
+                  <p>Documento constitutivo y estatutos oficiales de ADASFRO inscritos en el Registro de Asociaciones del Ministerio de Justicia de Costa Rica.</p>
+                  <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Estatutos ADASFRO' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar documento</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /page-transparencia -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: DENUNCIA                          -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-denuncia' class='page-section' style='display:none'>
+
+          <section class='hero-section' style='background: linear-gradient(135deg, #C62828 0%, #8B0000 100%);' aria-labelledby='den-title'>
+            <h2 id='den-title'>Generador de Denuncias — Ley 7600</h2>
+            <p>Si identificas una violación a la Ley 7600 o a la Convención sobre los Derechos de las Personas con Discapacidad, usa este formulario. Tu denuncia se enviará directamente a nuestro equipo legal.</p>
+          </section>
+
+          <div class='card'>
+            <h3>Datos de la Denuncia</h3>
+            <p style='margin-bottom: 20px;'>Todos los campos marcados con <span style='color: var(--danger);'>*</span> son obligatorios. La información es confidencial.</p>
+
+            <form id='denuncia-form' novalidate='novalidate'>
+              <div class='form-denuncia'>
+                <div class='form-group'>
+                  <label for='d-nombre'>Nombre completo <span class='req'>*</span></label>
+                  <input type='text' id='d-nombre' name='nombre' required='required' placeholder='Su nombre y apellidos' autocomplete='name'/>
+                </div>
+                <div class='form-group'>
+                  <label for='d-cedula'>Número de identificación <span class='req'>*</span></label>
+                  <input type='text' id='d-cedula' name='cedula' required='required' placeholder='Cédula, DIMEX u otro'/>
+                </div>
+                <div class='form-group'>
+                  <label for='d-correo'>Correo electrónico <span class='req'>*</span></label>
+                  <input type='email' id='d-correo' name='correo' required='required' placeholder='su@correo.com' autocomplete='email'/>
+                </div>
+                <div class='form-group'>
+                  <label for='d-telefono'>Teléfono de contacto</label>
+                  <input type='tel' id='d-telefono' name='telefono' placeholder='+506 0000-0000' autocomplete='tel'/>
+                </div>
+                <div class='form-group form-full'>
+                  <label for='d-institucion'>Institución o empresa denunciada <span class='req'>*</span></label>
+                  <input type='text' id='d-institucion' name='institucion' required='required' placeholder='Nombre de la institución, empresa o entidad'/>
+                </div>
+                <div class='form-group'>
+                  <label for='d-articulo'>Artículo de la Ley 7600 violado <span class='req'>*</span></label>
+                  <select id='d-articulo' name='articulo' required='required'>
+                    <option value=''>Seleccione un artículo</option>
+                    <option value='Art. 23 — Acceso a espacios físicos'>Art. 23 — Acceso a espacios físicos</option>
+                    <option value='Art. 24 — Eliminación de barreras arquitectónicas'>Art. 24 — Barreras arquitectónicas</option>
+                    <option value='Art. 26 — Transporte accesible'>Art. 26 — Transporte accesible</option>
+                    <option value='Art. 37 — Educación inclusiva'>Art. 37 — Educación inclusiva</option>
+                    <option value='Art. 44 — Derecho al trabajo'>Art. 44 — Derecho al trabajo</option>
+                    <option value='Art. 51 — Acceso a la salud'>Art. 51 — Acceso a la salud</option>
+                    <option value='Art. 58 — Recreación y cultura'>Art. 58 — Recreación y cultura</option>
+                    <option value='Art. 66 — Participación social'>Art. 66 — Participación social</option>
+                    <option value='Otro artículo (especificar en descripción)'>Otro (especificar en descripción)</option>
+                  </select>
+                </div>
+                <div class='form-group'>
+                  <label for='d-fecha'>Fecha del incidente <span class='req'>*</span></label>
+                  <input type='date' id='d-fecha' name='fecha' required='required'/>
+                </div>
+                <div class='form-group form-full'>
+                  <label for='d-descripcion'>Descripción detallada de los hechos <span class='req'>*</span></label>
+                  <textarea id='d-descripcion' name='descripcion' required='required' placeholder='Describa con el mayor detalle posible qué ocurrió, dónde, cómo y quiénes estuvieron involucrados.'></textarea>
+                </div>
+                <div class='form-full'>
+                  <button type='submit' class='btn btn-danger' style='font-size: 16px; padding: 14px 32px;'>
+                    <i class='fas fa-paper-plane' style='margin-right: 8px;'></i>
+                    Enviar Denuncia
+                  </button>
+                  <p style='font-size: 13px; color: var(--text-light); margin-top: 12px;'>
+                    Al enviar, se abrirá tu cliente de correo con la denuncia pre-completada dirigida a nuestro equipo legal.
+                  </p>
+                </div>
+              </div>
+            </form>
+
+            <div id='denuncia-confirmacion' class='form-confirm'>
+              <i class='fas fa-check-circle' style='font-size: 24px;'></i>
+              <span>Denuncia generada. Revisa tu cliente de correo para enviarla. ¡Gracias por defender la accesibilidad!</span>
+            </div>
+          </div>
+
+          <div class='card'>
+            <h3>¿Qué pasa con tu denuncia?</h3>
+            <div class='pilares-grid'>
+              <div class='pilar'>
+                <div class='pilar-num'>01</div>
+                <div class='pilar-body'>
+                  <strong>Recepción y clasificación</strong>
+                  <p>Nuestro equipo legal revisa cada denuncia en un plazo máximo de 5 días hábiles.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>02</div>
+                <div class='pilar-body'>
+                  <strong>Verificación</strong>
+                  <p>Contactamos al denunciante para ampliar la información y documentar el caso adecuadamente.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>03</div>
+                <div class='pilar-body'>
+                  <strong>Acción legal</strong>
+                  <p>Presentamos la denuncia ante el CONAPDIS, la Defensoría o los tribunales según corresponda.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>04</div>
+                <div class='pilar-body'>
+                  <strong>Seguimiento</strong>
+                  <p>Mantenemos informado al denunciante del avance del caso hasta su resolución.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /page-denuncia -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: LEY 7600                          -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-ley-7600' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='ley-title'>
+            <h2 id='ley-title'>Ley 7600 Explicada</h2>
+            <p>La Ley sobre la Igualdad de Oportunidades para las Personas con Discapacidad en lenguaje claro y sencillo.</p>
+          </section>
+
+          <div class='card'>
+            <h3>¿Qué es la Ley 7600?</h3>
+            <p>La Ley 7600, aprobada en Costa Rica en 1996, garantiza la igualdad de oportunidades para las personas con discapacidad. Es la principal norma que protege los derechos de acceso, participación y no discriminación.</p>
+            <p>Esta ley aplica a <strong>todas las instituciones públicas y privadas</strong> que brinden servicios al público. Su incumplimiento puede ser denunciado ante el CONAPDIS, la Defensoría de los Habitantes o los Tribunales de Justicia.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Artículos Clave</h3>
+            <div class='pilares-grid'>
+              <div class='pilar'>
+                <div class='pilar-num'>23</div>
+                <div class='pilar-body'>
+                  <strong>Acceso a espacios físicos</strong>
+                  <p>Todo espacio de uso público debe ser accesible: rampas, ascensores, señalización táctil y visual, espacios para silla de ruedas.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>26</div>
+                <div class='pilar-body'>
+                  <strong>Transporte accesible</strong>
+                  <p>El transporte público debe adaptarse progresivamente para ser utilizado por personas con discapacidad en igualdad de condiciones.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>37</div>
+                <div class='pilar-body'>
+                  <strong>Educación inclusiva</strong>
+                  <p>Toda persona con discapacidad tiene derecho a educación en centros regulares con los apoyos necesarios para su aprendizaje.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>44</div>
+                <div class='pilar-body'>
+                  <strong>Derecho al trabajo</strong>
+                  <p>Se prohíbe la discriminación laboral por discapacidad. Las empresas con más de 50 empleados deben aplicar medidas de inclusión laboral.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>51</div>
+                <div class='pilar-body'>
+                  <strong>Acceso a la salud</strong>
+                  <p>Los servicios de salud deben ser accesibles para personas con discapacidad, incluyendo comunicación en formatos accesibles.</p>
+                </div>
+              </div>
+              <div class='pilar'>
+                <div class='pilar-num'>58</div>
+                <div class='pilar-body'>
+                  <strong>Recreación y cultura</strong>
+                  <p>Las instalaciones deportivas, culturales y turísticas deben garantizar acceso igualitario a personas con discapacidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='card' style='background: var(--bg-body);'>
+            <h3>¿Qué puedo hacer si no se cumple?</h3>
+            <p>Si una institución no cumple con la Ley 7600, tienes derecho a:</p>
+            <ul style='padding-left: 20px; color: var(--text-light); line-height: 2;'>
+              <li>Presentar una denuncia ante el <strong>CONAPDIS</strong> (Consejo Nacional de Personas con Discapacidad)</li>
+              <li>Recurrir a la <strong>Defensoría de los Habitantes</strong> si es una institución pública</li>
+              <li>Interponer una <strong>acción de amparo</strong> ante la Sala Constitucional</li>
+              <li>Presentar una denuncia ante los <strong>Tribunales de Justicia</strong></li>
+            </ul>
+            <p style='margin-top: 16px;'>
+              <a href='#denuncia' class='btn btn-danger' style='display: inline-block;'>
+                <i class='fas fa-file-alt' style='margin-right: 8px;'></i>
+                Generar mi denuncia ahora
+              </a>
+            </p>
+          </div>
+
+        </div><!-- /page-ley-7600 -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: GUÍAS                             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-guias' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='guias-title'>
+            <h2 id='guias-title'>Guías en Lectura Fácil</h2>
+            <p>Materiales informativos adaptados para que todas las personas puedan comprender sus derechos, sin importar su nivel de lectura o condición cognitiva.</p>
+          </section>
+
+          <div class='card'>
+            <h3>¿Qué es la Lectura Fácil?</h3>
+            <p>La Lectura Fácil es un método de escritura que usa frases cortas, palabras sencillas e imágenes para que la información sea comprensible para personas con discapacidad cognitiva, neurodivergentes, adultos mayores y personas que aprendieron a leer de adultos.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Guías Disponibles</h3>
+            <div class='poblaciones-grid'>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-balance-scale'></i></div>
+                <h4>Mis Derechos según la Ley 7600</h4>
+                <p>Guía básica sobre los derechos que protege la Ley 7600 en lenguaje claro y con imágenes.</p>
+                <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Ley 7600' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-gavel'></i></div>
+                <h4>Cómo presentar una denuncia</h4>
+                <p>Paso a paso, en palabras sencillas, cómo reportar una violación a tus derechos como persona con discapacidad.</p>
+                <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Denuncia' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-briefcase'></i></div>
+                <h4>Mi derecho al trabajo</h4>
+                <p>Guía sobre los derechos laborales de las personas con discapacidad y cómo exigirlos ante empleadores.</p>
+                <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Trabajo' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-school'></i></div>
+                <h4>Educación inclusiva</h4>
+                <p>Guía para familias y estudiantes con discapacidad sobre el derecho a la educación regular con apoyos.</p>
+                <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Educacion' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /page-guias -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: LESCO                             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-lesco' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='lesco-title'>
+            <h2 id='lesco-title'>Videos en LESCO</h2>
+            <p>Lengua de Señas Costarricense. Todos nuestros videos institucionales están interpretados en LESCO para garantizar el acceso de la comunidad Sorda.</p>
+          </section>
+
+          <div class='card'>
+            <h3>¿Qué es LESCO?</h3>
+            <p>El LESCO (Lengua de Señas Costarricense) es la lengua natural de la comunidad Sorda en Costa Rica. Tiene su propio vocabulario, gramática y sintaxis, diferente al español. Su reconocimiento es un derecho garantizado por la Ley 7600 y la Convención de la ONU.</p>
+            <p>En ADASFRO exigimos que todos los eventos, materiales y comunicaciones oficiales cuenten con interpretación en LESCO.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Videos Institucionales</h3>
+            <div class='poblaciones-grid'>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-play-circle'></i></div>
+                <h4>¿Qué es ADASFRO?</h4>
+                <p>Video de presentación institucional con intérprete LESCO. Subtítulos en español incluidos.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--text-light);'>Disponible próximamente</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-play-circle'></i></div>
+                <h4>Tus derechos en LESCO</h4>
+                <p>Explicación de los artículos clave de la Ley 7600 interpretados en LESCO por intérprete certificada.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--text-light);'>Disponible próximamente</p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-play-circle'></i></div>
+                <h4>Cómo presentar una denuncia</h4>
+                <p>Tutorial paso a paso en LESCO sobre cómo usar el generador de denuncias de ADASFRO.</p>
+                <p style='margin-top: 12px; font-size: 13px; color: var(--text-light);'>Disponible próximamente</p>
+              </div>
+            </div>
+            <p style='margin-top: 16px; text-align: center;'>
+              <a href='mailto:comunicacion@adasfro.ong?subject=Solicitud interpretacion LESCO' class='btn btn-secondary' style='display: inline-block;'>
+                <i class='fas fa-hands' style='margin-right: 8px;'></i>
+                Solicitar interpretación LESCO para tu evento
+              </a>
+            </p>
+          </div>
+
+        </div><!-- /page-lesco -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: CONTACTO                          -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-contacto' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='cont-title'>
+            <h2 id='cont-title'>Contáctanos</h2>
+            <p>Estamos para apoyarte. Escríbenos por cualquiera de nuestros canales. Respondemos en un plazo máximo de 3 días hábiles.</p>
+          </section>
+
+          <div class='card'>
+            <h3>Canales de Contacto</h3>
+            <div class='poblaciones-grid'>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon' style='color: #25D366;'><i class='fab fa-whatsapp'></i></div>
+                <h4>WhatsApp</h4>
+                <p>Atención directa para casos urgentes, orientación legal y consultas generales.</p>
+                <p style='margin-top: 12px;'>
+                  <a href='https://wa.me/50625742048' target='_blank' class='btn btn-secondary' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>
+                    +506 2574-2048
+                  </a>
+                </p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon'><i class='fas fa-envelope'></i></div>
+                <h4>Correo Electrónico</h4>
+                <p>Para documentos, solicitudes formales, convenios y comunicaciones institucionales.</p>
+                <p style='margin-top: 12px;'>
+                  <a href='mailto:comunicacion@adasfro.ong' class='btn btn-outline' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>
+                    comunicacion@adasfro.ong
+                  </a>
+                </p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon' style='color: #1877F2;'><i class='fab fa-facebook'></i></div>
+                <h4>Facebook</h4>
+                <p>Noticias, eventos y comunicados oficiales. Respuesta por Messenger.</p>
+                <p style='margin-top: 12px;'>
+                  <a href='https://facebook.com/adasfroong' target='_blank' class='btn btn-outline' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>
+                    @adasfroong
+                  </a>
+                </p>
+              </div>
+              <div class='poblacion-card'>
+                <div class='poblacion-icon' style='color: #E4405F;'><i class='fab fa-instagram'></i></div>
+                <h4>Instagram</h4>
+                <p>Contenido visual, campañas de sensibilización e historias de impacto.</p>
+                <p style='margin-top: 12px;'>
+                  <a href='https://instagram.com/adasfro' target='_blank' class='btn btn-outline' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>
+                    @adasfro
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='card'>
+            <h3><i class='fas fa-map-marker-alt' style='margin-right: 10px; color: var(--primary);'></i>Ubicación</h3>
+            <p><strong>Asociación Agencia para el Desarrollo Accesible Sin Fronteras</strong><br/>
+            Paraíso, Cartago, Costa Rica</p>
+            <p>Las reuniones y atención presencial se realizan con cita previa. Contáctanos por WhatsApp o correo para coordinar.</p>
+          </div>
+
+        </div><!-- /page-contacto -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: MAPA DEL SITIO                   -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-mapa' class='page-section' style='display:none'>
+
+          <section class='card' aria-labelledby='mapa-title'>
+            <h3 id='mapa-title'><i class='fas fa-sitemap' style='margin-right: 10px; color: var(--primary);'></i>Mapa del Sitio</h3>
+            <p style='margin-bottom: 24px;'>Toda la estructura de la plataforma ADASFRO en un solo lugar para facilitar tu navegación.</p>
+
+            <div class='sitemap-grid'>
+              <div class='sitemap-col'>
+                <h4>Organización</h4>
+                <a href='#inicio'><i class='fas fa-chevron-right'></i> Inicio</a>
+                <a href='#sobre-nosotros'><i class='fas fa-chevron-right'></i> Sobre Nosotros</a>
+                <a href='#transparencia'><i class='fas fa-chevron-right'></i> Transparencia</a>
+                <a href='#convenios'><i class='fas fa-chevron-right'></i> Convenios</a>
+                <a href='#proyectos'><i class='fas fa-chevron-right'></i> Proyectos</a>
+              </div>
+              <div class='sitemap-col'>
+                <h4>Acción</h4>
+                <a href='#denuncia'><i class='fas fa-chevron-right'></i> Generador de Denuncias</a>
+                <a href='#ley-7600'><i class='fas fa-chevron-right'></i> Ley 7600 Explicada</a>
+                <a href='#poblaciones'><i class='fas fa-chevron-right'></i> Poblaciones</a>
+                <a href='#eventos'><i class='fas fa-chevron-right'></i> Eventos</a>
+              </div>
+              <div class='sitemap-col'>
+                <h4>Recursos</h4>
+                <a href='#guias'><i class='fas fa-chevron-right'></i> Guías en Lectura Fácil</a>
+                <a href='#lesco'><i class='fas fa-chevron-right'></i> Videos en LESCO</a>
+              </div>
+              <div class='sitemap-col'>
+                <h4>Contacto y Legal</h4>
+                <a href='#contacto'><i class='fas fa-chevron-right'></i> Contáctanos</a>
+                <a href='#privacidad'><i class='fas fa-chevron-right'></i> Política de Privacidad</a>
+                <a href='#mapa'><i class='fas fa-chevron-right'></i> Mapa del Sitio</a>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /page-mapa -->
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- PÁGINA: PRIVACIDAD                        -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id='page-privacidad' class='page-section' style='display:none'>
+
+          <section class='hero-section' aria-labelledby='priv-title'>
+            <h2 id='priv-title'>Política de Privacidad</h2>
+            <p>ADASFRO se compromete a proteger la información personal de quienes utilizan esta plataforma.</p>
+          </section>
+
+          <div class='card'>
+            <h3>1. Datos que recopilamos</h3>
+            <p>Recopilamos únicamente la información que usted nos proporciona voluntariamente a través de nuestros formularios de contacto y denuncia:</p>
+            <ul style='padding-left: 20px; color: var(--text-light); line-height: 2;'>
+              <li>Nombre completo e identificación</li>
+              <li>Dirección de correo electrónico</li>
+              <li>Número de teléfono (opcional)</li>
+              <li>Información relacionada con su caso o denuncia</li>
+            </ul>
+          </div>
+
+          <div class='card'>
+            <h3>2. Uso de la información</h3>
+            <p>La información recopilada se utiliza exclusivamente para:</p>
+            <ul style='padding-left: 20px; color: var(--text-light); line-height: 2;'>
+              <li>Atender su solicitud o denuncia</li>
+              <li>Brindar asesoría legal relacionada con su caso</li>
+              <li>Comunicarnos con usted sobre el seguimiento de su caso</li>
+              <li>Mejorar nuestros servicios de apoyo</li>
+            </ul>
+            <p>ADASFRO <strong>no vende, alquila ni comparte</strong> su información personal con terceros sin su consentimiento expreso, excepto cuando la ley así lo requiera o cuando sea necesario para la gestión de su denuncia ante autoridades competentes.</p>
+          </div>
+
+          <div class='card'>
+            <h3>3. Sus derechos</h3>
+            <p>De acuerdo con la <strong>Ley 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales</strong> de Costa Rica, usted tiene derecho a:</p>
+            <ul style='padding-left: 20px; color: var(--text-light); line-height: 2;'>
+              <li>Acceder a sus datos personales en nuestro poder</li>
+              <li>Rectificar información incorrecta o desactualizada</li>
+              <li>Solicitar la eliminación de sus datos</li>
+              <li>Oponerse al tratamiento de sus datos</li>
+            </ul>
+            <p>Para ejercer estos derechos, contáctenos a <a href='mailto:comunicacion@adasfro.ong'>comunicacion@adasfro.ong</a>.</p>
+          </div>
+
+          <div class='card'>
+            <h3>4. Cookies y tecnología</h3>
+            <p>Este sitio utiliza <strong>localStorage</strong> del navegador exclusivamente para guardar sus preferencias de accesibilidad (tamaño de letra, contraste, etc.). No utilizamos cookies de rastreo ni compartimos datos de navegación con terceros.</p>
+            <p style='margin-top: 8px; font-size: 13px; color: var(--text-light);'>Última actualización: Abril 2025</p>
+          </div>
+
+        </div><!-- /page-privacidad -->
+
+      </div><!-- /main-content -->
 
       <!-- SIDEBAR -->
       <aside id='sidebar-wrapper' role='complementary' aria-label='Barra lateral'>
         <b:section class='sidebar' id='sidebar' preferred='yes'>
-          
-          <!-- WIDGET DE DONACIONES -->
+
+          <!-- Widget de Donaciones -->
           <div class='widget'>
-            <div id='donation-widget'/>
+            <div id='donation-widget'></div>
           </div>
-          
-          <!-- CATEGORÍAS -->
+
+          <!-- Categorías -->
           <b:widget id='Label1' locked='false' title='📂 Categorías' type='Label'/>
-          
-          <!-- POSTS POPULARES -->
+
+          <!-- Posts Populares -->
           <b:widget id='PopularPosts1' locked='false' title='🔥 Más Leídos' type='PopularPosts'/>
-          
-          <!-- CTA SECUNDARIO -->
+
+          <!-- CTA Denuncia -->
           <div class='widget' style='background: linear-gradient(135deg, #FFE5E5 0%, #FFD6D6 100%); border-color: #FF6B6B;'>
-            <h4 style='color: #C62828; border-color: #FF6B6B;'>⚖️ ¿Necesitas Ayuda Legal?</h4>
-            <p style='color: #D32F2F; font-size: 14px;'>Utiliza nuestro generador automático de denuncias por violación a la Ley 7600.</p>
-            <a class='btn btn-danger' href='/p/denuncia.html' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
+            <h4 style='color: #C62828; border-color: #FF6B6B;'>¿Necesitas Ayuda Legal?</h4>
+            <p style='color: #D32F2F; font-size: 14px;'>Usa nuestro generador automático de denuncias por violación a la Ley 7600.</p>
+            <a class='btn btn-danger' href='#denuncia' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
           </div>
-          
+
+          <!-- Mapa del sitio acceso rápido -->
+          <div class='widget'>
+            <h4>Navegación rápida</h4>
+            <a href='#sobre-nosotros' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Sobre Nosotros</a>
+            <a href='#poblaciones' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Poblaciones</a>
+            <a href='#ley-7600' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Ley 7600</a>
+            <a href='#guias' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Guías Lectura Fácil</a>
+            <a href='#lesco' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Videos LESCO</a>
+            <a href='#mapa' style='display: block; padding: 6px 0; font-size: 14px;'>Mapa del Sitio</a>
+          </div>
+
         </b:section>
       </aside>
-      
-    </main>
+
+    </main><!-- /content-wrapper -->
 
     <!-- FOOTER -->
     <footer id='footer-wrapper' role='contentinfo'>
       <div class='footer-content'>
-        
+
         <div class='footer-section'>
-          <h4>Síguenos</h4>
-          <div class='social-icons' style='margin-top: 16px; display: flex; gap: 16px;'>
-            <a href='https://facebook.com/adasfro' target='_blank'><i class='fab fa-facebook-f'/></a>
-            <a href='https://instagram.com/adasfro' target='_blank'><i class='fab fa-instagram'/></a>
-            <a href='https://www.youtube.com/@adasfro' target='_blank'><i class='fab fa-youtube'/></a>
-            <a href='https://www.linkedin.com/in/adasfro/' target='_blank'><i class='fab fa-linkedin-in'/></a>
+          <h4>ADASFRO</h4>
+          <p style='color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.7; margin-bottom: 12px;'>
+            Asociación Agencia para el Desarrollo Accesible Sin Fronteras<br/>
+            Cédula Jurídica: 3-002-860094<br/>
+            Paraíso, Cartago, Costa Rica
+          </p>
+          <div class='social-icons' style='margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;'>
+            <a href='https://facebook.com/adasfroong' target='_blank' aria-label='Facebook'><i class='fab fa-facebook-f'></i></a>
+            <a href='https://instagram.com/adasfro' target='_blank' aria-label='Instagram'><i class='fab fa-instagram'></i></a>
+            <a href='https://www.youtube.com/@adasfro' target='_blank' aria-label='YouTube'><i class='fab fa-youtube'></i></a>
+            <a href='https://www.linkedin.com/in/adasfro/' target='_blank' aria-label='LinkedIn'><i class='fab fa-linkedin-in'></i></a>
+            <a href='https://wa.me/50625742048' target='_blank' aria-label='WhatsApp'><i class='fab fa-whatsapp'></i></a>
           </div>
         </div>
-        
+
         <div class='footer-section'>
           <h4>Información</h4>
-          <a href='/p/sobre-nosotros.html'>Sobre Nosotros</a>
-          <a href='/p/transparencia.html'>Transparencia</a>
-          <a href='/p/contacto.html'>Contáctanos</a>
-          <a href='/p/politica-privacidad.html'>Privacidad</a>
+          <a href='#sobre-nosotros'>Sobre Nosotros</a>
+          <a href='#transparencia'>Transparencia</a>
+          <a href='#convenios'>Convenios</a>
+          <a href='#contacto'>Contáctanos</a>
+          <a href='#privacidad'>Política de Privacidad</a>
         </div>
-        
+
         <div class='footer-section'>
           <h4>Recursos</h4>
-          <a href='/p/ley-7600.html'>Ley 7600 Explicada</a>
-          <a href='/p/guias.html'>Guías en Lectura Fácil</a>
-          <a href='/p/lesco.html'>Videos en LESCO</a>
-          <a href='/p/denuncia.html'>Generador de Denuncias</a>
+          <a href='#ley-7600'>Ley 7600 Explicada</a>
+          <a href='#guias'>Guías en Lectura Fácil</a>
+          <a href='#lesco'>Videos en LESCO</a>
+          <a href='#denuncia'>Generador de Denuncias</a>
+          <a href='#mapa'>Mapa del Sitio</a>
         </div>
-        
+
         <div class='footer-section'>
-          <h4>Legal</h4>
-          <p style='color: rgba(255,255,255,0.7); margin-bottom: 12px;'>Cédula Jurídica: 3-002-860094</p>
-          <p style='color: rgba(255,255,255,0.7);'>© <data:blog.publishedYear/> ADASFRO</p>
-          <p style='color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px;'>Todos los derechos reservados</p>
+          <h4>Contacto</h4>
+          <a href='mailto:comunicacion@adasfro.ong'>
+            <i class='fas fa-envelope' style='margin-right: 6px;'></i>
+            comunicacion@adasfro.ong
+          </a>
+          <a href='https://wa.me/50625742048' target='_blank'>
+            <i class='fab fa-whatsapp' style='margin-right: 6px;'></i>
+            +506 2574-2048
+          </a>
+          <p style='color: rgba(255,255,255,0.7); margin-top: 16px; font-size: 13px;'>
+            © <data:blog.publishedYear/> ADASFRO<br/>
+            Todos los derechos reservados
+          </p>
         </div>
-        
+
       </div>
-    </footer>
+
+      <div class='footer-wcag'>
+        Desarrollado bajo la <strong>Convención Internacional sobre los Derechos de las Personas con Discapacidad</strong> y estándares <strong>WCAG 2.1 AA</strong>.
+      </div>
+
+    </footer><!-- /footer-wrapper -->
 
     <!-- SCRIPTS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'/>
-    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'/>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'/>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'/>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'/>
-    
-    <!-- Inicializar Widget -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'></script>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'></script>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'></script>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'></script>
+
+    <!-- Inicializar Widget de Donaciones -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         new DonationWidget({
-          sinpeNumber: '8888-8888', // CAMBIAR
+          sinpeNumber: '8888-8888',
           donationGoal: 500000,
           currentAmount: 175000
         });
-        
-        // Sticky nav effect
-        const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 100) {
-            nav.classList.add('scrolled');
-          } else {
-            nav.classList.remove('scrolled');
-          }
-        });
       });
     </script>
-    
+
     <!-- Feed de posts manejado por swiper-init.js via fetch -->
-    
+
   </body>
 </html>

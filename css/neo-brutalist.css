@@ -793,6 +793,457 @@ img {
 }
 
 /* ========================================
+   NAVEGACIÓN — ENLACE ACTIVO Y MÓVIL
+======================================== */
+.main-menu .widget a.nav-active {
+  color: var(--primary);
+  background: var(--bg-body);
+}
+
+.main-menu .widget a.nav-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+#mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 8px;
+  align-items: center;
+  margin: 8px auto;
+  font-family: var(--font-body);
+}
+
+@media (max-width: 768px) {
+  #mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-menu .widget ul {
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding: 0;
+  }
+
+  .main-menu .widget ul.mobile-open {
+    max-height: 600px;
+    padding-bottom: 8px;
+  }
+
+  .main-menu .widget a {
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* ========================================
+   CINCO PILARES — DISEÑO LIMPIO
+======================================== */
+.pilares-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.pilar {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-body);
+  transition: var(--transition);
+}
+
+.pilar:hover {
+  border-color: var(--primary-light);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.pilar-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 52px;
+  opacity: 0.6;
+}
+
+.pilar-body strong {
+  display: block;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.pilar-body p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .pilares-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   FORMULARIO DE DENUNCIA
+======================================== */
+.form-denuncia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.form-denuncia .form-full {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group label .req {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: white;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.15);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-confirm {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background: #E8F5E9;
+  border: 2px solid var(--success);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  color: var(--success);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .form-denuncia { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   POBLACIONES
+======================================== */
+.poblaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.poblacion-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.poblacion-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.poblacion-icon {
+  font-size: 36px;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.poblacion-card h4 {
+  font-size: 16px;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.poblacion-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ========================================
+   CONVENIOS
+======================================== */
+.convenios-filters {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.convenios-filters select {
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: white;
+  cursor: pointer;
+}
+
+.convenios-filters select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.tabla-convenios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.tabla-convenios th {
+  background: var(--primary);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabla-convenios td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.tabla-convenios tr:hover td {
+  background: var(--bg-body);
+}
+
+.estado-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.estado-vigente  { background: #E8F5E9; color: #2E7D32; }
+.estado-vencido  { background: #FFEBEE; color: #C62828; }
+.estado-proceso  { background: #FFF8E1; color: #F57F17; }
+
+/* ========================================
+   MAPA DEL SITIO
+======================================== */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.sitemap-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.sitemap-col a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 14px;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.sitemap-col a:hover {
+  color: var(--primary);
+  padding-left: 6px;
+}
+
+.sitemap-col a i {
+  font-size: 12px;
+  color: var(--primary-light);
+  flex-shrink: 0;
+}
+
+/* ========================================
+   EVENTOS Y PROYECTOS
+======================================== */
+.eventos-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.evento-card {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: white;
+  transition: var(--transition);
+}
+
+.evento-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.evento-fecha {
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+  min-width: 64px;
+  flex-shrink: 0;
+}
+
+.evento-fecha .dia {
+  font-size: 28px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.evento-fecha .mes {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.evento-info h4 {
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.evento-info p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.proyecto-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--secondary);
+  transition: var(--transition);
+}
+
+.proyecto-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.proyecto-card .proyecto-estado {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--success);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.proyecto-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.proyecto-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .proyectos-grid { grid-template-columns: 1fr; }
+  .evento-card { flex-direction: column; }
+}
+
+/* ========================================
+   SECCIÓN WCAG EN FOOTER
+======================================== */
+.footer-wcag {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-md) 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* ========================================
    PREFERENCIA DEL SISTEMA — MOVIMIENTO
 ======================================== */
 @media (prefers-reduced-motion: reduce) {

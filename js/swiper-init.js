@@ -24,10 +24,10 @@ function initBlogSwiper() {
         const link = entry.link.find(l => l.rel === "alternate").href;
         const date = entry.published.$t.substring(0, 10);
 
-        // Buscar imagen (si existe en el contenido)
-        let img = "https://via.placeholder.com/400x300?text=ADASFRO";
+        // Buscar imagen — reemplaza el tamaño de miniatura de Blogger (s72) por s640
+        let img = "https://placehold.co/640x360/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url;
+          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//,  '/s640/');
         }
 
         // Crear slide

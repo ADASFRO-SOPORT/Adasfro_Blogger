@@ -10,7 +10,7 @@
   // ── Configura aquí el número de WhatsApp real de ADASFRO ──
   // Formato: código de país sin "+" + número sin espacios ni guiones
   // Costa Rica: 506 + 8 dígitos. Ejemplo: '50688887777'
-  var WHATSAPP_NUMBER = '50600000000'; // ← CAMBIAR
+  var WHATSAPP_NUMBER = '50625742048';
 
   var ATKINSON_FONT_URL = 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap';
   var STORAGE_KEY = 'adasfro_a11y_v1';
