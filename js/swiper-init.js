@@ -21,23 +21,34 @@ function initBlogSwiper() {
 
       entries.forEach(entry => {
         const title = entry.title.$t;
-        const link = entry.link.find(l => l.rel === "alternate").href;
-        const date = entry.published.$t.substring(0, 10);
+        const link  = entry.link.find(l => l.rel === "alternate").href;
+        const date  = new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' });
 
-        // Buscar imagen — reemplaza el tamaño de miniatura de Blogger (s72) por s640
-        let img = "https://placehold.co/640x360/00695C/FFFFFF?text=ADASFRO";
+        // Imagen de mayor resolución
+        let img = "https://placehold.co/480x200/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//,  '/s640/');
+          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s480/');
         }
 
-        // Crear slide
+        // Extracto: preferir summary, si no, primeros 120 caracteres del contenido sin HTML
+        let excerpt = '';
+        if (entry.summary && entry.summary.$t) {
+          excerpt = entry.summary.$t.replace(/<[^>]+>/g, '').trim().slice(0, 120);
+        } else if (entry.content && entry.content.$t) {
+          excerpt = entry.content.$t.replace(/<[^>]+>/g, '').trim().slice(0, 120);
+        }
+        if (excerpt.length === 120) excerpt += '…';
+
         const slide = document.createElement("div");
         slide.className = "swiper-slide";
         slide.innerHTML = `
-          <a href="${link}">
+          <a href="${link}" class="swiper-slide-inner">
             <img src="${img}" alt="${title}">
-            <h4>${title}</h4>
-            <p>${date}</p>
+            <div class="swiper-slide-body">
+              <p class="swiper-slide-date">${date}</p>
+              <h4>${title}</h4>
+              ${excerpt ? `<p class="swiper-slide-excerpt">${excerpt}</p>` : ''}
+            </div>
           </a>
         `;
         container.appendChild(slide);

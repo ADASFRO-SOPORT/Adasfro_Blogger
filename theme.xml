@@ -18,7 +18,7 @@
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/accessibility-bar.css' rel='stylesheet'/>
 
     <meta content='ADASFRO - Accesibilidad Universal en Costa Rica' property='og:title'/>
-    <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica.' property='og:description'/>
+    <meta content='Defendiendo derechos de personas con discapacidad en Costa Rica bajo la Ley 7600.' property='og:description'/>
     <meta content='https://www.adasfro.org' property='og:url'/>
     <meta content='website' property='og:type'/>
 
@@ -39,22 +39,29 @@
         <div class='social-icons'>
           <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank' rel='noopener'><i class='fab fa-facebook-f'></i></a>
           <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank' rel='noopener'><i class='fab fa-instagram'></i></a>
-          <a aria-label='TikTok' href='#' target='_blank'><i class='fab fa-tiktok'></i></a>
+          <a aria-label='TikTok' href='#'><i class='fab fa-tiktok'></i></a>
           <a aria-label='YouTube' href='https://www.youtube.com/@adasfro' target='_blank' rel='noopener'><i class='fab fa-youtube'></i></a>
-          <a aria-label='WhatsApp — +506 2574-2048' href='https://wa.me/50625742048' target='_blank' rel='noopener'><i class='fab fa-whatsapp'></i></a>
-          <a aria-label='Correo — comunicacion@adasfro.ong' href='mailto:comunicacion@adasfro.ong'><i class='fas fa-envelope'></i></a>
-          <a aria-label='LinkedIn' href='https://www.linkedin.com/in/adasfro/' target='_blank' rel='noopener'><i class='fab fa-linkedin-in'></i></a>
+          <a aria-label='WhatsApp' href='https://wa.me/50625742048' target='_blank' rel='noopener'><i class='fab fa-whatsapp'></i></a>
+          <a aria-label='Correo' href='mailto:comunicacion@adasfro.org'><i class='fas fa-envelope'></i></a>
         </div>
       </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER — Logo + nombre + subtítulo -->
     <div id='header-wrapper'>
       <b:section class='header' id='header' preferred='yes' showaddelement='no'>
         <b:widget id='Header1' locked='false' title='ADASFRO' type='Header' version='1'>
           <b:includable id='main'>
             <div class='header'>
-              <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+              <h1 style='margin:0;'>
+                <a class='header-link' expr:href='data:blog.homepageUrl'>
+                  <img alt='Logo ADASFRO' class='header-logo' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logo_adasfro.svg'/>
+                  <div class='header-text'>
+                    <span class='header-name'>ADASFRO</span>
+                    <span class='header-subtitle'>Asociación Agencia para el Desarrollo Accesible Sin Fronteras</span>
+                  </div>
+                </a>
+              </h1>
             </div>
           </b:includable>
         </b:widget>
@@ -93,6 +100,20 @@
         <!-- ══════════════════════════════════════ -->
         <div id='inicio'>
 
+          <!-- Carrusel PRIMERO (arriba del banner) -->
+          <section class='card' aria-labelledby='news-title'>
+            <h3 id='news-title' style='margin-bottom: 16px;'>
+              <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Últimas Entradas
+            </h3>
+            <div class='swiper'>
+              <div class='swiper-wrapper' id='blog-posts'></div>
+              <div class='swiper-button-next'></div>
+              <div class='swiper-button-prev'></div>
+              <div class='swiper-pagination'></div>
+            </div>
+          </section>
+
+          <!-- Banner principal (debajo del carrusel) -->
           <section class='hero-section' aria-labelledby='hero-title'>
             <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
             <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
@@ -101,6 +122,7 @@
             </a>
           </section>
 
+          <!-- Misión y Visión -->
           <section class='card' aria-labelledby='mv-title'>
             <h3 id='mv-title' style='margin-bottom: 20px;'>Nuestra Misión y Visión</h3>
             <div class='mv-grid'>
@@ -117,6 +139,7 @@
             </div>
           </section>
 
+          <!-- Valores -->
           <section class='card' aria-labelledby='valores-title'>
             <h3 id='valores-title' style='margin-bottom: 16px;'>Nuestros Valores</h3>
             <div class='valores-grid'>
@@ -132,24 +155,14 @@
             </div>
           </section>
 
-          <section class='card' aria-labelledby='news-title'>
-            <h3 id='news-title' style='margin-bottom: 24px;'>
-              <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Últimas Noticias
-            </h3>
-            <div class='swiper'>
-              <div class='swiper-wrapper' id='blog-posts'></div>
-              <div class='swiper-button-next'></div>
-              <div class='swiper-button-prev'></div>
-              <div class='swiper-pagination'></div>
-            </div>
-          </section>
-
+          <!-- Blog widget -->
           <div class='card'>
             <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
               <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
             </b:section>
           </div>
 
+          <!-- 5 Pilares -->
           <section class='card' aria-labelledby='pilares-title'>
             <h3 id='pilares-title'>Nuestros 5 Pilares Fundamentales</h3>
             <div class='pilares-grid'>
@@ -190,13 +203,6 @@
               </div>
             </div>
           </section>
-
-          <div class='card'>
-            <h3 style='margin-bottom: 24px;'><i class='fas fa-envelope' style='margin-right: 10px; color: var(--primary);'></i>Contáctanos</h3>
-            <b:section class='contact-area' id='contact-form-section' maxwidgets='1' showaddelement='yes'>
-              <b:widget id='ContactForm1' locked='false' title='Formulario' type='ContactForm'/>
-            </b:section>
-          </div>
 
         </div><!-- /inicio -->
 
@@ -265,7 +271,7 @@
             </tr>
             <tr style='border-bottom: 1px solid var(--border);'>
               <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>Correo</td>
-              <td style='padding: 12px;'><a href='mailto:comunicacion@adasfro.ong'>comunicacion@adasfro.ong</a></td>
+              <td style='padding: 12px;'><a href='mailto:comunicacion@adasfro.org'>comunicacion@adasfro.org</a></td>
             </tr>
             <tr>
               <td style='padding: 12px; font-weight: 600; color: var(--text-main);'>WhatsApp</td>
@@ -282,48 +288,72 @@
         </div>
 
         <div class='card'>
-          <p style='margin-bottom: 24px;'>Trabajamos con y para las personas históricamente excluidas, con un enfoque basado en derechos humanos y la Convención Internacional sobre los Derechos de las Personas con Discapacidad.</p>
+          <p style='margin-bottom: 24px;'>Trabajamos con y para las personas históricamente excluidas. Haz clic en cada grupo para ver las entradas relacionadas.</p>
           <div class='poblaciones-grid'>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-wheelchair'></i></div>
               <h4>Discapacidad Física</h4>
               <p>Personas con movilidad reducida, usuarios de silla de ruedas o ayudas técnicas. Fiscalizamos la accesibilidad física en espacios públicos y privados.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+F%C3%ADsica' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-eye-slash'></i></div>
               <h4>Discapacidad Visual</h4>
               <p>Personas ciegas o con baja visión. Promovemos el acceso a la información en formatos accesibles: braille, audio y texto de alto contraste.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Visual' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-deaf'></i></div>
               <h4>Discapacidad Auditiva</h4>
-              <p>Personas sordas o con hipoacusia. Trabajamos por el reconocimiento del LESCO como derecho fundamental y por la interpretación en todos los espacios públicos.</p>
+              <p>Personas sordas o con hipoacusia. Trabajamos por el reconocimiento del LESCO como derecho fundamental y la interpretación en todos los espacios públicos.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Auditiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-brain'></i></div>
               <h4>Discapacidad Cognitiva</h4>
               <p>Personas con discapacidad intelectual. Promovemos materiales en Lectura Fácil y apoyamos la autonomía e inserción social y laboral.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Cognitiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-puzzle-piece'></i></div>
               <h4>Neurodivergencia</h4>
               <p>Personas con TEA, TDAH, dislexia y otras condiciones neurodivergentes. Abogamos por entornos de baja estimulación y aprendizaje diferenciado.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Neurodivergencia' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-user-clock'></i></div>
               <h4>Adultos Mayores</h4>
               <p>Personas mayores que enfrentan barreras por el envejecimiento. Trabajamos por su plena participación y acceso a salud, recreación y servicios públicos.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Adultos+Mayores' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-globe-americas'></i></div>
-              <h4>Migrantes con Discapacidad</h4>
-              <p>Personas migrantes con alguna discapacidad. Brindamos orientación legal incluyendo apoyo jurídico internacional en casos de pensión alimenticia y acceso a derechos.</p>
+              <h4>Población Migrante</h4>
+              <p>Personas migrantes que enfrentan barreras adicionales. Brindamos orientación legal incluyendo apoyo jurídico internacional en casos de pensión alimenticia y acceso a derechos.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Poblaci%C3%B3n+Migrante' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-hands-helping'></i></div>
               <h4>Cuidadores y Familiares</h4>
               <p>Personas que cuidan a alguien con discapacidad. Ofrecemos acompañamiento, capacitación y espacios de apoyo emocional para cuidadores.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/Cuidadores' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
+
+            <div class='poblacion-card'>
+              <div class='poblacion-icon' style='color: var(--purple);'><i class='fas fa-rainbow'></i></div>
+              <h4>Comunidad LGTBI+Q</h4>
+              <p>Personas LGTBI+Q que enfrentan barreras de acceso e invisibilización. Trabajamos por la interseccionalidad entre diversidad sexual e inclusión social.</p>
+              <p style='margin-top: 12px;'><a href='/search/label/LGBTIQ' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+            </div>
+
           </div>
         </div>
 
@@ -372,7 +402,7 @@
             </div>
           </div>
           <p style='margin-top: 24px; text-align: center;'>
-            <a href='mailto:comunicacion@adasfro.ong?subject=Consulta sobre eventos' class='btn btn-secondary' style='display: inline-block;'>
+            <a href='mailto:comunicacion@adasfro.org?subject=Consulta sobre eventos' class='btn btn-secondary' style='display: inline-block;'>
               <i class='fas fa-envelope' style='margin-right: 8px;'></i>Consultar sobre eventos
             </a>
           </p>
@@ -455,39 +485,19 @@
               </thead>
               <tbody>
                 <tr data-anio='2024' data-estado='vigente' data-tipo='academico'>
-                  <td>Cooperación para inclusión educativa</td>
-                  <td>Universidad de Costa Rica (UCR)</td>
-                  <td>2024</td>
-                  <td>Académico</td>
-                  <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  <td>Cooperación para inclusión educativa</td><td>UCR</td><td>2024</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
                 <tr data-anio='2024' data-estado='vigente' data-tipo='publico'>
-                  <td>Fiscalización accesibilidad física</td>
-                  <td>CONAPDIS</td>
-                  <td>2024</td>
-                  <td>Institucional público</td>
-                  <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  <td>Fiscalización accesibilidad física</td><td>CONAPDIS</td><td>2024</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
                 <tr data-anio='2025' data-estado='proceso' data-tipo='sociedad'>
-                  <td>Red de apoyo para migrantes con discapacidad</td>
-                  <td>Cruz Roja Costarricense</td>
-                  <td>2025</td>
-                  <td>Sociedad civil</td>
-                  <td><span class='estado-badge estado-proceso'>En proceso</span></td>
+                  <td>Red de apoyo para migrantes con discapacidad</td><td>Cruz Roja CR</td><td>2025</td><td>Sociedad civil</td><td><span class='estado-badge estado-proceso'>En proceso</span></td>
                 </tr>
                 <tr data-anio='2023' data-estado='vencido' data-tipo='academico'>
-                  <td>Programa de prácticas universitarias</td>
-                  <td>TEC Costa Rica</td>
-                  <td>2023</td>
-                  <td>Académico</td>
-                  <td><span class='estado-badge estado-vencido'>Vencido</span></td>
+                  <td>Programa de prácticas universitarias</td><td>TEC Costa Rica</td><td>2023</td><td>Académico</td><td><span class='estado-badge estado-vencido'>Vencido</span></td>
                 </tr>
                 <tr data-anio='2025' data-estado='vigente' data-tipo='publico'>
-                  <td>Asistencia técnica accesibilidad web</td>
-                  <td>MICITT</td>
-                  <td>2025</td>
-                  <td>Institucional público</td>
-                  <td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                  <td>Asistencia técnica accesibilidad web</td><td>MICITT</td><td>2025</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
               </tbody>
             </table>
@@ -502,29 +512,6 @@
         </div>
 
         <div class='card'>
-          <h3 style='margin-bottom: 20px;'>Informe Financiero 2024</h3>
-          <div class='pilares-grid'>
-            <div class='pilar' style='flex-direction: column; text-align: center;'>
-              <div style='font-size: 2rem; font-weight: 900; color: var(--primary); font-family: var(--font-heading);'>₡1.8M</div>
-              <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Presupuesto Anual</div>
-            </div>
-            <div class='pilar' style='flex-direction: column; text-align: center;'>
-              <div style='font-size: 2rem; font-weight: 900; color: var(--success); font-family: var(--font-heading);'>₡1.2M</div>
-              <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Ingresos Ejecutados</div>
-            </div>
-            <div class='pilar' style='flex-direction: column; text-align: center;'>
-              <div style='font-size: 2rem; font-weight: 900; color: var(--secondary); font-family: var(--font-heading);'>₡980K</div>
-              <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Egresos</div>
-            </div>
-            <div class='pilar' style='flex-direction: column; text-align: center;'>
-              <div style='font-size: 2rem; font-weight: 900; color: var(--accent); font-family: var(--font-heading);'>68%</div>
-              <div style='font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px;'>Inversión Programática</div>
-            </div>
-          </div>
-          <p style='margin-top: 16px; font-size: 13px; color: var(--text-light);'>* Cifras preliminares sujetas a auditoría. Informe completo disponible previa solicitud.</p>
-        </div>
-
-        <div class='card'>
           <h3>Documentos Institucionales</h3>
           <div class='eventos-list'>
             <div class='evento-card'>
@@ -535,7 +522,7 @@
               <div class='evento-info'>
                 <h4>Informe Anual de Actividades 2024</h4>
                 <p>Resumen de proyectos, beneficiarios y resultados del año fiscal 2024.</p>
-                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Informe Anual 2024' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
+                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Informe Anual 2024' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
               </div>
             </div>
             <div class='evento-card'>
@@ -546,7 +533,7 @@
               <div class='evento-info'>
                 <h4>Acta Asamblea General Ordinaria — Mayo 2025</h4>
                 <p>Acuerdos, elección de junta directiva y aprobación de presupuesto.</p>
-                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Acta Asamblea 2025' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
+                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Acta Asamblea 2025' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
               </div>
             </div>
             <div class='evento-card'>
@@ -557,7 +544,7 @@
               <div class='evento-info'>
                 <h4>Estatutos de la Asociación</h4>
                 <p>Documento constitutivo inscrito en el Registro de Asociaciones del Ministerio de Justicia.</p>
-                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Estatutos ADASFRO' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
+                <p style='margin-top: 8px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Estatutos ADASFRO' class='btn btn-outline' style='display: inline-block; padding: 6px 16px; font-size: 14px;'>Solicitar</a></p>
               </div>
             </div>
           </div>
@@ -596,27 +583,12 @@
                 <input type='text' id='d-institucion' name='institucion' required='required' placeholder='Nombre de la institución o empresa'/>
               </div>
               <div class='form-group'>
-                <label for='d-articulo'>Artículo Ley 7600 <span class='req'>*</span></label>
-                <select id='d-articulo' name='articulo' required='required'>
-                  <option value=''>Seleccione un artículo</option>
-                  <option value='Art. 23 — Acceso a espacios físicos'>Art. 23 — Espacios físicos</option>
-                  <option value='Art. 24 — Eliminación de barreras arquitectónicas'>Art. 24 — Barreras arquitectónicas</option>
-                  <option value='Art. 26 — Transporte accesible'>Art. 26 — Transporte</option>
-                  <option value='Art. 37 — Educación inclusiva'>Art. 37 — Educación</option>
-                  <option value='Art. 44 — Derecho al trabajo'>Art. 44 — Trabajo</option>
-                  <option value='Art. 51 — Acceso a la salud'>Art. 51 — Salud</option>
-                  <option value='Art. 58 — Recreación y cultura'>Art. 58 — Recreación</option>
-                  <option value='Art. 66 — Participación social'>Art. 66 — Participación social</option>
-                  <option value='Otro artículo'>Otro (especificar)</option>
-                </select>
-              </div>
-              <div class='form-group'>
                 <label for='d-fecha'>Fecha del incidente <span class='req'>*</span></label>
                 <input type='date' id='d-fecha' name='fecha' required='required'/>
               </div>
               <div class='form-group form-full'>
                 <label for='d-descripcion'>Descripción de los hechos <span class='req'>*</span></label>
-                <textarea id='d-descripcion' name='descripcion' required='required' placeholder='Describa con detalle qué ocurrió, dónde, cómo y quiénes estuvieron involucrados.'></textarea>
+                <textarea id='d-descripcion' name='descripcion' required='required' placeholder='Describa con detalle qué ocurrió, dónde, cómo y quiénes estuvieron involucrados. Si conoce el artículo de la Ley 7600 violado, inclúyalo aquí.'></textarea>
               </div>
               <div class='form-full'>
                 <button type='submit' class='btn btn-danger' style='font-size: 16px; padding: 14px 32px;'>
@@ -671,25 +643,25 @@
               <div class='poblacion-icon'><i class='fas fa-balance-scale'></i></div>
               <h4>Mis derechos según la Ley 7600</h4>
               <p>Guía básica sobre los derechos que protege la Ley 7600 en lenguaje claro.</p>
-              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Ley 7600' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Guia Ley 7600' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
             </div>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-gavel'></i></div>
               <h4>Cómo presentar una denuncia</h4>
               <p>Paso a paso, en palabras sencillas, cómo reportar una violación a tus derechos.</p>
-              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Denuncia' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Guia Denuncia' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
             </div>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-briefcase'></i></div>
               <h4>Mi derecho al trabajo</h4>
               <p>Guía sobre los derechos laborales de las personas con discapacidad.</p>
-              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Trabajo' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Guia Trabajo' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
             </div>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-school'></i></div>
               <h4>Educación inclusiva</h4>
               <p>Guía para familias y estudiantes con discapacidad sobre el derecho a la educación.</p>
-              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong?subject=Solicitud Guia Educacion' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
+              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.org?subject=Solicitud Guia Educacion' class='btn btn-outline' style='display: inline-block; padding: 6px 14px; font-size: 14px;'>Solicitar</a></p>
             </div>
           </div>
         </div>
@@ -724,7 +696,7 @@
             </div>
           </div>
           <p style='margin-top: 16px; text-align: center;'>
-            <a href='mailto:comunicacion@adasfro.ong?subject=Solicitud interpretacion LESCO' class='btn btn-secondary' style='display: inline-block;'>
+            <a href='mailto:comunicacion@adasfro.org?subject=Solicitud interpretacion LESCO' class='btn btn-secondary' style='display: inline-block;'>
               <i class='fas fa-hands' style='margin-right: 8px;'></i>Solicitar interpretación LESCO
             </a>
           </p>
@@ -743,19 +715,21 @@
               <div class='poblacion-icon' style='color: #25D366;'><i class='fab fa-whatsapp'></i></div>
               <h4>WhatsApp</h4>
               <p>Atención directa para casos urgentes, orientación legal y consultas generales.</p>
-              <p style='margin-top: 12px;'><a href='https://wa.me/50625742048' target='_blank' rel='noopener' class='btn btn-secondary' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>+506 2574-2048</a></p>
+              <p style='margin-top: 12px;'>
+                <a href='https://wa.me/50625742048' target='_blank' rel='noopener' class='btn btn-secondary' style='display: inline-block; padding: 8px 20px;'>
+                  <i class='fab fa-whatsapp' style='margin-right: 6px;'></i>Escríbenos
+                </a>
+              </p>
             </div>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-envelope'></i></div>
               <h4>Correo Electrónico</h4>
               <p>Para documentos, solicitudes formales, convenios y comunicaciones institucionales.</p>
-              <p style='margin-top: 12px;'><a href='mailto:comunicacion@adasfro.ong' class='btn btn-outline' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>comunicacion@adasfro.ong</a></p>
-            </div>
-            <div class='poblacion-card'>
-              <div class='poblacion-icon' style='color: #1877F2;'><i class='fab fa-facebook'></i></div>
-              <h4>Facebook</h4>
-              <p>Noticias, eventos y comunicados oficiales.</p>
-              <p style='margin-top: 12px;'><a href='https://facebook.com/adasfroong' target='_blank' rel='noopener' class='btn btn-outline' style='display: inline-block; padding: 8px 16px; font-size: 14px;'>@adasfroong</a></p>
+              <p style='margin-top: 12px;'>
+                <a href='mailto:comunicacion@adasfro.org' class='btn btn-outline' style='display: inline-block; padding: 8px 20px;'>
+                  <i class='fas fa-envelope' style='margin-right: 6px;'></i>Escríbenos
+                </a>
+              </p>
             </div>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-map-marker-alt'></i></div>
@@ -819,7 +793,7 @@
           <p>La información se usa exclusivamente para atender su solicitud o denuncia, brindar asesoría legal y comunicarnos sobre el seguimiento de su caso. ADASFRO <strong>no vende ni comparte</strong> sus datos personales con terceros sin su consentimiento.</p>
 
           <h3 style='margin-top: 24px;'>3. Sus derechos</h3>
-          <p>Bajo la Ley 8968 de Protección de Datos Personales de Costa Rica, usted puede acceder, rectificar, eliminar u oponerse al tratamiento de sus datos. Escríbanos a <a href='mailto:comunicacion@adasfro.ong'>comunicacion@adasfro.ong</a>.</p>
+          <p>Bajo la Ley 8968 de Protección de Datos Personales de Costa Rica, usted puede acceder, rectificar, eliminar u oponerse al tratamiento de sus datos. Escríbanos a <a href='mailto:comunicacion@adasfro.org'>comunicacion@adasfro.org</a>.</p>
 
           <h3 style='margin-top: 24px;'>4. Cookies y tecnología</h3>
           <p>Este sitio usa <strong>localStorage</strong> exclusivamente para guardar sus preferencias de accesibilidad. No utilizamos cookies de rastreo ni compartimos datos de navegación.</p>
@@ -835,9 +809,6 @@
           <div class='widget'>
             <div id='donation-widget'></div>
           </div>
-
-          <b:widget id='Label1' locked='false' title='Categorías' type='Label'/>
-          <b:widget id='PopularPosts1' locked='false' title='Más Leídos' type='PopularPosts'/>
 
           <div class='widget' style='background: linear-gradient(135deg, #FFE5E5 0%, #FFD6D6 100%); border-color: #FF6B6B;'>
             <h4 style='color: #C62828; border-color: #FF6B6B;'>¿Necesitas Ayuda Legal?</h4>
@@ -865,16 +836,15 @@
       <div class='footer-content'>
         <div class='footer-section'>
           <h4>ADASFRO</h4>
-          <p style='color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.7; margin-bottom: 12px;'>
+          <p style='color:rgba(255,255,255,0.75);font-size:14px;line-height:1.7;margin-bottom:12px;'>
             Asociación Agencia para el Desarrollo Accesible Sin Fronteras<br/>
             Cédula Jurídica: 3-002-860094<br/>
             Paraíso, Cartago, Costa Rica
           </p>
-          <div class='social-icons' style='margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;'>
+          <div class='social-icons' style='margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;'>
             <a href='https://facebook.com/adasfroong' target='_blank' rel='noopener' aria-label='Facebook'><i class='fab fa-facebook-f'></i></a>
             <a href='https://instagram.com/adasfro' target='_blank' rel='noopener' aria-label='Instagram'><i class='fab fa-instagram'></i></a>
             <a href='https://www.youtube.com/@adasfro' target='_blank' rel='noopener' aria-label='YouTube'><i class='fab fa-youtube'></i></a>
-            <a href='https://www.linkedin.com/in/adasfro/' target='_blank' rel='noopener' aria-label='LinkedIn'><i class='fab fa-linkedin-in'></i></a>
             <a href='https://wa.me/50625742048' target='_blank' rel='noopener' aria-label='WhatsApp'><i class='fab fa-whatsapp'></i></a>
           </div>
         </div>
@@ -896,9 +866,13 @@
         </div>
         <div class='footer-section'>
           <h4>Contacto</h4>
-          <a href='mailto:comunicacion@adasfro.ong'><i class='fas fa-envelope' style='margin-right: 6px;'></i>comunicacion@adasfro.ong</a>
-          <a href='https://wa.me/50625742048' target='_blank' rel='noopener'><i class='fab fa-whatsapp' style='margin-right: 6px;'></i>+506 2574-2048</a>
-          <p style='color: rgba(255,255,255,0.7); margin-top: 16px; font-size: 13px;'>
+          <a href='mailto:comunicacion@adasfro.org' style='display:inline-flex;align-items:center;gap:8px;'>
+            <i class='fas fa-envelope'></i>Escríbenos por correo
+          </a>
+          <a href='https://wa.me/50625742048' target='_blank' rel='noopener' style='display:inline-flex;align-items:center;gap:8px;'>
+            <i class='fab fa-whatsapp'></i>Escríbenos por WhatsApp
+          </a>
+          <p style='color:rgba(255,255,255,0.7);margin-top:16px;font-size:13px;'>
             © <data:blog.publishedYear/> ADASFRO<br/>Todos los derechos reservados
           </p>
         </div>
@@ -908,7 +882,7 @@
       </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP (en HTML, no depende de JS) -->
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a id='whatsapp-float' href='https://wa.me/50625742048' target='_blank' rel='noopener noreferrer' aria-label='Contactar a ADASFRO por WhatsApp'>
       <i class='fab fa-whatsapp'></i>
     </a>

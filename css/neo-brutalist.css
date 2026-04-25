@@ -234,23 +234,49 @@ img {
   box-sizing: border-box;
 }
 
-.header h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  margin: 0;
+/* Brand: logo + nombre + subtítulo alineados a la izquierda */
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
 }
 
-.header h1 a {
+.header-logo {
+  height: 56px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.1;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.header-subtitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+  .header-logo   { height: 40px; }
+  .header-subtitle { display: none; }
+  .header-link   { gap: 10px; }
 }
 
 /* ========================================
@@ -558,24 +584,58 @@ img {
   transform: translateY(-4px);
 }
 
+.swiper-slide-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 .swiper-slide img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.swiper-slide-body {
+  padding: 10px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.swiper-slide-date {
+  font-size: 11px;
+  color: var(--primary-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 .swiper-slide h4 {
-  padding: var(--spacing-sm) var(--spacing-md) 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--text-main);
-  margin-bottom: var(--spacing-xs);
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.swiper-slide p {
-  padding: 0 var(--spacing-md) var(--spacing-md);
-  font-size: 14px;
+.swiper-slide-excerpt {
+  font-size: 12px;
   color: var(--text-light);
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .swiper-button-next,

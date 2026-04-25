@@ -376,6 +376,32 @@
     injectHTML();
     applyState();
     attachEvents();
+    initFloatingPosition();
+  }
+
+  // ── Reposicionar botones flotantes sobre el footer ────────
+  function initFloatingPosition() {
+    function adjust() {
+      var footer = document.getElementById('footer-wrapper');
+      var a11y  = document.getElementById('a11y-trigger');
+      var wa    = document.getElementById('whatsapp-float');
+      if (!footer) return;
+
+      var gap = window.innerHeight - footer.getBoundingClientRect().top;
+
+      if (gap > 0) {
+        var base = gap + 16;
+        if (wa)    wa.style.bottom    = base + 'px';
+        if (a11y)  a11y.style.bottom  = (base + 64) + 'px';
+      } else {
+        if (wa)    wa.style.bottom    = '';
+        if (a11y)  a11y.style.bottom  = '';
+      }
+    }
+
+    window.addEventListener('scroll', adjust, { passive: true });
+    window.addEventListener('resize', adjust, { passive: true });
+    adjust();
   }
 
   if (document.readyState === 'loading') {

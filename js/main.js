@@ -10,7 +10,7 @@ function initDenunciaForm() {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var campos = ['d-nombre','d-cedula','d-correo','d-telefono',
-                  'd-institucion','d-articulo','d-fecha','d-descripcion'];
+                  'd-institucion','d-fecha','d-descripcion'];
     var vals = {};
     campos.forEach(function(id) {
       var el = document.getElementById(id);

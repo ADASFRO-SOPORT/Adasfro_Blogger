@@ -311,9 +311,9 @@ html.high-contrast #footer-wrapper {
 }
 
 html.high-contrast #a11y-trigger {
-  background: #FFEE00 !important;
-  color: #000 !important;
-  border-color: #000 !important;
+  background: #000033 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
 }
 
 html.high-contrast #whatsapp-float {
