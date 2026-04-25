@@ -25,9 +25,9 @@ function initBlogSwiper() {
         const date  = new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' });
 
         // Imagen de mayor resolución
-        let img = "https://placehold.co/480x200/00695C/FFFFFF?text=ADASFRO";
+        let img = "https://placehold.co/800x400/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s480/');
+          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s800/');
         }
 
         // Extracto: preferir summary, si no, primeros 120 caracteres del contenido sin HTML

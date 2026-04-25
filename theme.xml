@@ -91,6 +91,15 @@
       </b:section>
     </nav>
 
+    <!-- BANNER — ancho completo, fuera del content-wrapper -->
+    <section class='hero-section hero-banner' aria-labelledby='hero-title'>
+      <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
+      <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
+      <a class='btn btn-primary' href='#denuncia' style='display: inline-block; margin-top: 16px;'>
+        <i class='fas fa-file-alt' style='margin-right: 8px;'></i>Genera tu Denuncia Legal
+      </a>
+    </section>
+
     <!-- CONTENIDO PRINCIPAL -->
     <main id='content-wrapper'>
       <div id='main-content'>
@@ -100,7 +109,7 @@
         <!-- ══════════════════════════════════════ -->
         <div id='inicio'>
 
-          <!-- Carrusel PRIMERO (arriba del banner) -->
+          <!-- Carrusel de últimas entradas -->
           <section class='card' aria-labelledby='news-title'>
             <h3 id='news-title' style='margin-bottom: 16px;'>
               <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Últimas Entradas
@@ -111,15 +120,6 @@
               <div class='swiper-button-prev'></div>
               <div class='swiper-pagination'></div>
             </div>
-          </section>
-
-          <!-- Banner principal (debajo del carrusel) -->
-          <section class='hero-section' aria-labelledby='hero-title'>
-            <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
-            <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
-            <a class='btn btn-primary' href='#denuncia' style='display: inline-block; margin-top: 16px;'>
-              <i class='fas fa-file-alt' style='margin-right: 8px;'></i>Genera tu Denuncia Legal
-            </a>
           </section>
 
           <!-- Misión y Visión -->
@@ -205,6 +205,9 @@
           </section>
 
         </div><!-- /inicio -->
+
+        <!-- Widget de donación en el flujo principal -->
+        <div id='donation-widget'></div>
 
         <!-- ══════════════════════════════════════ -->
         <!--  SOBRE NOSOTROS                       -->
@@ -802,31 +805,9 @@
 
       </div><!-- /main-content -->
 
-      <!-- SIDEBAR -->
-      <aside id='sidebar-wrapper' role='complementary' aria-label='Barra lateral'>
-        <b:section class='sidebar' id='sidebar' preferred='yes'>
-
-          <div class='widget'>
-            <div id='donation-widget'></div>
-          </div>
-
-          <div class='widget' style='background: linear-gradient(135deg, #FFE5E5 0%, #FFD6D6 100%); border-color: #FF6B6B;'>
-            <h4 style='color: #C62828; border-color: #FF6B6B;'>¿Necesitas Ayuda Legal?</h4>
-            <p style='color: #D32F2F; font-size: 14px;'>Usa nuestro generador automático de denuncias por violación a la Ley 7600.</p>
-            <a class='btn btn-danger' href='#denuncia' style='width: 100%; text-align: center; display: block;'>Ir al Generador</a>
-          </div>
-
-          <div class='widget'>
-            <h4>Navegación rápida</h4>
-            <a href='#sobre-nosotros' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Sobre Nosotros</a>
-            <a href='#poblaciones' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Poblaciones</a>
-            <a href='#ley-7600' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Ley 7600</a>
-            <a href='#guias' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Guías Lectura Fácil</a>
-            <a href='#lesco' style='display: block; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px;'>Videos LESCO</a>
-            <a href='#denuncia' style='display: block; padding: 6px 0; font-size: 14px; color: var(--danger); font-weight: 600;'>Generar Denuncia</a>
-          </div>
-
-        </b:section>
+      <!-- Sidebar vacío requerido por Blogger — contenido movido al flujo principal -->
+      <aside id='sidebar-wrapper' aria-hidden='true' style='display:none;'>
+        <b:section class='sidebar' id='sidebar' preferred='yes'/>
       </aside>
 
     </main>
