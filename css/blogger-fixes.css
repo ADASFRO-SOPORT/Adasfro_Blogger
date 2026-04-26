@@ -119,6 +119,13 @@ canvas {
   display: block;
 }
 
+/* El carousel tiene altura fija — excluir del height: auto general */
+.swiper-slide img {
+  height: 180px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
 /* ========================================
    FIX ELEMENTOS DE BLOGGER
 ======================================== */

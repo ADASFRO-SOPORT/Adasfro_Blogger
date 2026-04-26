@@ -11,11 +11,17 @@ function initBlogSwiper() {
   fetch(feedUrl)
     .then(response => response.json())
     .then(data => {
-      const entries = data.feed.entry.slice(0, 5); // Últimas 5 publicaciones
+      const allEntries = data.feed.entry || [];
+      const entries = allEntries.slice(0, 5);
       const container = document.getElementById("blog-posts");
 
       if (!container) {
         console.warn('Contenedor #blog-posts no encontrado');
+        return;
+      }
+
+      if (entries.length === 0) {
+        container.innerHTML = '<div style="padding:24px;color:#64748B;text-align:center">No hay entradas publicadas aún.</div>';
         return;
       }
 

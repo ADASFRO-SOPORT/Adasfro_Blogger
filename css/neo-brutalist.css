@@ -585,9 +585,7 @@ img {
 }
 
 .swiper-slide-inner {
-  display: flex;
-  flex-direction: column;
-  height: auto;
+  display: block;
   text-decoration: none;
   color: inherit;
 }
