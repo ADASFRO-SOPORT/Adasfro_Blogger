@@ -26,14 +26,15 @@ function initBlogSwiper() {
       }
 
       entries.forEach(entry => {
-        const title = entry.title.$t;
-        const link  = entry.link.find(l => l.rel === "alternate").href;
-        const date  = new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' });
+        const title = (entry.title && entry.title.$t) ? entry.title.$t : 'Sin título';
+        const linkObj = entry.link ? entry.link.find(l => l.rel === "alternate") : null;
+        const link  = linkObj ? linkObj.href : '#';
+        const date  = entry.published ? new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' }) : '';
 
-        // Imagen de mayor resolución
-        let img = "https://placehold.co/400x200/00695C/FFFFFF?text=ADASFRO";
+        // Imagen: s640 para resolución retina en cards angostas
+        let img = "https://placehold.co/640x300/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s400/');
+          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s640/');
         }
 
         // Extracto: preferir summary, si no, primeros 120 caracteres del contenido sin HTML
