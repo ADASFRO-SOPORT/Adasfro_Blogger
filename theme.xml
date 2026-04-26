@@ -15,6 +15,7 @@
     <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/blogger-fixes.css' rel='stylesheet'/>
+    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/swiper-fixes.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/accessibility-bar.css' rel='stylesheet'/>
 
     <meta content='ADASFRO - Accesibilidad Universal en Costa Rica' property='og:title'/>
