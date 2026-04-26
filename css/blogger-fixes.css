@@ -118,7 +118,7 @@ canvas {
 
 /* Excluir logo y carousel del height: auto general */
 .header-logo {
-  height: 110px !important;
+  height: 160px !important;
   width: auto !important;
   max-width: none !important;
 }
