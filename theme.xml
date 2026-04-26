@@ -207,9 +207,6 @@
 
         </div><!-- /inicio -->
 
-        <!-- Widget de donación en el flujo principal -->
-        <div id='donation-widget'></div>
-
         <!-- ══════════════════════════════════════ -->
         <!--  SOBRE NOSOTROS                       -->
         <!-- ══════════════════════════════════════ -->
@@ -874,18 +871,8 @@
     <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'></script>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/donation-widget.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'></script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        new DonationWidget({
-          sinpeNumber: '2574-2048',
-          donationGoal: 500000,
-          currentAmount: 175000
-        });
-      });
-    </script>
+    <!-- donation-widget desactivado temporalmente -->
 
   </body>
 </html>
