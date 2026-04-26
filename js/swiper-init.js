@@ -31,10 +31,15 @@ function initBlogSwiper() {
         const link  = linkObj ? linkObj.href : '#';
         const date  = entry.published ? new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' }) : '';
 
-        // Imagen: s640 para resolución retina en cards angostas
+        // Imagen: Intentar obtener una versión de alta resolución
         let img = "https://placehold.co/640x300/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s640/');
+          // Reemplaza los formatos de miniatura de Blogger por alta resolución (s1600)
+          img = entry.media$thumbnail.url
+            .replace(/\/s\d+(-c)?\//, "/s1600/") // Formato /s72-c/
+            .replace(/[=]s\d+(-c)?/, "=s1600")    // Formato =s72-c
+            .replace(/[=]w\d+-h\d+(-[a-z])?/, "=s1600") // Formato =w72-h72-p
+            .replace("http://", "https://");     // Asegurar HTTPS
         }
 
         // Extracto: preferir summary, si no, primeros 120 caracteres del contenido sin HTML
