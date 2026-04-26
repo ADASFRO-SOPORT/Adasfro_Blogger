@@ -89,10 +89,13 @@ body {
 #header-wrapper,
 #main-nav,
 #content-wrapper,
+#main-content,
 #footer-wrapper,
 .hero-section,
+.hero-banner,
 .card,
-.widget {
+.widget,
+.section-break {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -365,6 +368,7 @@ img {
   flex-direction: column;
   gap: var(--spacing-lg);
   width: 100%;
+  min-width: 0;
 }
 
 /* ========================================

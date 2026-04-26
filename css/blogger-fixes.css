@@ -57,21 +57,18 @@ body {
    FIX GRID LAYOUTS
 ======================================== */
 
-/* Content wrapper con grid */
+/* Content wrapper — columna única, sin sidebar */
 #content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 24px;
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 40px;
+  padding: 48px 24px;
+  display: block;
   box-sizing: border-box;
-  width: calc(100% - 48px); /* Resta el padding total */
+  width: calc(100% - 48px);
 }
 
 @media (max-width: 1024px) {
   #content-wrapper {
-    grid-template-columns: 1fr;
     width: calc(100% - 32px);
     padding: 32px 16px;
   }
