@@ -246,9 +246,10 @@ img {
 }
 
 .header-logo {
-  height: 52px;
-  width: auto;
+  height: 52px !important;
+  width: auto !important;
   flex-shrink: 0;
+  max-width: none !important;
 }
 
 .header-text {

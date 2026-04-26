@@ -116,7 +116,13 @@ canvas {
   display: block;
 }
 
-/* El carousel tiene altura fija — excluir del height: auto general */
+/* Excluir logo y carousel del height: auto general */
+.header-logo {
+  height: 52px !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
 .swiper-slide img {
   height: 130px !important;
   object-fit: cover !important;

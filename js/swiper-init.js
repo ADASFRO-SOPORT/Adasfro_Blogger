@@ -62,11 +62,11 @@ function initBlogSwiper() {
 
       // Loop solo si hay suficientes slides (al menos el doble del máximo slidesPerView)
       const totalSlides = entries.length;
-      const enableLoop = totalSlides >= 6;
+      const enableLoop = totalSlides >= 8;
 
       new Swiper(".swiper", {
         slidesPerView: 1,
-        spaceBetween: 16,
+        spaceBetween: 12,
         loop: enableLoop,
         pagination: {
           el: ".swiper-pagination",
@@ -77,13 +77,17 @@ function initBlogSwiper() {
           prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-          640: {
+          480: {
             slidesPerView: 2,
-            spaceBetween: 16,
+            spaceBetween: 12,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 14,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 20,
+            slidesPerView: 4,
+            spaceBetween: 16,
           },
         },
       });
