@@ -12,7 +12,7 @@ function initBlogSwiper() {
     .then(response => response.json())
     .then(data => {
       const allEntries = data.feed.entry || [];
-      const entries = allEntries.slice(0, 5);
+      const entries = allEntries.slice(0, 10);
       const container = document.getElementById("blog-posts");
 
       if (!container) {
@@ -31,9 +31,9 @@ function initBlogSwiper() {
         const date  = new Date(entry.published.$t).toLocaleDateString('es-CR', { day:'2-digit', month:'short', year:'numeric' });
 
         // Imagen de mayor resolución
-        let img = "https://placehold.co/800x400/00695C/FFFFFF?text=ADASFRO";
+        let img = "https://placehold.co/400x200/00695C/FFFFFF?text=ADASFRO";
         if (entry.media$thumbnail) {
-          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s800/');
+          img = entry.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/s400/');
         }
 
         // Extracto: preferir summary, si no, primeros 120 caracteres del contenido sin HTML

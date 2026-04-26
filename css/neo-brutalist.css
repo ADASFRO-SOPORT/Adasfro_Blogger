@@ -246,7 +246,7 @@ img {
 }
 
 .header-logo {
-  height: 42px;
+  height: 52px;
   width: auto;
   flex-shrink: 0;
 }
@@ -256,20 +256,20 @@ img {
   flex-direction: column;
 }
 
+/* Letras ADASFRO con colores individuales del logo */
 .header-name {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
   font-weight: 900;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 0.02em;
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 
 .header-subtitle {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-light);
   font-weight: 500;
   margin-top: 3px;
@@ -277,7 +277,7 @@ img {
 }
 
 @media (max-width: 480px) {
-  .header-logo   { height: 32px; }
+  .header-logo   { height: 38px; }
   .header-subtitle { display: none; }
   .header-link   { gap: 10px; }
 }

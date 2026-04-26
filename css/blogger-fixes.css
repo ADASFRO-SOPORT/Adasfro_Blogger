@@ -118,7 +118,7 @@ canvas {
 
 /* El carousel tiene altura fija — excluir del height: auto general */
 .swiper-slide img {
-  height: 180px !important;
+  height: 130px !important;
   object-fit: cover !important;
   object-position: center !important;
 }

@@ -56,9 +56,9 @@
             <div class='header'>
               <h1 style='margin:0;'>
                 <a class='header-link' expr:href='data:blog.homepageUrl'>
-                  <img alt='Logo ADASFRO' class='header-logo' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logo_adasfro.svg'/>
+                  <img alt='Logo ADASFRO' class='header-logo' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logo_adasfro.jpg'/>
                   <div class='header-text'>
-                    <span class='header-name'>ADASFRO</span>
+                    <span class='header-name'><span style='color:#1565C0'>A</span><span style='color:#C62828'>D</span><span style='color:#F9A825'>A</span><span style='color:#2E7D32'>S</span><span style='color:#7B1FA2'>F</span><span style='color:#1565C0'>R</span><span style='color:#C62828'>O</span></span>
                     <span class='header-subtitle'>Asociación Agencia para el Desarrollo Accesible Sin Fronteras</span>
                   </div>
                 </a>
