@@ -93,16 +93,6 @@ body {
   overflow: hidden;
 }
 
-/* Swiper — overflow: hidden es obligatorio para contener las slides del loop */
-.swiper {
-  max-width: 100%;
-  overflow: hidden !important;
-}
-
-.swiper-wrapper {
-  max-width: 100%;
-}
-
 /* ========================================
    FIX IMÁGENES Y MEDIA
 ======================================== */
@@ -116,17 +106,11 @@ canvas {
   display: block;
 }
 
-/* Excluir logo y carousel del height: auto general */
+/* Excluir logo del height: auto general */
 .header-logo {
   height: 160px !important;
   width: auto !important;
   max-width: none !important;
-}
-
-.swiper-slide img {
-  height: 130px !important;
-  object-fit: cover !important;
-  object-position: center !important;
 }
 
 /* ========================================

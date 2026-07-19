@@ -69,22 +69,25 @@ function initConveniosFilter() {
 // ── Menú móvil ────────────────────────────────────────────────
 function initMobileMenu() {
   var toggle = document.getElementById('mobile-menu-toggle');
-  var list   = document.getElementById('nav-list');
-  if (!toggle || !list) return;
+  var lists  = [document.getElementById('nav-list'), document.getElementById('nav-list-secondary')].filter(Boolean);
+  if (!toggle || !lists.length) return;
 
   toggle.addEventListener('click', function () {
-    var open = list.classList.toggle('mobile-open');
+    var open = !lists[0].classList.contains('mobile-open');
+    lists.forEach(function (list) { list.classList.toggle('mobile-open', open); });
     toggle.setAttribute('aria-expanded', String(open));
     toggle.querySelector('.menu-icon').className = 'menu-icon fas ' + (open ? 'fa-times' : 'fa-bars');
   });
 
   // Cerrar al navegar
-  list.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') {
-      list.classList.remove('mobile-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.querySelector('.menu-icon').className = 'menu-icon fas fa-bars';
-    }
+  lists.forEach(function (list) {
+    list.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        lists.forEach(function (l) { l.classList.remove('mobile-open'); });
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('.menu-icon').className = 'menu-icon fas fa-bars';
+      }
+    });
   });
 }
 

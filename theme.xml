@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
-    <title><data:blog.pageTitle/></title>
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+      <title><data:blog.pageTitle/></title>
+    <b:else/>
+      <title><data:blog.pageName/> | <data:blog.title/></title>
+    </b:if>
     <meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
     <meta content='ADASFRO - Asociación Agencia para el Desarrollo Accesible Sin Fronteras. Defendiendo derechos, promoviendo inclusión y fiscalizando el cumplimiento de la Ley 7600 en Costa Rica.' name='description'/>
 
@@ -12,10 +16,8 @@
 
     <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
-    <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/neo-brutalist.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/blogger-fixes.css' rel='stylesheet'/>
-    <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/swiper-fixes.css' rel='stylesheet'/>
     <link href='https://adasfro-soport.github.io/Adasfro_Blogger/css/accessibility-bar.css' rel='stylesheet'/>
 
     <meta content='ADASFRO - Accesibilidad Universal en Costa Rica' property='og:title'/>
@@ -56,7 +58,7 @@
             <div class='header'>
               <h1 style='margin:0;'>
                 <a class='header-link' expr:href='data:blog.homepageUrl'>
-                  <img alt='Logo ADASFRO' class='header-logo' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logo_adasfro.jpg'/>
+                  <img alt='Logo de ADASFRO: cinco figuras humanas de colores distintos formando un círculo sobre un mapa del mundo' class='header-logo' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logo_adasfro.jpg'/>
                   <div class='header-text'>
                     <span class='header-name'><span style='color:#1565C0'>A</span><span style='color:#C62828'>D</span><span style='color:#F9A825'>A</span><span style='color:#2E7D32'>S</span><span style='color:#7B1FA2'>F</span><span style='color:#1565C0'>R</span><span style='color:#C62828'>O</span></span>
                     <span class='header-subtitle'>Asociación Agencia para el Desarrollo Accesible Sin Fronteras</span>
@@ -74,19 +76,33 @@
       <b:section class='main-menu' id='main-menu' preferred='yes' showaddelement='yes'>
         <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
           <b:includable id='main'>
-            <button id='mobile-menu-toggle' aria-label='Abrir menú' aria-expanded='false' aria-controls='nav-list'>
+            <button id='mobile-menu-toggle' aria-label='Abrir menú' aria-expanded='false' aria-controls='nav-list nav-list-secondary'>
               <i class='menu-icon fas fa-bars'></i>
               <span>Menú</span>
             </button>
-            <ul id='nav-list'>
+            <ul id='nav-list' aria-label='Institucional'>
               <li><a href='#inicio'>Inicio</a></li>
+              <li><a href='#sobre-nosotros'>Sobre Nosotros</a></li>
+              <li><a href='#mv-title'>Misión y Visión</a></li>
+              <li><a href='#transparencia'>Transparencia</a></li>
+              <li><a href='#contacto'>Contacto</a></li>
+            </ul>
+            <span class='nav-group-label'>Qué Hacemos</span>
+            <ul id='nav-list-secondary' aria-label='Qué hacemos'>
               <li><a href='#poblaciones'>Poblaciones</a></li>
               <li><a href='#eventos'>Eventos</a></li>
               <li><a href='#proyectos'>Proyectos</a></li>
               <li><a href='#convenios'>Convenios</a></li>
-              <li><a href='#transparencia'>Transparencia</a></li>
+              <li><a href='#ley-7600'>Ley 7600</a></li>
+              <li><a href='#guias'>Guías</a></li>
+              <li><a href='#lesco'>LESCO</a></li>
               <li><a href='#denuncia' style='color: #FF6B6B; font-weight: 700;'>Denunciar</a></li>
             </ul>
+            <form action='/search' class='nav-search' method='get' role='search'>
+              <label class='visually-hidden' for='nav-search-input'>Buscar en el sitio</label>
+              <input id='nav-search-input' name='q' placeholder='Buscar en el sitio…' type='search'/>
+              <button aria-label='Buscar' type='submit'><i class='fas fa-search'></i></button>
+            </form>
           </b:includable>
         </b:widget>
       </b:section>
@@ -115,12 +131,7 @@
             <h3 id='news-title' style='margin-bottom: 16px;'>
               <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Últimas Entradas
             </h3>
-            <div class='swiper'>
-              <div class='swiper-wrapper' id='blog-posts'></div>
-              <div class='swiper-button-next'></div>
-              <div class='swiper-button-prev'></div>
-              <div class='swiper-pagination'></div>
-            </div>
+            <div class='news-grid' id='blog-posts'></div>
           </section>
 
           <!-- Misión y Visión -->
@@ -143,17 +154,17 @@
           <!-- Valores -->
           <section class='card' aria-labelledby='valores-title'>
             <h3 id='valores-title' style='margin-bottom: 16px;'>Nuestros Valores</h3>
-            <div class='valores-grid'>
-              <span class='valor'>Respeto</span>
-              <span class='valor'>Inclusión</span>
-              <span class='valor'>Equidad</span>
-              <span class='valor'>Trabajo en equipo</span>
-              <span class='valor'>Amor</span>
-              <span class='valor'>Integridad</span>
-              <span class='valor'>Servicio</span>
-              <span class='valor'>Honestidad</span>
-              <span class='valor'>Tolerancia</span>
-            </div>
+            <ul class='valores-grid'>
+              <li class='valor'>Respeto</li>
+              <li class='valor'>Inclusión</li>
+              <li class='valor'>Equidad</li>
+              <li class='valor'>Trabajo en equipo</li>
+              <li class='valor'>Amor</li>
+              <li class='valor'>Integridad</li>
+              <li class='valor'>Servicio</li>
+              <li class='valor'>Honestidad</li>
+              <li class='valor'>Tolerancia</li>
+            </ul>
           </section>
 
           <!-- Blog widget -->
@@ -868,9 +879,8 @@
 
     <!-- SCRIPTS -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'></script>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/swiper-init.js'></script>
+    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/news-grid.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'></script>
     <!-- donation-widget desactivado temporalmente -->
 

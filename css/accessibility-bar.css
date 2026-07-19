@@ -337,7 +337,7 @@ html.dyslexia-font input, html.dyslexia-font textarea,
 html.dyslexia-font select,
 html.dyslexia-font button,
 html.dyslexia-font a,
-html.dyslexia-font span:not([class*="fa"]):not([class*="swiper"]) {
+html.dyslexia-font span:not([class*="fa"]) {
   font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important;
   letter-spacing: 0.05em;
   word-spacing: 0.15em;
@@ -361,7 +361,7 @@ html.low-stimulation .hero-section::before {
 }
 
 html.low-stimulation .card:hover,
-html.low-stimulation .swiper-slide:hover,
+html.low-stimulation .news-card:hover,
 html.low-stimulation .btn:hover {
   transform: none !important;
 }

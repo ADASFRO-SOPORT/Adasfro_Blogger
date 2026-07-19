@@ -1,18 +1,18 @@
 /**
- * ADASFRO - Inicialización de Swiper
- * Carga las últimas publicaciones del blog en un carrusel
+ * ADASFRO - Grilla de últimas noticias
+ * Carga las últimas publicaciones del blog en una cuadrícula estática
+ * (reemplaza al carrusel Swiper, que atrapaba el foco de teclado)
  */
 
 // URL del feed JSON de tu Blogger
 const feedUrl = "https://www.adasfro.org/feeds/posts/default?alt=json";
 
-// Función para inicializar el carrusel de posts
-function initBlogSwiper() {
+function initNewsGrid() {
   fetch(feedUrl)
     .then(response => response.json())
     .then(data => {
       const allEntries = data.feed.entry || [];
-      const entries = allEntries.slice(0, 10);
+      const entries = allEntries.slice(0, 9);
       const container = document.getElementById("blog-posts");
 
       if (!container) {
@@ -51,51 +51,18 @@ function initBlogSwiper() {
         }
         if (excerpt.length === 120) excerpt += '…';
 
-        const slide = document.createElement("div");
-        slide.className = "swiper-slide";
-        slide.innerHTML = `
-          <a href="${link}" class="swiper-slide-inner">
-            <img src="${img}" alt="${title}">
-            <div class="swiper-slide-body">
-              <p class="swiper-slide-date">${date}</p>
-              <h4>${title}</h4>
-              ${excerpt ? `<p class="swiper-slide-excerpt">${excerpt}</p>` : ''}
-            </div>
-          </a>
+        const card = document.createElement("a");
+        card.className = "news-card";
+        card.href = link;
+        card.innerHTML = `
+          <img src="${img}" alt="${title}">
+          <div class="news-card-body">
+            <p class="news-card-date">${date}</p>
+            <h4>${title}</h4>
+            ${excerpt ? `<p class="news-card-excerpt">${excerpt}</p>` : ''}
+          </div>
         `;
-        container.appendChild(slide);
-      });
-
-      // Loop solo si hay suficientes slides (al menos el doble del máximo slidesPerView)
-      const totalSlides = entries.length;
-      const enableLoop = totalSlides >= 8;
-
-      new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 12,
-        loop: enableLoop,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          480: {
-            slidesPerView: 2,
-            spaceBetween: 12,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 14,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 16,
-          },
-        },
+        container.appendChild(card);
       });
     })
     .catch(error => {
@@ -105,7 +72,7 @@ function initBlogSwiper() {
 
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initBlogSwiper);
+  document.addEventListener('DOMContentLoaded', initNewsGrid);
 } else {
-  initBlogSwiper();
+  initNewsGrid();
 }
