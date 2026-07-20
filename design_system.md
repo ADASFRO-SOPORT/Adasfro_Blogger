@@ -95,7 +95,7 @@ Guía completa de identidad visual basada en los colores del logo
 
 ## ✅ Ratios de Contraste WCAG
 
-### Texto Normal (16px)
+### Texto Normal (18px base)
 
 | Combinación           | Ratio  | WCAG     | Uso                 |
 | --------------------- | ------ | -------- | ------------------- |
@@ -146,6 +146,8 @@ Características:
 ```
 
 **Uso:** Texto principal, párrafos, formularios, navegación, metadatos
+
+**Tamaño base (2026-07):** `html`/`body` en `18px` (antes `16px`), `line-height: 1.75` (antes `1.7`) — ajuste de legibilidad pedido en la reunión de requerimientos, manteniendo Montserrat + Open Sans en vez de migrar a Arial (ambas ya son sans-serif). Los tamaños de headings usan `clamp(...rem...)` y escalan automáticamente con el nuevo base; la escala de espaciado de 8px no se tocó.
 
 ### Familia Secundaria: Montserrat
 

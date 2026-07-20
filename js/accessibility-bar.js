@@ -1,7 +1,8 @@
 /**
  * ADASFRO — Panel de Accesibilidad
  * WCAG 2.1 AA | Persistencia con localStorage
- * Icono universal de accesibilidad (ISA) — votación comunitaria pendiente
+ * Banner de votación del logo (ISA) enlaza a LOGO_VOTE_FORM_URL —
+ * falta reemplazar el placeholder por la URL real del Google Form.
  */
 
 (function () {
@@ -12,6 +13,11 @@
   // Costa Rica: 506 + 8 dígitos. Ejemplo: '50688887777'
   var WHATSAPP_NUMBER = '50625742048';
 
+  // ── Configura aquí la URL del Google Form de votación del logo ──
+  // Reemplazar por la URL real una vez que el equipo de comunicación
+  // publique el formulario con las opciones de logo de accesibilidad.
+  var LOGO_VOTE_FORM_URL = 'https://forms.google.com/PENDIENTE-configurar-url-real';
+
   var ATKINSON_FONT_URL = 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap';
   var STORAGE_KEY = 'adasfro_a11y_v1';
 
@@ -20,6 +26,9 @@
     contrast: false,
     dyslexiaFont: false,
     lowStimulation: false,
+    ttsRate: 0.9,           // 0.5 (lento) — 1.5 (rápido)
+    ttsVolume: 1,           // 0 (mudo) — 1 (máximo)
+    voteBannerDismissed: false,
   };
 
   var state = Object.assign({}, defaults);
@@ -78,6 +87,8 @@
           '<i class="fas fa-times" aria-hidden="true"></i>',
         '</button>',
       '</div>',
+
+      buildVoteBannerHTML(),
 
       // Tamaño de letra
       '<div class="a11y-section">',
@@ -143,11 +154,43 @@
         '<p>Lee el contenido principal de esta página</p>',
       '</div>',
 
+      // Modulación de sonido (velocidad y volumen de la lectura)
+      '<div class="a11y-section">',
+        '<h3 id="a11y-sound-label">Sonido de la lectura</h3>',
+        '<div class="a11y-slider-row">',
+          '<label for="a11y-tts-rate">Velocidad</label>',
+          '<input type="range" id="a11y-tts-rate" min="0.5" max="1.5" step="0.1" value="0.9" aria-describedby="a11y-tts-rate-value"/>',
+          '<span id="a11y-tts-rate-value" class="a11y-slider-value">90%</span>',
+        '</div>',
+        '<div class="a11y-slider-row">',
+          '<label for="a11y-tts-volume">Volumen</label>',
+          '<input type="range" id="a11y-tts-volume" min="0" max="1" step="0.1" value="1" aria-describedby="a11y-tts-volume-value"/>',
+          '<span id="a11y-tts-volume-value" class="a11y-slider-value">100%</span>',
+        '</div>',
+      '</div>',
+
       // Restablecer
       '<div class="a11y-reset">',
         '<button class="a11y-btn a11y-btn-reset" data-action="reset">',
           '<i class="fas fa-undo" aria-hidden="true"></i> Restablecer configuración',
         '</button>',
+      '</div>',
+    ].join('');
+  }
+
+  function buildVoteBannerHTML() {
+    if (state.voteBannerDismissed) return '';
+    return [
+      '<div class="a11y-vote-banner" id="a11y-vote-banner" role="note">',
+        '<p>Estamos eligiendo el logo oficial de accesibilidad de ADASFRO. Tu voto cuenta.</p>',
+        '<div class="a11y-vote-banner-actions">',
+          '<a href="' + LOGO_VOTE_FORM_URL + '" target="_blank" rel="noopener" aria-label="Votar por el logo oficial de accesibilidad (se abre en una pestaña nueva)">',
+            'Votar ahora',
+          '</a>',
+          '<button type="button" data-action="dismiss-vote-banner" aria-label="Cerrar este aviso">',
+            '<i class="fas fa-times" aria-hidden="true"></i>',
+          '</button>',
+        '</div>',
       '</div>',
     ].join('');
   }
@@ -203,6 +246,7 @@
     html.classList.toggle('low-stimulation', !!state.lowStimulation);
 
     syncButtonStates();
+    syncSoundControls();
     savePrefs();
   }
 
@@ -224,6 +268,18 @@
       var btn = document.querySelector('[data-action="' + action + '"]');
       if (btn) btn.setAttribute('aria-pressed', String(!!toggles[action]));
     });
+  }
+
+  function syncSoundControls() {
+    var rateInput = document.getElementById('a11y-tts-rate');
+    var volumeInput = document.getElementById('a11y-tts-volume');
+    var rateValue = document.getElementById('a11y-tts-rate-value');
+    var volumeValue = document.getElementById('a11y-tts-volume-value');
+
+    if (rateInput) rateInput.value = state.ttsRate;
+    if (volumeInput) volumeInput.value = state.ttsVolume;
+    if (rateValue) rateValue.textContent = Math.round(state.ttsRate * 100) + '%';
+    if (volumeValue) volumeValue.textContent = Math.round(state.ttsVolume * 100) + '%';
   }
 
   // ── Fuente Atkinson Hyperlegible ──────────────────────────────
@@ -258,7 +314,8 @@
     window.speechSynthesis.cancel();
 
     var utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.9;
+    utterance.rate = state.ttsRate;
+    utterance.volume = state.ttsVolume;
     utterance.pitch = 1;
 
     // Busca una voz en español; si no, usa la primera disponible
@@ -354,6 +411,12 @@
         case 'dyslexia-font': state.dyslexiaFont = !state.dyslexiaFont;          break;
         case 'low-stimulation': state.lowStimulation = !state.lowStimulation;    break;
         case 'tts':           toggleTTS(); return;
+        case 'dismiss-vote-banner':
+          state.voteBannerDismissed = true;
+          savePrefs();
+          var banner = document.getElementById('a11y-vote-banner');
+          if (banner) banner.remove();
+          return;
         case 'reset':
           if (isSpeaking) window.speechSynthesis.cancel();
           isSpeaking = false;
@@ -362,6 +425,17 @@
       }
 
       applyState();
+    });
+
+    // Sliders de sonido (velocidad / volumen de lectura)
+    document.getElementById('a11y-panel').addEventListener('input', function (e) {
+      if (e.target.id === 'a11y-tts-rate') {
+        state.ttsRate = parseFloat(e.target.value);
+        applyState();
+      } else if (e.target.id === 'a11y-tts-volume') {
+        state.ttsVolume = parseFloat(e.target.value);
+        applyState();
+      }
     });
 
     // Detener TTS al navegar fuera

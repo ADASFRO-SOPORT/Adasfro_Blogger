@@ -108,7 +108,7 @@ canvas {
 
 /* Excluir logo del height: auto general */
 .header-logo {
-  height: 160px !important;
+  height: 200px !important;
   width: auto !important;
   max-width: none !important;
 }
@@ -288,11 +288,6 @@ html {
   .card,
   .hero-section,
   .mission-block {
-    padding: 24px 16px;
-  }
-  
-  /* Widget de donaciones */
-  .donation-widget-modern {
     padding: 24px 16px;
   }
 }

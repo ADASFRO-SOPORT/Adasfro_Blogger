@@ -123,6 +123,70 @@
   outline-offset: 2px;
 }
 
+/* Banner de votación del logo oficial de accesibilidad */
+.a11y-vote-banner {
+  background: #F0FBF9;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 14px 16px;
+}
+
+.a11y-vote-banner p {
+  font-size: 13px;
+  color: #1E293B;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.a11y-vote-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.a11y-vote-banner-actions a {
+  background: #00695C;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+}
+
+.a11y-vote-banner-actions a:hover,
+.a11y-vote-banner-actions a:focus {
+  background: #004D40;
+}
+
+.a11y-vote-banner-actions a:focus {
+  outline: 3px solid #00695C;
+  outline-offset: 2px;
+}
+
+.a11y-vote-banner-actions button {
+  background: none;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  color: #64748B;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.a11y-vote-banner-actions button:hover {
+  border-color: #00695C;
+  color: #00695C;
+}
+
+.a11y-vote-banner-actions button:focus {
+  outline: 3px solid #00695C;
+  outline-offset: 2px;
+}
+
 /* Secciones */
 .a11y-section {
   padding: 18px 16px;
@@ -149,6 +213,46 @@
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+/* Sliders de sonido (velocidad / volumen de lectura) */
+.a11y-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.a11y-slider-row:first-of-type {
+  margin-top: 0;
+}
+
+.a11y-slider-row label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1E293B;
+  width: 68px;
+  flex-shrink: 0;
+}
+
+.a11y-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: #00695C;
+  min-height: 24px;
+}
+
+.a11y-slider-row input[type="range"]:focus {
+  outline: 3px solid #00695C;
+  outline-offset: 2px;
+}
+
+.a11y-slider-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #00695C;
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 /* Botones del panel */

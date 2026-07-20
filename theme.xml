@@ -82,6 +82,7 @@
             </button>
             <ul id='nav-list' aria-label='Institucional'>
               <li><a href='#inicio'>Inicio</a></li>
+              <li><a href='/search'>Publicaciones</a></li>
               <li><a href='#sobre-nosotros'>Sobre Nosotros</a></li>
               <li><a href='#mv-title'>Misión y Visión</a></li>
               <li><a href='#transparencia'>Transparencia</a></li>
@@ -120,19 +121,12 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main id='content-wrapper'>
       <div id='main-content'>
+      <b:if cond='data:blog.url == data:blog.homepageUrl'>
 
         <!-- ══════════════════════════════════════ -->
         <!--  INICIO                               -->
         <!-- ══════════════════════════════════════ -->
         <div id='inicio'>
-
-          <!-- Carrusel de últimas entradas -->
-          <section class='card' aria-labelledby='news-title'>
-            <h3 id='news-title' style='margin-bottom: 16px;'>
-              <i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Últimas Entradas
-            </h3>
-            <div class='news-grid' id='blog-posts'></div>
-          </section>
 
           <!-- Misión y Visión -->
           <section class='card' aria-labelledby='mv-title'>
@@ -166,13 +160,6 @@
               <li class='valor'>Tolerancia</li>
             </ul>
           </section>
-
-          <!-- Blog widget -->
-          <div class='card'>
-            <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
-              <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
-            </b:section>
-          </div>
 
           <!-- 5 Pilares -->
           <section class='card' aria-labelledby='pilares-title'>
@@ -496,6 +483,7 @@
                 </tr>
               </thead>
               <tbody>
+                <!-- FILAS DE EJEMPLO — reemplazar con convenios reales. Formato documentado en CLAUDE.md, sección "Convenios". -->
                 <tr data-anio='2024' data-estado='vigente' data-tipo='academico'>
                   <td>Cooperación para inclusión educativa</td><td>UCR</td><td>2024</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
@@ -687,6 +675,24 @@
 
         <div class='card'>
           <p style='margin-bottom: 20px;'>El LESCO (Lengua de Señas Costarricense) es la lengua natural de la comunidad Sorda en Costa Rica. En ADASFRO exigimos interpretación LESCO en todos los eventos y comunicaciones oficiales.</p>
+
+          <!-- Componente reutilizable de video accesible: video principal + recuadro LESCO + transcripción.
+               Placeholder hasta que el equipo de comunicación produzca el video institucional real. -->
+          <div class='video-accessible'>
+            <div class='video-accessible-main'>
+              <div class='video-accessible-placeholder'>
+                <i class='fas fa-video' aria-hidden='true'></i>
+                <p>Video institucional — pendiente de producción con intérprete LESCO</p>
+              </div>
+              <div class='video-accessible-lesco' aria-label='Recuadro de interpretación LESCO'>
+                <i class='fas fa-hands' aria-hidden='true'></i>
+              </div>
+            </div>
+            <p class='video-accessible-transcript'>
+              <i class='fas fa-file-alt' aria-hidden='true'></i> Transcripción de texto disponible cuando se publique el video.
+            </p>
+          </div>
+
           <div class='poblaciones-grid'>
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-play-circle'></i></div>
@@ -760,7 +766,13 @@
         </div>
 
         <div class='card'>
-          <div class='sitemap-grid'>
+          <div class='sitemap-search'>
+            <label class='visually-hidden' for='sitemap-filter'>Buscar en el mapa del sitio</label>
+            <i class='fas fa-search' aria-hidden='true'></i>
+            <input type='text' id='sitemap-filter' placeholder='Buscar una sección...' autocomplete='off'/>
+          </div>
+          <p id='sitemap-no-results' class='sitemap-no-results' style='display:none;' role='status'>No se encontraron secciones con ese término.</p>
+          <div class='sitemap-grid' id='sitemap-grid'>
             <div class='sitemap-col'>
               <h4>Organización</h4>
               <a href='#inicio'><i class='fas fa-chevron-right'></i>Inicio</a>
@@ -812,6 +824,21 @@
           <p style='margin-top: 12px; font-size: 13px; color: var(--text-light);'>Última actualización: Abril 2025</p>
         </div>
 
+      <b:else/>
+
+        <!-- ══════════════════════════════════════ -->
+        <!--  PUBLICACIONES (archivo / post individual) -->
+        <!-- ══════════════════════════════════════ -->
+        <section class='card' aria-labelledby='publicaciones-title'>
+          <h2 id='publicaciones-title' style='margin-bottom: 16px;'><i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Publicaciones</h2>
+          <div class='post-list-wrapper'>
+            <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
+              <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
+            </b:section>
+          </div>
+        </section>
+
+      </b:if>
       </div><!-- /main-content -->
 
       <!-- Sidebar vacío requerido por Blogger — contenido movido al flujo principal -->
@@ -878,11 +905,8 @@
     </a>
 
     <!-- SCRIPTS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/main.js'></script>
-    <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/news-grid.js'></script>
     <script src='https://adasfro-soport.github.io/Adasfro_Blogger/js/accessibility-bar.js'></script>
-    <!-- donation-widget desactivado temporalmente -->
 
   </body>
 </html>

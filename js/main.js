@@ -91,6 +91,37 @@ function initMobileMenu() {
   });
 }
 
+// ── Filtro de búsqueda del mapa del sitio ────────────────────────
+function initSitemapFilter() {
+  var input = document.getElementById('sitemap-filter');
+  var grid  = document.getElementById('sitemap-grid');
+  var noResults = document.getElementById('sitemap-no-results');
+  if (!input || !grid) return;
+
+  var links = grid.querySelectorAll('a');
+
+  input.addEventListener('input', function () {
+    var term = input.value.trim().toLowerCase();
+    var visibleCount = 0;
+
+    links.forEach(function (link) {
+      var match = !term || link.textContent.toLowerCase().indexOf(term) !== -1;
+      link.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+
+    grid.querySelectorAll('.sitemap-col').forEach(function (col) {
+      var hasVisible = Array.prototype.some.call(
+        col.querySelectorAll('a'),
+        function (a) { return a.style.display !== 'none'; }
+      );
+      col.style.display = hasVisible ? '' : 'none';
+    });
+
+    if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  });
+}
+
 // ── Sticky nav ────────────────────────────────────────────────
 function initStickyNav() {
   var nav = document.getElementById('main-nav');
@@ -100,10 +131,47 @@ function initStickyNav() {
   });
 }
 
+// ── Indicador de sección activa (scrollspy) ─────────────────────
+// Reemplaza a breadcrumbs: el sitio es de una sola página con
+// navegación por anclas, así que se resalta en el menú la sección
+// visible en vez de fingir una jerarquía de páginas que no existe.
+function initScrollSpy() {
+  var navLinks = document.querySelectorAll('#nav-list a[href^="#"], #nav-list-secondary a[href^="#"]');
+  if (!navLinks.length || !('IntersectionObserver' in window)) return;
+
+  var linkByTarget = {};
+  var targets = [];
+  navLinks.forEach(function (link) {
+    var id = link.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el && !linkByTarget[id]) {
+      linkByTarget[id] = link;
+      targets.push(el);
+    }
+  });
+  if (!targets.length) return;
+
+  function setActive(id) {
+    navLinks.forEach(function (link) { link.classList.remove('nav-active'); });
+    var link = linkByTarget[id];
+    if (link) link.classList.add('nav-active');
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  targets.forEach(function (el) { observer.observe(el); });
+}
+
 // ── Init ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
   initDenunciaForm();
   initConveniosFilter();
+  initSitemapFilter();
   initMobileMenu();
   initStickyNav();
+  initScrollSpy();
 });
