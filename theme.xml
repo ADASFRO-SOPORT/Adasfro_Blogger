@@ -292,28 +292,28 @@
               <div class='poblacion-icon'><i class='fas fa-wheelchair'></i></div>
               <h4>Discapacidad Física</h4>
               <p>Personas con movilidad reducida, usuarios de silla de ruedas o ayudas técnicas. Fiscalizamos la accesibilidad física en espacios públicos y privados.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+F%C3%ADsica' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad%20F%C3%ADsica' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-eye-slash'></i></div>
               <h4>Discapacidad Visual</h4>
               <p>Personas ciegas o con baja visión. Promovemos el acceso a la información en formatos accesibles: braille, audio y texto de alto contraste.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Visual' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad%20Visual' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-deaf'></i></div>
               <h4>Discapacidad Auditiva</h4>
               <p>Personas sordas o con hipoacusia. Trabajamos por el reconocimiento del LESCO como derecho fundamental y la interpretación en todos los espacios públicos.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Auditiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad%20Auditiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-brain'></i></div>
               <h4>Discapacidad Cognitiva</h4>
               <p>Personas con discapacidad intelectual. Promovemos materiales en Lectura Fácil y apoyamos la autonomía e inserción social y laboral.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad+Cognitiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Discapacidad%20Cognitiva' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
@@ -327,14 +327,14 @@
               <div class='poblacion-icon'><i class='fas fa-user-clock'></i></div>
               <h4>Adultos Mayores</h4>
               <p>Personas mayores que enfrentan barreras por el envejecimiento. Trabajamos por su plena participación y acceso a salud, recreación y servicios públicos.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Adultos+Mayores' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Adultos%20Mayores' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
               <div class='poblacion-icon'><i class='fas fa-globe-americas'></i></div>
               <h4>Población Migrante</h4>
               <p>Personas migrantes que enfrentan barreras adicionales. Brindamos orientación legal incluyendo apoyo jurídico internacional en casos de pensión alimenticia y acceso a derechos.</p>
-              <p style='margin-top: 12px;'><a href='/search/label/Poblaci%C3%B3n+Migrante' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
+              <p style='margin-top: 12px;'><a href='/search/label/Poblaci%C3%B3n%20Migrante' class='btn btn-outline' style='display:inline-block;padding:6px 14px;font-size:13px;'>Ver entradas</a></p>
             </div>
 
             <div class='poblacion-card'>
