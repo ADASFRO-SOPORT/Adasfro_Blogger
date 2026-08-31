@@ -5,8 +5,10 @@ Basada en [Conventional Commits](https://www.conventionalcommits.org/), adaptada
 ## Formato
 
 ```
-<tipo>(<alcance opcional>): <descripción corta en español, minúsculas, modo imperativo>
+<tipo>(<alcance opcional>): <short description in English, lowercase, imperative mood>
 ```
+
+**Los mensajes de commit van en inglés** (cambio de convención, 2026-08-30 — antes eran en español). El resto de esta documentación se mantiene en español.
 
 Si el motivo del cambio no es obvio a partir del diff, agregar cuerpo: línea en blanco + explicación del **por qué** (no del qué — eso ya lo dice el diff).
 
@@ -40,9 +42,9 @@ Después de cada tarea **completada** que introdujo un cambio al proyecto, se de
 ## Ejemplos
 
 ```
-fix(carousel): corregir resolución de miniaturas a alta calidad
-feat(convenios): agregar filtros por año, estado y tipo
-a11y(accessibility-bar): guardar preferencias de contraste en localStorage
-docs(todo): registrar deuda técnica de archivos que superan 500 líneas
-docs(plan): agregar plan de mapa del sitio interactivo dividido por fases
+fix(carousel): fix thumbnail resolution to high quality
+feat(convenios): add filters by year, status, and type
+a11y(accessibility-bar): persist contrast preference in localStorage
+docs(todo): log tech debt for files over 500 lines
+docs(plan): add phased plan for interactive sitemap
 ```

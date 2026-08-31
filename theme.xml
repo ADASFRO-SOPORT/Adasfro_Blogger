@@ -451,10 +451,33 @@
           <h2 class='section-break-title'><i class='fas fa-handshake'></i>Convenios Institucionales</h2>
         </div>
 
+        <div class='card aliados-card'>
+          <h3>Aliados y colaboradores</h3>
+          <div class='aliados-grid'>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>PANI</div><span class='aliados-name'>PANI</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONACIDA</div><span class='aliados-name'>CONACIDA</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONAPDIS</div><span class='aliados-name'>CONAPDIS</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MICITT</div><span class='aliados-name'>MICITT</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>FUNIBER</div><span class='aliados-name'>FUNIBER</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UH</div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
+            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MTSS</div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+          </div>
+          <a class='aliados-ver-todos' href='#convenios-tabla'>Ver todos los aliados <i aria-hidden='true' class='fas fa-arrow-right'></i></a>
+        </div>
+
         <div class='card'>
           <div class='convenios-filters'>
             <select id='f-anio' aria-label='Filtrar por año'>
               <option value=''>Todos los años</option>
+              <option value='2026'>2026</option>
               <option value='2025'>2025</option>
               <option value='2024'>2024</option>
               <option value='2023'>2023</option>
@@ -484,21 +507,52 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- FILAS DE EJEMPLO — reemplazar con convenios reales. Formato documentado en CLAUDE.md, sección "Convenios". -->
-                <tr data-anio='2024' data-estado='vigente' data-tipo='academico'>
-                  <td>Cooperación para inclusión educativa</td><td>UCR</td><td>2024</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                <!-- Datos placeholder (año/estado/tipo) mientras ADASFRO confirma los reales — ver docs/TODO.md.
+                     Nombre de institución real; formato de fila documentado en CLAUDE.md, sección "Convenios". -->
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>PANI</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
-                <tr data-anio='2024' data-estado='vigente' data-tipo='publico'>
-                  <td>Fiscalización accesibilidad física</td><td>CONAPDIS</td><td>2024</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Buenos Aires</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
-                <tr data-anio='2025' data-estado='proceso' data-tipo='sociedad'>
-                  <td>Red de apoyo para migrantes con discapacidad</td><td>Cruz Roja CR</td><td>2025</td><td>Sociedad civil</td><td><span class='estado-badge estado-proceso'>En proceso</span></td>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
+                  <td>Convenio de cooperación institucional</td><td>CONACIDA</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
-                <tr data-anio='2023' data-estado='vencido' data-tipo='academico'>
-                  <td>Programa de prácticas universitarias</td><td>TEC Costa Rica</td><td>2023</td><td>Académico</td><td><span class='estado-badge estado-vencido'>Vencido</span></td>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>CONAPDIS</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
-                <tr data-anio='2025' data-estado='vigente' data-tipo='publico'>
-                  <td>Asistencia técnica accesibilidad web</td><td>MICITT</td><td>2025</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
+                  <td>Convenio de cooperación institucional</td><td>Universidad de Costa Rica (UCR)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
+                  <td>Convenio de cooperación institucional</td><td>Instituto Tecnológico de Costa Rica (TEC)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>MICITT</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
+                  <td>Convenio de cooperación institucional</td><td>Cruz Roja Costarricense</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Belén</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
+                  <td>Convenio de cooperación institucional</td><td>FUNIBER</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
+                  <td>Convenio de cooperación institucional</td><td>Fundación Clarissa Martínez Castillo</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Upala</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Heredia</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
+                  <td>Convenio de cooperación institucional</td><td>Universidad Hispanoamericana (UH)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
+                </tr>
+                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
+                  <td>Convenio de cooperación institucional</td><td>Ministerio de Trabajo y Seguridad Social (MTSS)</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
                 </tr>
               </tbody>
             </table>

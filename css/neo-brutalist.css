@@ -1441,6 +1441,66 @@ img {
 }
 
 /* ========================================
+   ALIADOS Y COLABORADORES (banda de logos, ref. convenios.jpeg)
+   Placeholders de texto hasta que ADASFRO provea logos reales —
+   ver docs/TODO.md.
+======================================== */
+.aliados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.aliados-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 112px;
+  text-align: center;
+}
+
+.aliados-logo {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-body);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+.aliados-name {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+
+.aliados-ver-todos {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.aliados-ver-todos:hover {
+  color: var(--primary-light);
+}
+
+#convenios-tabla {
+  scroll-margin-top: 72px;
+}
+
+/* ========================================
    CONVENIOS
 ======================================== */
 .convenios-filters {

@@ -39,7 +39,7 @@ Confirmado por el usuario: "arreglar cards" = mostrar los posts de Blogger como 
 - Alcance: CSS grid de 3 columnas (1 en móvil, 2 en tablet, como el resto del sitio), badge = primera label del post, thumbnail recortado a proporción fija, título truncado a 2-3 líneas, byline con ícono + "ADASFRO" (nombre del blog vía `data:blog.title` si Blogger lo expone en el post por defecto, si no, texto fijo).
 - Archivos: `css/neo-brutalist.css` (sección `.post-list-wrapper` existente).
 
-## Fase 4 — Convenios: banda de aliados + 15 organizaciones nuevas (ref. `ui-ux_example/convenios.jpeg`)
+## Fase 4 — Convenios: banda de aliados + 15 organizaciones nuevas (ref. `ui-ux_example/convenios.jpeg`) ✅ HECHA (2026-08-30, con datos placeholder — ver `docs/TODO.md`)
 
 - Nueva sección "Aliados y colaboradores" **encima** de la tabla filtrable actual (`#convenios-tabla`): grid de logos en placeholder (recuadro gris con texto/inicial de la organización — el usuario confirmó "usa placeholders para las imágenes/logos por ahora") + link "Ver todos los aliados →" que hace scroll/expande hacia la tabla completa con filtros (que se mantiene, ya funciona y está documentada).
 - Se agregan las 15 organizaciones nuevas tanto al grid de logos como a las filas de `#convenios-tabla`:
