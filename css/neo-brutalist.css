@@ -1099,8 +1099,8 @@ img {
 .nav-search {
   display: flex;
   align-items: center;
-  width: 220px;
-  max-width: 60vw;
+  flex: 1 1 380px;
+  max-width: 420px;
 }
 
 .nav-search input[type='search'] {
