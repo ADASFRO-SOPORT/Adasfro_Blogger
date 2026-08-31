@@ -413,25 +413,25 @@
         <div class='card'>
           <div class='proyectos-grid'>
             <div class='proyecto-card'>
-              <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+              <div class='proyecto-estado'>En ejecución</div>
               <h4>Accesibilidad Web para ONGs</h4>
               <p>Diagnóstico y asesoría para que organizaciones de la sociedad civil costarricense adapten sus sitios web a estándares WCAG 2.1 AA.</p>
               <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2024 — 2025</p>
             </div>
             <div class='proyecto-card'>
-              <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+              <div class='proyecto-estado'>En ejecución</div>
               <h4>Asesoría Legal para Migrantes con Discapacidad</h4>
               <p>Orientación jurídica para personas migrantes con discapacidad, incluyendo casos transfronterizos de pensión alimenticia y acceso a derechos.</p>
               <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2023 — continuo</p>
             </div>
             <div class='proyecto-card'>
-              <div class='proyecto-estado'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En ejecución</div>
+              <div class='proyecto-estado'>En ejecución</div>
               <h4>Fiscalización Ley 7600 en Espacios Públicos</h4>
               <p>Auditorías de accesibilidad física en municipios de Cartago. Informes de incumplimiento y seguimiento ante CONAPDIS y Defensoría.</p>
               <p style='margin-top: 12px; font-size: 13px; color: var(--primary); font-weight: 600;'>2024 — 2025</p>
             </div>
             <div class='proyecto-card'>
-              <div class='proyecto-estado' style='color: var(--accent);'><i class='fas fa-circle' style='font-size: 8px; margin-right: 4px;'></i>En planificación</div>
+              <div class='proyecto-estado' style='color: var(--accent);'>En planificación</div>
               <h4>Guías en Lectura Fácil sobre Derechos</h4>
               <p>Producción de materiales sobre la Ley 7600 y la Convención ONU en formato Lectura Fácil, adaptados para personas con discapacidad cognitiva.</p>
               <p style='margin-top: 12px; font-size: 13px; color: var(--accent); font-weight: 600;'>2025 — planificado</p>
