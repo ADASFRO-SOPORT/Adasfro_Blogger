@@ -1508,6 +1508,12 @@ img {
   text-transform: uppercase;
 }
 
+.aliados-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .aliados-name {
   font-size: 11px;
   color: var(--text-light);
