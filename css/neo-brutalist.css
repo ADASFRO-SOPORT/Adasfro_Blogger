@@ -1539,46 +1539,6 @@ img {
 /* ========================================
    MAPA DEL SITIO
 ======================================== */
-.sitemap-search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--bg-body);
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  max-width: 360px;
-}
-
-.sitemap-search i {
-  color: var(--text-light);
-  flex-shrink: 0;
-}
-
-.sitemap-search input {
-  border: none;
-  background: none;
-  outline: none;
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--text-main);
-}
-
-.sitemap-search input:focus-visible {
-  outline: none;
-}
-
-.sitemap-search:focus-within {
-  border-color: var(--primary);
-}
-
-.sitemap-no-results {
-  margin-top: var(--spacing-md);
-  color: var(--text-light);
-  font-style: italic;
-}
-
 .sitemap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

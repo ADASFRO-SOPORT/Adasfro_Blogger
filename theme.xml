@@ -164,35 +164,35 @@
             <h3 id='pilares-title'>Nuestros 5 Pilares Fundamentales</h3>
             <div class='pilares-grid'>
               <div class='pilar'>
-                <div class='pilar-num'>01</div>
+                <div class='pilar-num'>1</div>
                 <div class='pilar-body'>
                   <strong>Inclusión Social</strong>
                   <p>Fomentamos espacios donde todas las personas participan en igualdad de condiciones, sin importar su condición.</p>
                 </div>
               </div>
               <div class='pilar'>
-                <div class='pilar-num'>02</div>
+                <div class='pilar-num'>2</div>
                 <div class='pilar-body'>
                   <strong>Transparencia</strong>
                   <p>Exigimos al Estado y practicamos internamente una rendición de cuentas radical, accesible y verificable.</p>
                 </div>
               </div>
               <div class='pilar'>
-                <div class='pilar-num'>03</div>
+                <div class='pilar-num'>3</div>
                 <div class='pilar-body'>
                   <strong>Colaboración</strong>
                   <p>Establecemos convenios estratégicos con entidades que comparten nuestra visión de accesibilidad universal.</p>
                 </div>
               </div>
               <div class='pilar'>
-                <div class='pilar-num'>04</div>
+                <div class='pilar-num'>4</div>
                 <div class='pilar-body'>
                   <strong>Desarrollo Sostenible</strong>
                   <p>Impulsamos proyectos alineados con los ODS de la ONU, con enfoque en derechos humanos.</p>
                 </div>
               </div>
               <div class='pilar'>
-                <div class='pilar-num'>05</div>
+                <div class='pilar-num'>5</div>
                 <div class='pilar-body'>
                   <strong>Defensa de Derechos</strong>
                   <p>Litigamos estratégicamente para garantizar el cumplimiento de la Ley 7600 y la Convención ONU sobre PcD.</p>
@@ -457,37 +457,19 @@
           </div>
           <div class='aliados-marquee' id='aliados-marquee'>
             <div class='aliados-track'>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/PANI.svg'/></div><span class='aliados-name'>PANI</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONACIDA.svg'/></div><span class='aliados-name'>CONACIDA</span></div>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONAPDIS.svg'/></div><span class='aliados-name'>CONAPDIS</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MICITT</div><span class='aliados-name'>MICITT</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/FUNIBER.svg'/></div><span class='aliados-name'>FUNIBER</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
-              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/UH.svg'/></div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
-              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/MTSS.svg'/></div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/PANI.svg'/></div><span class='aliados-name'>Patronato Nacional de la Infancia (PANI)</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONACIDA.svg'/></div><span class='aliados-name'>Consejo Nacional para la Prevención y el Control del SIDA (CONACIDA)</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONAPDIS.svg'/></div><span class='aliados-name'>Consejo Nacional de Personas con Discapacidad (CONAPDIS)</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/FUNIBER.svg'/></div><span class='aliados-name'>Fundación Universitaria Iberoamericana (FUNIBER)</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/UH.svg'/></div><span class='aliados-name'>Universidad Hispanoamericana (UH)</span></div>
+              <div class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/MTSS.svg'/></div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social (MTSS)</span></div>
               <!-- Copia duplicada (oculta a lectores de pantalla) para el loop continuo sin salto visible -->
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/PANI.svg'/></div><span class='aliados-name'>PANI</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONACIDA.svg'/></div><span class='aliados-name'>CONACIDA</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONAPDIS.svg'/></div><span class='aliados-name'>CONAPDIS</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>MICITT</div><span class='aliados-name'>MICITT</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/FUNIBER.svg'/></div><span class='aliados-name'>FUNIBER</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/UH.svg'/></div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
-              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/MTSS.svg'/></div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/PANI.svg'/></div><span class='aliados-name'>Patronato Nacional de la Infancia (PANI)</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONACIDA.svg'/></div><span class='aliados-name'>Consejo Nacional para la Prevención y el Control del SIDA (CONACIDA)</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/CONAPDIS.svg'/></div><span class='aliados-name'>Consejo Nacional de Personas con Discapacidad (CONAPDIS)</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/FUNIBER.svg'/></div><span class='aliados-name'>Fundación Universitaria Iberoamericana (FUNIBER)</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/UH.svg'/></div><span class='aliados-name'>Universidad Hispanoamericana (UH)</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'><img alt='' src='https://adasfro-soport.github.io/Adasfro_Blogger/public/logos_convenio/MTSS.svg'/></div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social (MTSS)</span></div>
             </div>
           </div>
         </div>
@@ -754,12 +736,6 @@
         </div>
 
         <div class='card'>
-          <div class='sitemap-search'>
-            <label class='visually-hidden' for='sitemap-filter'>Buscar en el mapa del sitio</label>
-            <i class='fas fa-search' aria-hidden='true'></i>
-            <input type='text' id='sitemap-filter' placeholder='Buscar una sección...' autocomplete='off'/>
-          </div>
-          <p id='sitemap-no-results' class='sitemap-no-results' style='display:none;' role='status'>No se encontraron secciones con ese término.</p>
           <div class='sitemap-grid' id='sitemap-grid'>
             <div class='sitemap-col'>
               <h4>Organización</h4>

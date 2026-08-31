@@ -150,37 +150,6 @@ function initNavOverflow() {
   });
 }
 
-// ── Filtro de búsqueda del mapa del sitio ────────────────────────
-function initSitemapFilter() {
-  var input = document.getElementById('sitemap-filter');
-  var grid  = document.getElementById('sitemap-grid');
-  var noResults = document.getElementById('sitemap-no-results');
-  if (!input || !grid) return;
-
-  var links = grid.querySelectorAll('a');
-
-  input.addEventListener('input', function () {
-    var term = input.value.trim().toLowerCase();
-    var visibleCount = 0;
-
-    links.forEach(function (link) {
-      var match = !term || link.textContent.toLowerCase().indexOf(term) !== -1;
-      link.style.display = match ? '' : 'none';
-      if (match) visibleCount++;
-    });
-
-    grid.querySelectorAll('.sitemap-col').forEach(function (col) {
-      var hasVisible = Array.prototype.some.call(
-        col.querySelectorAll('a'),
-        function (a) { return a.style.display !== 'none'; }
-      );
-      col.style.display = hasVisible ? '' : 'none';
-    });
-
-    if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-  });
-}
-
 // ── Sticky nav ────────────────────────────────────────────────
 function initStickyNav() {
   var nav = document.getElementById('main-nav');
@@ -211,10 +180,15 @@ function initScrollSpy() {
   navLinks.forEach(function (link) {
     var id = link.hash.slice(1);
     var el = document.getElementById(id);
-    if (el && !linkByTarget[id]) {
-      linkByTarget[id] = link;
-      targets.push(el);
-    }
+    if (!el || linkByTarget[id]) return;
+    // Evita observar targets anidados uno dentro del otro (ej. "#mv-title"
+    // dentro de "#inicio"): ambos disparándose independiente rompe el
+    // resaltado, el chico se queda pegado como activo y nunca se despega
+    // porque el observer solo reacciona a entradas, no a salidas.
+    var nested = targets.some(function (t) { return t !== el && (t.contains(el) || el.contains(t)); });
+    if (nested) return;
+    linkByTarget[id] = link;
+    targets.push(el);
   });
   if (!targets.length) return;
 
@@ -240,7 +214,6 @@ function initScrollSpy() {
 document.addEventListener('DOMContentLoaded', function () {
   initDenunciaForm();
   initAliadosMarquee();
-  initSitemapFilter();
   initMobileMenu();
   initNavOverflow();
   initStickyNav();
