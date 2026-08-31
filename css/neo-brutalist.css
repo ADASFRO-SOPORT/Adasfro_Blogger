@@ -141,28 +141,6 @@ img {
 }
 
 /* ========================================
-   SKIP LINK - Accesibilidad
-======================================== */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary);
-  color: white;
-  padding: var(--spacing-sm) var(--spacing-md);
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 0 0 var(--radius-sm) 0;
-  z-index: 100;
-  transition: var(--transition);
-}
-
-.skip-link:focus {
-  top: 0;
-  box-shadow: var(--shadow-lg);
-}
-
-/* ========================================
    FOCUS STATES - Accesible
 ======================================== */
 *:focus {
@@ -294,8 +272,8 @@ img {
    MENÚ PRINCIPAL - Sticky
 ======================================== */
 #main-nav {
-  background: white;
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--primary) 0%, #004D40 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -312,8 +290,10 @@ img {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
   gap: var(--spacing-xs);
   max-width: 1200px;
   margin: 0 auto;
@@ -324,6 +304,7 @@ img {
 
 .main-menu .widget li {
   margin: 0;
+  flex-shrink: 0;
 }
 
 .main-menu .widget a {
@@ -332,10 +313,16 @@ img {
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.3px;
-  color: var(--text-main);
+  color: rgba(255, 255, 255, 0.92);
   border-radius: var(--radius-md);
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
+}
+
+.main-menu .widget a.nav-denuncia {
+  color: #FF6B6B;
+  font-weight: 700;
 }
 
 .main-menu .widget a::after {
@@ -346,17 +333,113 @@ img {
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: var(--primary);
+  background: white;
   transition: var(--transition);
 }
 
 .main-menu .widget a:hover {
-  color: var(--primary);
-  background: var(--bg-body);
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .main-menu .widget a:hover::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+.main-menu .widget a:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   NAV — DROPDOWN "MÁS" (ítems que no caben)
+======================================== */
+#nav-more-item {
+  display: none;
+  position: relative;
+}
+
+#nav-more-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  font-size: 15px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+#nav-more-toggle:hover,
+#nav-more-toggle[aria-expanded='true'] {
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#nav-more-toggle:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+#nav-more-toggle.has-active {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 4px;
+}
+
+#nav-more-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  max-width: none;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 220px;
+  padding: var(--spacing-xs);
+  list-style: none;
+  z-index: 60;
+  border: 1px solid var(--border);
+}
+
+#nav-more-menu.open {
+  display: block;
+}
+
+#nav-more-menu li {
+  margin: 0;
+}
+
+#nav-more-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: normal;
+}
+
+#nav-more-menu a:hover {
+  background: var(--bg-body);
+  color: var(--primary);
+}
+
+#nav-more-menu a.nav-active {
+  background: var(--bg-body);
+  color: var(--primary);
+}
+
+#nav-more-menu a:focus {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
 }
 
 /* ========================================
@@ -877,8 +960,8 @@ img {
    NAVEGACIÓN — ENLACE ACTIVO Y MÓVIL
 ======================================== */
 .main-menu .widget a.nav-active {
-  color: var(--primary);
-  background: var(--bg-body);
+  color: white;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .main-menu .widget a.nav-active::after {
@@ -888,8 +971,8 @@ img {
 #mobile-menu-toggle {
   display: none;
   background: none;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  border: 2px solid white;
+  color: white;
   padding: 8px 16px;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -899,6 +982,11 @@ img {
   align-items: center;
   margin: 8px auto;
   font-family: var(--font-body);
+}
+
+#mobile-menu-toggle:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
 }
 
 .visually-hidden {
@@ -911,18 +999,6 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.nav-group-label {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-light);
-  margin-top: -4px;
-  margin-bottom: 4px;
 }
 
 .nav-search {
@@ -965,6 +1041,7 @@ img {
   .main-menu .widget ul {
     flex-direction: column;
     align-items: stretch;
+    flex-wrap: wrap;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease;
@@ -972,21 +1049,19 @@ img {
   }
 
   .main-menu .widget ul.mobile-open {
-    max-height: 600px;
+    max-height: 800px;
     padding-bottom: 8px;
   }
 
   .main-menu .widget a {
     border-radius: 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .nav-group-label {
-    display: none;
-  }
-
-  #nav-list.mobile-open ~ .nav-group-label {
-    display: block;
+  /* El dropdown "Más" es un mecanismo de overflow para desktop;
+     en móvil el menú hamburguesa ya lista todos los ítems apilados */
+  #nav-more-item {
+    display: none !important;
   }
 }
 

@@ -29,8 +29,6 @@
   </head>
   <body>
 
-    <a class='skip-link' href='#main-content'>Saltar al contenido principal</a>
-
     <!-- BARRA SUPERIOR -->
     <div id='header-top-menu'>
       <div class='top-nav-content'>
@@ -76,20 +74,17 @@
       <b:section class='main-menu' id='main-menu' preferred='yes' showaddelement='yes'>
         <b:widget id='PageList1' locked='true' title='Menú Principal' type='PageList' version='1'>
           <b:includable id='main'>
-            <button id='mobile-menu-toggle' aria-label='Abrir menú' aria-expanded='false' aria-controls='nav-list nav-list-secondary'>
+            <button id='mobile-menu-toggle' aria-label='Abrir menú' aria-expanded='false' aria-controls='nav-list'>
               <i class='menu-icon fas fa-bars'></i>
               <span>Menú</span>
             </button>
-            <ul id='nav-list' aria-label='Institucional'>
-              <li><a href='#inicio'>Inicio</a></li>
+            <ul id='nav-list' aria-label='Menú principal'>
+              <li><a expr:href='data:blog.homepageUrl + "#inicio"'>Inicio</a></li>
               <li><a href='/search'>Publicaciones</a></li>
               <li><a href='#sobre-nosotros'>Sobre Nosotros</a></li>
               <li><a href='#mv-title'>Misión y Visión</a></li>
               <li><a href='#transparencia'>Transparencia</a></li>
               <li><a href='#contacto'>Contacto</a></li>
-            </ul>
-            <span class='nav-group-label'>Qué Hacemos</span>
-            <ul id='nav-list-secondary' aria-label='Qué hacemos'>
               <li><a href='#poblaciones'>Poblaciones</a></li>
               <li><a href='#eventos'>Eventos</a></li>
               <li><a href='#proyectos'>Proyectos</a></li>
@@ -97,7 +92,13 @@
               <li><a href='#ley-7600'>Ley 7600</a></li>
               <li><a href='#guias'>Guías</a></li>
               <li><a href='#lesco'>LESCO</a></li>
-              <li><a href='#denuncia' style='color: #FF6B6B; font-weight: 700;'>Denunciar</a></li>
+              <li data-pin='true'><a class='nav-denuncia' href='#denuncia'>Denunciar</a></li>
+              <li id='nav-more-item'>
+                <button aria-expanded='false' aria-haspopup='true' id='nav-more-toggle'>
+                  Más <i aria-hidden='true' class='fas fa-chevron-down'></i>
+                </button>
+                <ul aria-label='Más opciones' id='nav-more-menu' role='menu'></ul>
+              </li>
             </ul>
             <form action='/search' class='nav-search' method='get' role='search'>
               <label class='visually-hidden' for='nav-search-input'>Buscar en el sitio</label>

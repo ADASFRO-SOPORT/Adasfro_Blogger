@@ -69,25 +69,92 @@ function initConveniosFilter() {
 // ── Menú móvil ────────────────────────────────────────────────
 function initMobileMenu() {
   var toggle = document.getElementById('mobile-menu-toggle');
-  var lists  = [document.getElementById('nav-list'), document.getElementById('nav-list-secondary')].filter(Boolean);
-  if (!toggle || !lists.length) return;
+  var list   = document.getElementById('nav-list');
+  if (!toggle || !list) return;
 
   toggle.addEventListener('click', function () {
-    var open = !lists[0].classList.contains('mobile-open');
-    lists.forEach(function (list) { list.classList.toggle('mobile-open', open); });
+    var open = !list.classList.contains('mobile-open');
+    list.classList.toggle('mobile-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.querySelector('.menu-icon').className = 'menu-icon fas ' + (open ? 'fa-times' : 'fa-bars');
   });
 
   // Cerrar al navegar
-  lists.forEach(function (list) {
-    list.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        lists.forEach(function (l) { l.classList.remove('mobile-open'); });
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.querySelector('.menu-icon').className = 'menu-icon fas fa-bars';
+  list.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      list.classList.remove('mobile-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.querySelector('.menu-icon').className = 'menu-icon fas fa-bars';
+    }
+  });
+}
+
+// ── Overflow del menú: ítems que no caben colapsan en "Más" ────
+// El botón "Denunciar" (data-pin) nunca se colapsa: es el acceso
+// más urgente del nav (apoyo legal). Solo corre en desktop; en
+// móvil el menú hamburguesa ya apila todos los ítems.
+function initNavOverflow() {
+  var list       = document.getElementById('nav-list');
+  var moreItem   = document.getElementById('nav-more-item');
+  var moreToggle = document.getElementById('nav-more-toggle');
+  var moreMenu   = document.getElementById('nav-more-menu');
+  if (!list || !moreItem || !moreToggle || !moreMenu) return;
+
+  var MOBILE_BREAKPOINT = 768;
+  function isMobile() { return window.innerWidth <= MOBILE_BREAKPOINT; }
+
+  function resetOverflow() {
+    while (moreMenu.firstChild) {
+      list.insertBefore(moreMenu.firstChild, moreItem);
+    }
+    moreItem.style.display = 'none';
+    moreMenu.classList.remove('open');
+    moreToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function collapse() {
+    resetOverflow();
+    if (isMobile()) return;
+
+    var guard = 0;
+    while (list.scrollWidth > list.clientWidth && guard < 30) {
+      var candidate = moreItem.previousElementSibling;
+      while (candidate && candidate.hasAttribute('data-pin')) {
+        candidate = candidate.previousElementSibling;
       }
-    });
+      if (!candidate) break;
+      moreMenu.insertBefore(candidate, moreMenu.firstChild);
+      moreItem.style.display = '';
+      guard++;
+    }
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(collapse, 150);
+  });
+
+  collapse();
+
+  moreToggle.addEventListener('click', function () {
+    var open = moreMenu.classList.toggle('open');
+    moreToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!moreItem.contains(e.target)) {
+      moreMenu.classList.remove('open');
+      moreToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  moreItem.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      moreMenu.classList.remove('open');
+      moreToggle.setAttribute('aria-expanded', 'false');
+      moreToggle.focus();
+    }
   });
 }
 
@@ -136,13 +203,21 @@ function initStickyNav() {
 // navegación por anclas, así que se resalta en el menú la sección
 // visible en vez de fingir una jerarquía de páginas que no existe.
 function initScrollSpy() {
-  var navLinks = document.querySelectorAll('#nav-list a[href^="#"], #nav-list-secondary a[href^="#"]');
+  // Se usa link.hash (no el atributo href crudo) porque "Inicio" apunta a
+  // data:blog.homepageUrl + "#inicio", no a un anchor puro "#inicio".
+  var navLinks = Array.prototype.filter.call(
+    document.querySelectorAll('#nav-list a'),
+    function (link) { return !!link.hash; }
+  );
   if (!navLinks.length || !('IntersectionObserver' in window)) return;
+
+  var moreToggle = document.getElementById('nav-more-toggle');
+  var moreMenu   = document.getElementById('nav-more-menu');
 
   var linkByTarget = {};
   var targets = [];
   navLinks.forEach(function (link) {
-    var id = link.getAttribute('href').slice(1);
+    var id = link.hash.slice(1);
     var el = document.getElementById(id);
     if (el && !linkByTarget[id]) {
       linkByTarget[id] = link;
@@ -155,6 +230,9 @@ function initScrollSpy() {
     navLinks.forEach(function (link) { link.classList.remove('nav-active'); });
     var link = linkByTarget[id];
     if (link) link.classList.add('nav-active');
+    if (moreToggle && moreMenu) {
+      moreToggle.classList.toggle('has-active', !!link && moreMenu.contains(link));
+    }
   }
 
   var observer = new IntersectionObserver(function (entries) {
@@ -172,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initConveniosFilter();
   initSitemapFilter();
   initMobileMenu();
+  initNavOverflow();
   initStickyNav();
   initScrollSpy();
 });
