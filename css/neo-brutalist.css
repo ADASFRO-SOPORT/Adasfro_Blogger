@@ -503,7 +503,7 @@ img {
   box-shadow: none;
   width: 100%;
   max-width: 100%;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
 .hero-section::before {
@@ -524,17 +524,17 @@ img {
 
 .hero-section h2 {
   color: white;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.25;
 }
 
 .hero-section p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   max-width: 600px;
-  margin: 0 auto var(--spacing-lg);
+  margin: 0 auto var(--spacing-md);
 }
 
 /* ========================================

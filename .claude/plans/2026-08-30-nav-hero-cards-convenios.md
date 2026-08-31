@@ -23,7 +23,7 @@ Une tres pedidos del usuario que apuntan a lo mismo: "arreglar menu inicial", "s
 
 **Punto abierto:** el corte exacto de qué queda visible vs. qué entra al "Más" depende del ancho real disponible (depende del logo, que ya es grande) — se decide con overflow dinámico vía JS (medir qué no cabe) en vez de un corte fijo hardcodeado, para que no se rompa si cambia el zoom de texto (barra de accesibilidad permite +25%/+50%).
 
-## Fase 2 — Proporción del hero banner
+## Fase 2 — Proporción del hero banner ✅ HECHA (2026-08-30)
 
 `El banner "Accesibilidad Universal: Un Derecho, No un Privilegio"` se ve demasiado grande respecto a logo/header/menú.
 
