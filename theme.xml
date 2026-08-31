@@ -105,14 +105,16 @@
       </b:section>
     </nav>
 
-    <!-- BANNER — ancho completo, fuera del content-wrapper -->
-    <section class='hero-section hero-banner' aria-labelledby='hero-title'>
-      <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
-      <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
-      <a class='btn btn-primary' href='#denuncia' style='display: inline-block; margin-top: 16px;'>
-        <i class='fas fa-file-alt' style='margin-right: 8px;'></i>Genera tu Denuncia Legal
-      </a>
-    </section>
+    <!-- BANNER — ancho completo, fuera del content-wrapper. Solo en portada real. -->
+    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+      <section class='hero-section hero-banner' aria-labelledby='hero-title'>
+        <h2 id='hero-title'>Accesibilidad Universal: Un Derecho, No un Privilegio</h2>
+        <p>Fiscalizamos el cumplimiento de la Ley 7600 y defendemos activamente a las poblaciones históricamente excluidas de Costa Rica. Juntos construimos una sociedad más inclusiva.</p>
+        <a class='btn btn-primary' expr:href='data:blog.homepageUrl + "#denuncia"' style='display: inline-block; margin-top: 16px;'>
+          <i class='fas fa-file-alt' style='margin-right: 8px;'></i>Genera tu Denuncia Legal
+        </a>
+      </section>
+    </b:if>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main id='content-wrapper'>
@@ -867,7 +869,7 @@
                                   </b:loop>
                                 </b:if>
                                 <b:if cond='data:post.featuredImage'>
-                                  <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 400, &quot;1:1&quot;)'/>
+                                  <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 400)'/>
                                 <b:else/>
                                   <div class='post-card-media-placeholder'><i aria-hidden='true' class='fas fa-newspaper'></i></div>
                                 </b:if>

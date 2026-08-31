@@ -451,18 +451,9 @@ img {
    CARDS MODERNAS
 ======================================== */
 .card {
-  background: var(--bg-surface);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  border: 1px solid var(--border);
   max-width: 100%;
   box-sizing: border-box;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-lg);
 }
 
 /* ========================================
@@ -852,10 +843,6 @@ img {
   transition: var(--transition);
 }
 
-.post-card:hover {
-  box-shadow: var(--shadow-md);
-}
-
 .post-card-link {
   display: flex;
   flex-direction: column;
@@ -866,7 +853,7 @@ img {
 
 .post-card-media {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   background: var(--bg-body);
   overflow: hidden;
 }
@@ -1414,10 +1401,6 @@ img {
   border-top: 4px solid var(--primary);
   text-align: center;
   transition: var(--transition);
-}
-
-.poblacion-card:hover {
-  box-shadow: var(--shadow-md);
 }
 
 .poblacion-icon {

@@ -359,15 +359,27 @@ Descripción: Open Sans 400, 18-20px, Blanco 90%
 CTA: Botón blanco con texto Teal
 ```
 
-### Cards / Widgets
+### Secciones (`.card`)
+
+```
+Fondo: ninguno (transparente, hereda el fondo de la página)
+Borde: ninguno
+Shadow: ninguno
+Padding: 24-32px
+Hover: sin efecto
+```
+
+> Cambio 2026-08-30: antes cada sección (Misión/Visión, Poblaciones, Eventos, Proyectos, Convenios, etc.) era una "card" con fondo blanco, borde, sombra y hover elevado. El usuario pidió que las secciones se vean "como parte de la misma página" en vez de como cards independientes — se quitó todo el tratamiento visual de caja, queda solo el padding para espaciado interno. Los ítems *dentro* de una sección en grid (`.poblacion-card`, `.evento-card`, `.proyecto-card`, `.post-card`) mantienen su propio estilo de card — ese cambio fue solo para el contenedor de sección.
+
+### Widgets (item cards dentro de una sección: `.poblacion-card`, `.evento-card`, `.proyecto-card`, `.post-card`)
 
 ```
 Fondo: Blanco #FFFFFF
 Borde: 1px solid #E2E8F0
 Border-radius: 16px
 Padding: 24-32px
-Shadow: var(--shadow-md)
-Hover: Shadow lg + translateY(-4px)
+Shadow: var(--shadow-md) o var(--shadow-sm)
+Hover: solo cambio de shadow (sin translateY — se quitó 2026-08-30 por pedido del usuario, se sentía como que la card "se movía")
 ```
 
 ### Footer
