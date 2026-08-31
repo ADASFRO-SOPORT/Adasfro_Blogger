@@ -819,6 +819,22 @@
         <!-- ══════════════════════════════════════ -->
         <section class='card' aria-labelledby='publicaciones-title'>
           <h2 id='publicaciones-title' style='margin-bottom: 16px;'><i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Publicaciones</h2>
+          <b:if cond='data:blog.pageType != &quot;item&quot;'>
+            <b:section class='labels' id='labels-filter' showaddelement='yes'>
+              <b:widget id='Label1' locked='false' title='Categorías' type='Label' version='2'>
+                <b:includable id='main'>
+                  <b:if cond='data:labels'>
+                    <nav aria-label='Filtrar publicaciones por etiqueta' class='labels-filter'>
+                      <a class='label-chip' href='/search'>Todas</a>
+                      <b:loop values='data:labels' var='label'>
+                        <a class='label-chip' expr:href='data:label.url'><data:label.name/></a>
+                      </b:loop>
+                    </nav>
+                  </b:if>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </b:if>
           <div class='post-list-wrapper'>
             <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
               <b:widget id='Blog1' locked='true' title='Blog' type='Blog'>
@@ -841,11 +857,6 @@
                           </b:if>
                           <span class='post-single-date'><data:post.date/></span>
                         </div>
-                        <b:if cond='data:post.thumbnailUrl'>
-                          <div class='post-single-image'>
-                            <img expr:alt='data:post.title' expr:src='data:post.thumbnailUrl'/>
-                          </div>
-                        </b:if>
                         <div class='post-single-body'>
                           <data:post.body/>
                         </div>

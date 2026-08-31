@@ -822,6 +822,33 @@ img {
 }
 
 /* ========================================
+   FILTRO POR ETIQUETA (widget Label1, solo en lista/búsqueda)
+======================================== */
+.labels-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.label-chip {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.label-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ========================================
    VISTA DE PUBLICACIONES — GRID DE CARDS
    Includable propio del widget Blog1 (theme.xml) — ya no
    depende del markup por defecto de Blogger. Grid para
@@ -972,17 +999,6 @@ img {
   font-size: 14px;
   color: var(--text-light);
   margin-bottom: var(--spacing-md);
-}
-
-.post-single-image {
-  margin-bottom: var(--spacing-md);
-}
-
-.post-single-image img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  display: block;
 }
 
 .post-single-body {
@@ -1464,7 +1480,7 @@ img {
   display: flex;
   width: max-content;
   gap: var(--spacing-md);
-  animation: aliados-scroll 40s linear infinite;
+  animation: aliados-scroll 56s linear infinite;
 }
 
 .aliados-marquee.is-paused .aliados-track {
@@ -1485,15 +1501,15 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  width: 112px;
+  gap: 8px;
+  width: 168px;
   flex-shrink: 0;
   text-align: center;
 }
 
 .aliados-logo {
   width: 100%;
-  height: 64px;
+  height: 108px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1502,9 +1518,9 @@ img {
   border-radius: var(--radius-md);
   color: var(--text-light);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.02em;
-  padding: 4px;
+  padding: 10px;
   text-transform: uppercase;
 }
 
