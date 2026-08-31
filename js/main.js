@@ -41,28 +41,20 @@ function initDenunciaForm() {
   });
 }
 
-// ── Filtros de convenios ──────────────────────────────────────
-function initConveniosFilter() {
-  var tabla = document.getElementById('convenios-tabla');
-  if (!tabla) return;
+// ── Carrusel de aliados: botón de pausa (WCAG 2.2 SC 2.2.2) ────
+// El scroll automático también se detiene con hover/foco (CSS) y
+// con prefers-reduced-motion (regla global), pero SC 2.2.2 pide
+// además un control persistente que no dependa del mouse.
+function initAliadosMarquee() {
+  var marquee = document.getElementById('aliados-marquee');
+  var button  = document.getElementById('aliados-pause');
+  if (!marquee || !button) return;
 
-  function filtrar() {
-    var anio  = document.getElementById('f-anio').value;
-    var estado = document.getElementById('f-estado').value;
-    var tipo  = document.getElementById('f-tipo').value;
-    var filas = tabla.querySelectorAll('tbody tr');
-    filas.forEach(function (fila) {
-      var ok = true;
-      if (anio   && fila.dataset.anio   !== anio)   ok = false;
-      if (estado && fila.dataset.estado !== estado)  ok = false;
-      if (tipo   && fila.dataset.tipo   !== tipo)    ok = false;
-      fila.style.display = ok ? '' : 'none';
-    });
-  }
-
-  ['f-anio','f-estado','f-tipo'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('change', filtrar);
+  button.addEventListener('click', function () {
+    var paused = marquee.classList.toggle('is-paused');
+    button.setAttribute('aria-pressed', String(paused));
+    button.setAttribute('aria-label', paused ? 'Reanudar desplazamiento de aliados' : 'Pausar desplazamiento de aliados');
+    button.querySelector('i').className = paused ? 'fas fa-play' : 'fas fa-pause';
   });
 }
 
@@ -247,7 +239,7 @@ function initScrollSpy() {
 // ── Init ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
   initDenunciaForm();
-  initConveniosFilter();
+  initAliadosMarquee();
   initSitemapFilter();
   initMobileMenu();
   initNavOverflow();

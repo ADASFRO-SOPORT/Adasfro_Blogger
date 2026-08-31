@@ -32,11 +32,6 @@
     <!-- BARRA SUPERIOR -->
     <div id='header-top-menu'>
       <div class='top-nav-content'>
-        <div class='top-nav-left'>
-          <a href='#sobre-nosotros'>Sobre Nosotros</a>
-          <a href='#transparencia'>Transparencia</a>
-          <a href='#contacto'>Contáctanos</a>
-        </div>
         <div class='social-icons'>
           <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank' rel='noopener'><i class='fab fa-facebook-f'></i></a>
           <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank' rel='noopener'><i class='fab fa-instagram'></i></a>
@@ -452,110 +447,46 @@
         </div>
 
         <div class='card aliados-card'>
-          <h3>Aliados y colaboradores</h3>
-          <div class='aliados-grid'>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>PANI</div><span class='aliados-name'>PANI</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONACIDA</div><span class='aliados-name'>CONACIDA</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONAPDIS</div><span class='aliados-name'>CONAPDIS</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MICITT</div><span class='aliados-name'>MICITT</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>FUNIBER</div><span class='aliados-name'>FUNIBER</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UH</div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
-            <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MTSS</div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+          <div class='aliados-header'>
+            <h3>Aliados y colaboradores</h3>
+            <button aria-label='Pausar desplazamiento de aliados' aria-pressed='false' class='aliados-pause' id='aliados-pause' type='button'>
+              <i aria-hidden='true' class='fas fa-pause'></i>
+            </button>
           </div>
-          <a class='aliados-ver-todos' href='#convenios-tabla'>Ver todos los aliados <i aria-hidden='true' class='fas fa-arrow-right'></i></a>
-        </div>
-
-        <div class='card'>
-          <div class='convenios-filters'>
-            <select id='f-anio' aria-label='Filtrar por año'>
-              <option value=''>Todos los años</option>
-              <option value='2026'>2026</option>
-              <option value='2025'>2025</option>
-              <option value='2024'>2024</option>
-              <option value='2023'>2023</option>
-            </select>
-            <select id='f-estado' aria-label='Filtrar por estado'>
-              <option value=''>Todos los estados</option>
-              <option value='vigente'>Vigente</option>
-              <option value='proceso'>En proceso</option>
-              <option value='vencido'>Vencido</option>
-            </select>
-            <select id='f-tipo' aria-label='Filtrar por tipo'>
-              <option value=''>Todos los tipos</option>
-              <option value='academico'>Académico</option>
-              <option value='publico'>Institucional público</option>
-              <option value='sociedad'>Sociedad civil</option>
-            </select>
-          </div>
-          <div style='overflow-x: auto;'>
-            <table class='tabla-convenios' id='convenios-tabla'>
-              <thead>
-                <tr>
-                  <th>Convenio</th>
-                  <th>Institución</th>
-                  <th>Año</th>
-                  <th>Tipo</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Datos placeholder (año/estado/tipo) mientras ADASFRO confirma los reales — ver docs/TODO.md.
-                     Nombre de institución real; formato de fila documentado en CLAUDE.md, sección "Convenios". -->
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>PANI</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Buenos Aires</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
-                  <td>Convenio de cooperación institucional</td><td>CONACIDA</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>CONAPDIS</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
-                  <td>Convenio de cooperación institucional</td><td>Universidad de Costa Rica (UCR)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
-                  <td>Convenio de cooperación institucional</td><td>Instituto Tecnológico de Costa Rica (TEC)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>MICITT</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
-                  <td>Convenio de cooperación institucional</td><td>Cruz Roja Costarricense</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Belén</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
-                  <td>Convenio de cooperación institucional</td><td>FUNIBER</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='sociedad'>
-                  <td>Convenio de cooperación institucional</td><td>Fundación Clarissa Martínez Castillo</td><td>2026</td><td>Sociedad civil</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Upala</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>Municipalidad de Heredia</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='academico'>
-                  <td>Convenio de cooperación institucional</td><td>Universidad Hispanoamericana (UH)</td><td>2026</td><td>Académico</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-                <tr data-anio='2026' data-estado='vigente' data-tipo='publico'>
-                  <td>Convenio de cooperación institucional</td><td>Ministerio de Trabajo y Seguridad Social (MTSS)</td><td>2026</td><td>Institucional público</td><td><span class='estado-badge estado-vigente'>Vigente</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class='aliados-marquee' id='aliados-marquee'>
+            <div class='aliados-track'>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>PANI</div><span class='aliados-name'>PANI</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONACIDA</div><span class='aliados-name'>CONACIDA</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>CONAPDIS</div><span class='aliados-name'>CONAPDIS</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MICITT</div><span class='aliados-name'>MICITT</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>FUNIBER</div><span class='aliados-name'>FUNIBER</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>UH</div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
+              <div class='aliados-item'><div class='aliados-logo' aria-hidden='true'>MTSS</div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+              <!-- Copia duplicada (oculta a lectores de pantalla) para el loop continuo sin salto visible -->
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>PANI</div><span class='aliados-name'>PANI</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.BA</div><span class='aliados-name'>Municipalidad de Buenos Aires</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>CONACIDA</div><span class='aliados-name'>CONACIDA</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>CONAPDIS</div><span class='aliados-name'>CONAPDIS</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>UCR</div><span class='aliados-name'>Universidad de Costa Rica</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>TEC</div><span class='aliados-name'>Instituto Tecnológico de Costa Rica</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>MICITT</div><span class='aliados-name'>MICITT</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>C.ROJA</div><span class='aliados-name'>Cruz Roja Costarricense</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.BE</div><span class='aliados-name'>Municipalidad de Belén</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>FUNIBER</div><span class='aliados-name'>FUNIBER</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>F.CMC</div><span class='aliados-name'>Fundación Clarissa Martínez Castillo</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.UP</div><span class='aliados-name'>Municipalidad de Upala</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>M.HE</div><span class='aliados-name'>Municipalidad de Heredia</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>UH</div><span class='aliados-name'>Universidad Hispanoamericana</span></div>
+              <div aria-hidden='true' class='aliados-item'><div class='aliados-logo'>MTSS</div><span class='aliados-name'>Ministerio de Trabajo y Seguridad Social</span></div>
+            </div>
           </div>
         </div>
 

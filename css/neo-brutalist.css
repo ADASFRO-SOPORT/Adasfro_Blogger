@@ -161,28 +161,13 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 var(--spacing-md);
   flex-wrap: wrap;
   gap: var(--spacing-sm);
   width: 100%;
   box-sizing: border-box;
-}
-
-.top-nav-left a {
-  color: white;
-  margin-right: var(--spacing-md);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  transition: var(--transition);
-  opacity: 0.9;
-}
-
-.top-nav-left a:hover {
-  opacity: 1;
-  transform: translateY(-1px);
 }
 
 .social-icons a {
@@ -1441,15 +1426,68 @@ img {
 }
 
 /* ========================================
-   ALIADOS Y COLABORADORES (banda de logos, ref. convenios.jpeg)
+   ALIADOS Y COLABORADORES (carrusel horizontal, ref. convenios.jpeg)
    Placeholders de texto hasta que ADASFRO provea logos reales —
-   ver docs/TODO.md.
+   ver docs/TODO.md. Cumple WCAG 2.2 SC 2.2.2 (Pause/Stop/Hide):
+   botón de pausa visible + se detiene con hover/foco + respeta
+   prefers-reduced-motion (regla global al final del archivo).
 ======================================== */
-.aliados-grid {
+.aliados-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
+}
+
+.aliados-header h3 {
+  margin: 0;
+}
+
+.aliados-pause {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-body);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.aliados-pause:hover {
+  border-color: var(--primary);
+}
+
+.aliados-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+          mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+
+.aliados-track {
+  display: flex;
+  width: max-content;
+  gap: var(--spacing-md);
+  animation: aliados-scroll 40s linear infinite;
+}
+
+.aliados-marquee.is-paused .aliados-track {
+  animation-play-state: paused;
+}
+
+.aliados-marquee:hover .aliados-track,
+.aliados-marquee:focus-within .aliados-track {
+  animation-play-state: paused;
+}
+
+@keyframes aliados-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .aliados-item {
@@ -1458,6 +1496,7 @@ img {
   align-items: center;
   gap: 6px;
   width: 112px;
+  flex-shrink: 0;
   text-align: center;
 }
 
@@ -1483,84 +1522,6 @@ img {
   color: var(--text-light);
   line-height: 1.3;
 }
-
-.aliados-ver-todos {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  color: var(--primary);
-}
-
-.aliados-ver-todos:hover {
-  color: var(--primary-light);
-}
-
-#convenios-tabla {
-  scroll-margin-top: 72px;
-}
-
-/* ========================================
-   CONVENIOS
-======================================== */
-.convenios-filters {
-  display: flex;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.convenios-filters select {
-  padding: 10px 14px;
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  font-size: 15px;
-  font-family: var(--font-body);
-  color: var(--text-main);
-  background: white;
-  cursor: pointer;
-}
-
-.convenios-filters select:focus {
-  border-color: var(--primary);
-  outline: none;
-}
-
-.tabla-convenios {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-}
-
-.tabla-convenios th {
-  background: var(--primary);
-  color: white;
-  padding: 12px 16px;
-  text-align: left;
-  font-weight: 600;
-}
-
-.tabla-convenios td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-main);
-}
-
-.tabla-convenios tr:hover td {
-  background: var(--bg-body);
-}
-
-.estado-badge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.estado-vigente  { background: #E8F5E9; color: #2E7D32; }
-.estado-vencido  { background: #FFEBEE; color: #C62828; }
-.estado-proceso  { background: #FFF8E1; color: #F57F17; }
 
 /* ========================================
    MAPA DEL SITIO
