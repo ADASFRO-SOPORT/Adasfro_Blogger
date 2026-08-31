@@ -32,6 +32,11 @@
     <!-- BARRA SUPERIOR -->
     <div id='header-top-menu'>
       <div class='top-nav-content'>
+        <form action='/search' class='nav-search' method='get' role='search'>
+          <label class='visually-hidden' for='nav-search-input'>Buscar en el sitio</label>
+          <input id='nav-search-input' name='q' placeholder='Buscar en el sitio…' type='search'/>
+          <button aria-label='Buscar' type='submit'><i class='fas fa-search'></i></button>
+        </form>
         <div class='social-icons'>
           <a aria-label='Facebook' href='https://facebook.com/adasfroong' target='_blank' rel='noopener'><i class='fab fa-facebook-f'></i></a>
           <a aria-label='Instagram' href='https://instagram.com/adasfro' target='_blank' rel='noopener'><i class='fab fa-instagram'></i></a>
@@ -76,18 +81,18 @@
             <ul id='nav-list' aria-label='Menú principal'>
               <li><a expr:href='data:blog.homepageUrl + "#inicio"'>Inicio</a></li>
               <li><a href='/search'>Publicaciones</a></li>
-              <li><a href='#sobre-nosotros'>Sobre Nosotros</a></li>
-              <li><a href='#mv-title'>Misión y Visión</a></li>
-              <li><a href='#transparencia'>Transparencia</a></li>
-              <li><a href='#contacto'>Contacto</a></li>
-              <li><a href='#poblaciones'>Poblaciones</a></li>
-              <li><a href='#eventos'>Eventos</a></li>
-              <li><a href='#proyectos'>Proyectos</a></li>
-              <li><a href='#convenios'>Convenios</a></li>
-              <li><a href='#ley-7600'>Ley 7600</a></li>
-              <li><a href='#guias'>Guías</a></li>
-              <li><a href='#lesco'>LESCO</a></li>
-              <li data-pin='true'><a class='nav-denuncia' href='#denuncia'>Denunciar</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#sobre-nosotros"'>Sobre Nosotros</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#mv-title"'>Misión y Visión</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#transparencia"'>Transparencia</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#contacto"'>Contacto</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#poblaciones"'>Poblaciones</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#eventos"'>Eventos</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#proyectos"'>Proyectos</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#convenios"'>Convenios</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#ley-7600"'>Ley 7600</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#guias"'>Guías</a></li>
+              <li><a expr:href='data:blog.homepageUrl + "#lesco"'>LESCO</a></li>
+              <li data-pin='true'><a class='nav-denuncia' expr:href='data:blog.homepageUrl + "#denuncia"'>Denunciar</a></li>
               <li id='nav-more-item'>
                 <button aria-expanded='false' aria-haspopup='true' id='nav-more-toggle'>
                   Más <i aria-hidden='true' class='fas fa-chevron-down'></i>
@@ -95,11 +100,6 @@
                 <ul aria-label='Más opciones' id='nav-more-menu' role='menu'></ul>
               </li>
             </ul>
-            <form action='/search' class='nav-search' method='get' role='search'>
-              <label class='visually-hidden' for='nav-search-input'>Buscar en el sitio</label>
-              <input id='nav-search-input' name='q' placeholder='Buscar en el sitio…' type='search'/>
-              <button aria-label='Buscar' type='submit'><i class='fas fa-search'></i></button>
-            </form>
           </b:includable>
         </b:widget>
       </b:section>
@@ -448,7 +448,7 @@
 
         <div class='card aliados-card'>
           <div class='aliados-header'>
-            <h3>Aliados y colaboradores</h3>
+            <h3 class='visually-hidden'>Aliados y colaboradores</h3>
             <button aria-label='Pausar desplazamiento de aliados' aria-pressed='false' class='aliados-pause' id='aliados-pause' type='button'>
               <i aria-hidden='true' class='fas fa-pause'></i>
             </button>
