@@ -847,60 +847,184 @@ img {
 }
 
 /* ========================================
-   VISTA DE PUBLICACIONES (archivo / post individual)
-   Estiliza el markup por defecto del widget Blog1
-   (locked, sin includable propio) para /search y
-   permalinks de post individual.
+   VISTA DE PUBLICACIONES — GRID DE CARDS
+   Includable propio del widget Blog1 (theme.xml) — ya no
+   depende del markup por defecto de Blogger. Grid para
+   /search y archivo; vista completa (.post-single) para
+   permalinks de post individual (data:blog.pageType == 'item').
 ======================================== */
-.post-list-wrapper .date-header {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: var(--spacing-md) 0 var(--spacing-xs);
+.post-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
 }
 
-.post-list-wrapper .post {
-  padding-bottom: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--border);
+.post-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition);
 }
 
-.post-list-wrapper .post:last-child {
-  border-bottom: none;
+.post-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
-.post-list-wrapper .post-title {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin: 0 0 var(--spacing-xs);
-}
-
-.post-list-wrapper .post-title a {
+.post-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   color: inherit;
   text-decoration: none;
 }
 
-.post-list-wrapper .post-body {
-  font-family: var(--font-body);
-  color: var(--text-main);
-  line-height: 1.6;
+.post-card-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-body);
+  overflow: hidden;
 }
 
-.post-list-wrapper .post-body img {
+.post-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.post-card-media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 2.5rem;
+}
+
+.post-card-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  background: var(--primary);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+
+.post-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.post-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-byline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--border);
+}
+
+.post-card-empty {
+  color: var(--text-light);
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+@media (max-width: 1024px) {
+  .post-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .post-card-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Post individual (data:blog.pageType == 'item') ── */
+.post-single-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.post-single-labels .post-badge {
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.post-single-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 var(--spacing-sm);
+  line-height: 1.25;
+}
+
+.post-single-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.post-single-image {
+  margin-bottom: var(--spacing-md);
+}
+
+.post-single-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.post-single-body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  line-height: 1.75;
+}
+
+.post-single-body img {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-md);
-}
-
-.post-list-wrapper .post-footer {
-  font-size: 13px;
-  color: var(--text-light);
-  margin-top: var(--spacing-xs);
 }
 
 .post-list-wrapper .blog-pager {

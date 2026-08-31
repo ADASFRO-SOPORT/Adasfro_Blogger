@@ -834,7 +834,74 @@
           <h2 id='publicaciones-title' style='margin-bottom: 16px;'><i class='fas fa-newspaper' style='color: var(--primary); margin-right: 10px;'></i>Publicaciones</h2>
           <div class='post-list-wrapper'>
             <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
-              <b:widget id='Blog1' locked='true' title='Blog' type='Blog'/>
+              <b:widget id='Blog1' locked='true' title='Blog' type='Blog'>
+                <b:includable id='main'>
+                  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                    <!-- Post individual: contenido completo, no card -->
+                    <b:loop values='data:posts' var='post'>
+                      <article class='post-single'>
+                        <b:if cond='data:post.labels'>
+                          <div class='post-single-labels'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <a class='post-badge' expr:href='data:label.url'><data:label.name/></a>
+                            </b:loop>
+                          </div>
+                        </b:if>
+                        <h1 class='post-single-title'><data:post.title/></h1>
+                        <div class='post-single-meta'>
+                          <b:if cond='data:post.author.name'>
+                            <span><i aria-hidden='true' class='fas fa-user-circle'></i> <data:post.author.name/></span>
+                          </b:if>
+                          <span class='post-single-date'><data:post.date/></span>
+                        </div>
+                        <b:if cond='data:post.featuredImage'>
+                          <div class='post-single-image'>
+                            <img expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                          </div>
+                        </b:if>
+                        <div class='post-single-body'>
+                          <data:post.body/>
+                        </div>
+                      </article>
+                      <b:include data='post' name='comments'/>
+                    </b:loop>
+                    <b:include name='nextprev'/>
+                  <b:else/>
+                    <!-- Lista / búsqueda: grid de cards -->
+                    <b:if cond='data:posts'>
+                      <div class='post-card-grid'>
+                        <b:loop values='data:posts' var='post'>
+                          <article class='post-card'>
+                            <a class='post-card-link' expr:href='data:post.url'>
+                              <div class='post-card-media'>
+                                <b:if cond='data:post.labels'>
+                                  <b:loop index='i' values='data:post.labels' var='label'>
+                                    <b:if cond='data:i == 0'>
+                                      <span class='post-card-badge'><data:label.name/></span>
+                                    </b:if>
+                                  </b:loop>
+                                </b:if>
+                                <b:if cond='data:post.featuredImage'>
+                                  <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 400, &quot;1:1&quot;)'/>
+                                <b:else/>
+                                  <div class='post-card-media-placeholder'><i aria-hidden='true' class='fas fa-newspaper'></i></div>
+                                </b:if>
+                              </div>
+                              <div class='post-card-body'>
+                                <h3 class='post-card-title'><data:post.title/></h3>
+                                <div class='post-card-byline'><i aria-hidden='true' class='fas fa-building'></i> <data:blog.title/></div>
+                              </div>
+                            </a>
+                          </article>
+                        </b:loop>
+                      </div>
+                      <b:include name='nextprev'/>
+                    <b:else/>
+                      <p class='post-card-empty'>No se encontraron publicaciones que coincidan con tu búsqueda.</p>
+                    </b:if>
+                  </b:if>
+                </b:includable>
+              </b:widget>
             </b:section>
           </div>
         </section>

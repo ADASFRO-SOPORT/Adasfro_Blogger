@@ -30,7 +30,7 @@ Une tres pedidos del usuario que apuntan a lo mismo: "arreglar menu inicial", "s
 - Reducir tamaño de fuente / padding en `.hero-section h2`, `.hero-section p` y el padding vertical de `.hero-section` (`css/neo-brutalist.css:382-428`).
 - Mantener contraste y legibilidad (WCAG AAA ya documentado) — solo se ajusta escala, no color ni texto.
 
-## Fase 3 — Publicaciones como grid de cards (ref. `ui-ux_example/publicaciones.png`)
+## Fase 3 — Publicaciones como grid de cards (ref. `ui-ux_example/publicaciones.png`) ✅ HECHA (2026-08-30, pendiente de verificación en Blogger real — ver `docs/TODO.md`)
 
 Confirmado por el usuario: "arreglar cards" = mostrar los posts de Blogger como cards (badge de categoría verde arriba-izquierda, imagen, título, byline "ADASFRO" con ícono), igual a la imagen de referencia.
 
